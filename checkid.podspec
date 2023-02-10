@@ -3,6 +3,7 @@ Pod::Spec.new do |spec|
   spec.version      = '1.0'
   spec.license      = 'MIT'
   spec.summary      = 'CheckID framework with Vietnamese Chip Citizen Card'
+  spec.homepage     = 'https://github.com/phungtiep/CheckID'
   spec.author       = 'Mobile-ID Technology and Services Joint Stock Company'
   spec.source       = { :git => 'https://github.com/phungtiep/CheckID.git', :tag => '1.0' }
   spec.requires_arc = true
@@ -14,5 +15,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'SwiftyRSA'
   spec.dependency 'SwiftyJSON'
   spec.dependency 'GoogleUtilitiesComponents' , '1.1.0'
-  spec.swift_version = "5.0" 
+  spec.swift_version = "5.0"
+  spec.vendored_frameworks = "checkid.xcframework" 
 end
