@@ -502,7 +502,7 @@ public enum MobileIDScanSuccess : Swift.Error {
   public static func startNfc(mobile_no: Swift.String, email: Swift.String, onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.NfcScanError>) -> Swift.Void)
   public static func startFaceScan(nfcInfo: checkid.NFCInfo?, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceScanInfo, checkid.FaceError>) -> Swift.Void)
   public static func startFaceAuth(card_no: Swift.String, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceAuthInfo, checkid.FaceError>) -> Swift.Void)
-  public static func startFaceLiveness(retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceLivenessInfo, checkid.FaceError>) -> Swift.Void)
+  public static func startFaceLiveness(WithCardNo card_no: Swift.String = "", retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceLivenessInfo, checkid.FaceError>) -> Swift.Void)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class TestViewController : UIKit.UIViewController {
@@ -1285,6 +1285,8 @@ public class DataGroup2 : checkid.DataGroup {
   public var videoUUID: Swift.String?
   public var progressTintColor: UIKit.UIColor?
   public var progressTrackColor: UIKit.UIColor?
+  public var isEnroll: Swift.Bool?
+  public var isAuditISO: Swift.Bool?
   public func setProgressColor(color: UIKit.UIColor)
   public func setProgressTrackTintColor(color: UIKit.UIColor)
   public func setPlaceHolderTextColor(color: UIKit.UIColor)
@@ -1307,6 +1309,8 @@ public class DataGroup2 : checkid.DataGroup {
   public func setButtonTitleEnableColor(color: UIKit.UIColor)
   public func setButtonTitleDisableColor(color: UIKit.UIColor)
   public func setNavTitleAttribute(textColor: UIKit.UIColor, font: UIKit.UIFont)
+  public func setIsEnroll(enroll: Swift.Bool)
+  public func setAuditISO(audit: Swift.Bool)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
