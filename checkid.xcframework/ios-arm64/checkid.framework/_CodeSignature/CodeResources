@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		8YBQQuTuQwQK4pzoC6wD+Y93Zvg=
+		cc05MHRpgZYzqHB6UUsg4ISxE6I=
 		</data>
 		<key>CSCA Vietnam.cer</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/OpenSSL.framework/OpenSSL</key>
 		<data>
-		4FaPiQA3S3IxIq+1f3YwSZfKIXc=
+		9jIyXq9V02ry+yH86XcOJl1ZOjM=
 		</data>
 		<key>Frameworks/OpenSSL.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -209,7 +209,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			R/WY39Vwz9/pKTmsIVLrsrj1z3mDHvRGyyXwAbqZ5gQ=
+			bxhz+hDVElAapmHlfIDqAymKIQVaSLo9ccMs8vJ1O1o=
 			</data>
 		</dict>
 		<key>CSCA Vietnam.cer</key>
@@ -279,7 +279,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Jr2QhQ77lVFPl0ZbBHpr4ZOvhG/oHEzX0tjslcNz/qk=
+			DSdbuLEa0IIDSxqc2Y29G4PUVIg2itLAZVMhCeKPafk=
 			</data>
 		</dict>
 		<key>Frameworks/OpenSSL.framework/_CodeSignature/CodeResources</key>
