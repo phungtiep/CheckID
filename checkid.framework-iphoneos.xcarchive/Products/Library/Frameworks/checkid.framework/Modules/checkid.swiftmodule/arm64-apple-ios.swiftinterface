@@ -1329,6 +1329,7 @@ public protocol CheckIDScanFaceViewDelegate : AnyObject {
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleScanFaceForResult object: checkid.FaceForCustomResultSuccess)
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didMoveFaceCloser isCloser: Swift.Bool)
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHoldFaceSteady isHoldSteady: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHadMoreOneFace isMoreOneFace: Swift.Bool)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(CheckIDScanFace) @_Concurrency.MainActor(unsafe) public class CheckIDScanFaceView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) weak public var delegate: checkid.CheckIDScanFaceViewDelegate?

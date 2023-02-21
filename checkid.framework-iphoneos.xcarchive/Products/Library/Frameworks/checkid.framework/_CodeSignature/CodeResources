@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		cc05MHRpgZYzqHB6UUsg4ISxE6I=
+		OMhkoFED2tdbcqs+WdbrSo6l9Jw=
 		</data>
 		<key>CSCA Vietnam.cer</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/OpenSSL.framework/OpenSSL</key>
 		<data>
-		9jIyXq9V02ry+yH86XcOJl1ZOjM=
+		BEStezs1YP5ucG0OM/AEeOZxYhk=
 		</data>
 		<key>Frameworks/OpenSSL.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -126,11 +126,11 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		gTdseBm5EwpTw5JYZfhz8MB9Nrg=
+		790aoOxYzsk2m9mtCp/Cip2UeIA=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		llQ+N/P864qJ0+Zo5qXOBYchDGU=
+		p6XWJZ6wP9h8fqmNKjFb/rnNieM=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -138,11 +138,11 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		gTdseBm5EwpTw5JYZfhz8MB9Nrg=
+		790aoOxYzsk2m9mtCp/Cip2UeIA=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		llQ+N/P864qJ0+Zo5qXOBYchDGU=
+		p6XWJZ6wP9h8fqmNKjFb/rnNieM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -180,7 +180,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kktnfSB5arbHOndXNFot0Y27d4E=
+			iNk5bgM+PEWPLBNvvDuLztwxj+g=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -197,7 +197,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			F0Uq9x/rlKh4hD6SjKoT5uruoKo=
+			J8Nqp8lm9mOO10OOuGCF8kr1DjY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -209,7 +209,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bxhz+hDVElAapmHlfIDqAymKIQVaSLo9ccMs8vJ1O1o=
+			qDVmSuCeGBJF/rGDA5jCekHwl/6Ctbp4tEImomgmGLc=
 			</data>
 		</dict>
 		<key>CSCA Vietnam.cer</key>
@@ -279,7 +279,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DSdbuLEa0IIDSxqc2Y29G4PUVIg2itLAZVMhCeKPafk=
+			9yEynf/N3f0QUjxUykmsNOeW6VNv3COyR8RT+cBF/X0=
 			</data>
 		</dict>
 		<key>Frameworks/OpenSSL.framework/_CodeSignature/CodeResources</key>
@@ -412,14 +412,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dCyxJdtSufWH0/ALec9/K7uKmIL0+eFEE1+Twwei2sQ=
+			9Y3Ep5D60NyuOCZX7YSpmM4vYvGCdYLF6AIrW1X5Cwc=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Yx7Rvkt8WexGn9Oah3OMfOlDYnj6RYfb5W+2OeCmhJg=
+			wIro4Zy2wa/pEhSm99fvsWPKwD5Y5JEmYmMOSVYNH/4=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
@@ -433,14 +433,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dCyxJdtSufWH0/ALec9/K7uKmIL0+eFEE1+Twwei2sQ=
+			9Y3Ep5D60NyuOCZX7YSpmM4vYvGCdYLF6AIrW1X5Cwc=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Yx7Rvkt8WexGn9Oah3OMfOlDYnj6RYfb5W+2OeCmhJg=
+			wIro4Zy2wa/pEhSm99fvsWPKwD5Y5JEmYmMOSVYNH/4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -503,7 +503,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oc22AoX2YF+gQdRJ/oUNFLUnzIl5IxyMm7jso2xhMPc=
+			LXNsj535pKl+sZIy3p3GdFjsWWXX6y9vgJU2JOZ8pkQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -526,7 +526,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			O0XuRgmQ8hskPfVZhzHtcaJnqAq5WD9jTMg9IGKLhqM=
+			iuVBsolkk6UxhonbOJpL2XHk8N5M38Gj9wdefRi3hzw=
 			</data>
 			<key>optional</key>
 			<true/>
