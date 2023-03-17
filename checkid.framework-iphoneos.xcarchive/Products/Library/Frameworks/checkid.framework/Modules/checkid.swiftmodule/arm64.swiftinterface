@@ -175,7 +175,7 @@ extension Foundation.Data {
   public static func fromBase64(_ encoded: Swift.String) -> Foundation.Data?
 }
 extension Swift.String {
-  public static func fromBase64(_ encoded: Swift.String) -> Swift.String?
+  public static func fromBase64(_ encoded: Swift.String) throws -> Swift.String?
 }
 @_hasMissingDesignatedInitializers public class X509PublicKey {
   public var algOid: Swift.String? {
