@@ -9,7 +9,6 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
   spec.ios.deployment_target  = '13.0'
   spec.dependency 'GoogleMLKit/FaceDetection'
-  spec.dependency 'OpenSSL-Universal'
   spec.dependency 'CryptoSwift'
   spec.dependency 'SwiftyTesseract'
   spec.dependency 'SwiftyRSA'

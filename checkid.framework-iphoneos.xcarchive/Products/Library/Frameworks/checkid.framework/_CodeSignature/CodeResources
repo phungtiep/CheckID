@@ -40,6 +40,18 @@
 		<data>
 		a3nmcBHTiN8iJOVOAfzqAPlm6xs=
 		</data>
+		<key>Frameworks/OpenSSL.framework/Info.plist</key>
+		<data>
+		R4w9Yn6kWzy3bsdpKnsV3t6Jqbw=
+		</data>
+		<key>Frameworks/OpenSSL.framework/OpenSSL</key>
+		<data>
+		RTqlW3lILXQJZKqYF1uy/MIPBzc=
+		</data>
+		<key>Frameworks/OpenSSL.framework/_CodeSignature/CodeResources</key>
+		<data>
+		yyuOf2fZI7DF6IEKg2Ib1UUq/50=
+		</data>
 		<key>GoogleMVFaceDetectorResources.bundle/BCLjoy_200.emd</key>
 		<data>
 		96Uw5p4tLIiDbN11Du0p0c5xqE8=
@@ -254,6 +266,27 @@
 			<key>hash2</key>
 			<data>
 			dNQeag3GTuiqQJw0L0yF/+SUOa85Olu/y7gDT3ogAC8=
+			</data>
+		</dict>
+		<key>Frameworks/OpenSSL.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rWnTrErtrwABu4GTUiNkKVn32rx+bxLt+ZPbcUuwun8=
+			</data>
+		</dict>
+		<key>Frameworks/OpenSSL.framework/OpenSSL</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XIePfQ+JjICrYF8+rdTSekT46XAkFmyKU+Ei7LeP2gk=
+			</data>
+		</dict>
+		<key>Frameworks/OpenSSL.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TpBQpGoGjpVSydYf7niyGhFVH5k6dw+31T0QFNmjhO0=
 			</data>
 		</dict>
 		<key>GoogleMVFaceDetectorResources.bundle/BCLjoy_200.emd</key>
