@@ -125,7 +125,7 @@ __44-[FBLPromise observeOnQueue:fulfill:reject:]_block_invoke
 ___40+[FBLPromise(AllAdditions) onQueue:all:]_block_invoke
 ___40+[FBLPromise(AllAdditions) onQueue:all:]_block_invoke_2
 ___copy_helper_block_e8_32s40b
-___40+[FBLPromise(AllAdditions) onQueue:all:]_block_invoke.26
+___40+[FBLPromise(AllAdditions) onQueue:all:]_block_invoke.25
 ___copy_helper_block_e8_32b
 ___copy_helper_block_e8_32s48s
 ___destroy_helper_block_e8_32s48s
@@ -137,19 +137,16 @@ _OBJC_SELECTOR_REFERENCES_.6
 _OBJC_SELECTOR_REFERENCES_.8
 _OBJC_SELECTOR_REFERENCES_.10
 _OBJC_SELECTOR_REFERENCES_.12
-_OBJC_CLASSLIST_REFERENCES_$_.13
-_OBJC_SELECTOR_REFERENCES_.17
-_OBJC_SELECTOR_REFERENCES_.19
-_OBJC_SELECTOR_REFERENCES_.21
-_OBJC_SELECTOR_REFERENCES_.23
-_OBJC_SELECTOR_REFERENCES_.25
+_OBJC_SELECTOR_REFERENCES_.14
+_OBJC_SELECTOR_REFERENCES_.16
+_OBJC_SELECTOR_REFERENCES_.24
 ___block_descriptor_48_e8_32s40bs_e8_v16?08l
 ___block_descriptor_40_e8_32bs_e17_v16?0"NSError"8l
-_OBJC_SELECTOR_REFERENCES_.29
+_OBJC_SELECTOR_REFERENCES_.28
 ___block_descriptor_56_e8_32s48s_e34_v24?0?<v?>8?<v?"NSError">16l
+_OBJC_SELECTOR_REFERENCES_.31
 __OBJC_$_CATEGORY_CLASS_METHODS_FBLPromise_$_AllAdditions
 __OBJC_$_CATEGORY_FBLPromise_$_AllAdditions
-_OBJC_SELECTOR_REFERENCES_.36
 ___block_descriptor_40_e8__e29_"FBLPromise"16?0"NSArray"8l
 ___block_descriptor_40_e8__e61_"FBLPromise"24?0"NSObject<OS_dispatch_queue>"8"NSArray"16l
 __OBJC_$_CATEGORY_CLASS_METHODS_FBLPromise_$_DotSyntax_AllAdditions
@@ -161,7 +158,7 @@ __41+[FBLPromise(DotSyntax_AllAdditions) all]_block_invoke
 __destroy_helper_block_e8_32s48s
 __copy_helper_block_e8_32s48s
 __copy_helper_block_e8_32b
-__40+[FBLPromise(AllAdditions) onQueue:all:]_block_invoke.26
+__40+[FBLPromise(AllAdditions) onQueue:all:]_block_invoke.25
 __copy_helper_block_e8_32s40b
 __40+[FBLPromise(AllAdditions) onQueue:all:]_block_invoke_2
 __40+[FBLPromise(AllAdditions) onQueue:all:]_block_invoke
@@ -199,14 +196,11 @@ ___41+[FBLPromise(DotSyntax_AnyAdditions) any]_block_invoke
 +[FBLPromise(DotSyntax_AnyAdditions) anyOn]
 ___43+[FBLPromise(DotSyntax_AnyAdditions) anyOn]_block_invoke
 _FBLPromiseCombineValuesAndErrors.cold.1
-_OBJC_SELECTOR_REFERENCES_.14
-_OBJC_SELECTOR_REFERENCES_.16
+_OBJC_SELECTOR_REFERENCES_.21
 ___block_descriptor_56_e8_32s40bs48bs_e17_v16?0"NSError"8l
-_OBJC_SELECTOR_REFERENCES_.24
 _OBJC_SELECTOR_REFERENCES_.27
 __OBJC_$_CATEGORY_CLASS_METHODS_FBLPromise_$_AnyAdditions
 __OBJC_$_CATEGORY_FBLPromise_$_AnyAdditions
-_OBJC_SELECTOR_REFERENCES_.31
 __OBJC_$_CATEGORY_CLASS_METHODS_FBLPromise_$_DotSyntax_AnyAdditions
 __OBJC_$_CATEGORY_FBLPromise_$_DotSyntax_AnyAdditions
 _OBJC_CLASSLIST_REFERENCES_$_.40
@@ -239,6 +233,7 @@ ___47+[FBLPromise(DotSyntax_AsyncAdditions) asyncOn]_block_invoke
 ___block_descriptor_56_e8_32bs40s48s_e5_v8?0l
 __OBJC_$_CATEGORY_CLASS_METHODS_FBLPromise_$_AsyncAdditions
 __OBJC_$_CATEGORY_FBLPromise_$_AsyncAdditions
+_OBJC_SELECTOR_REFERENCES_.23
 ___block_descriptor_40_e8__e39_16?0?<v??<v?>?<v?"NSError">>8l
 ___block_descriptor_40_e8__e71_24?0"NSObject<OS_dispatch_queue>"8?<v??<v?>?<v?"NSError">>16l
 __OBJC_$_CATEGORY_CLASS_METHODS_FBLPromise_$_DotSyntax_AsyncAdditions
@@ -301,7 +296,7 @@ __44-[FBLPromise(CatchAdditions) onQueue:catch:]_block_invoke
 -[FBLPromise(DelayAdditions) onQueue:delay:]
 ___44-[FBLPromise(DelayAdditions) onQueue:delay:]_block_invoke
 ___44-[FBLPromise(DelayAdditions) onQueue:delay:]_block_invoke_2
-___44-[FBLPromise(DelayAdditions) onQueue:delay:]_block_invoke.8
+___44-[FBLPromise(DelayAdditions) onQueue:delay:]_block_invoke.10
 -[FBLPromise(DotSyntax_DelayAdditions) delay]
 ___45-[FBLPromise(DotSyntax_DelayAdditions) delay]_block_invoke
 -[FBLPromise(DotSyntax_DelayAdditions) delayOn]
@@ -318,7 +313,7 @@ __OBJC_$_CATEGORY_FBLPromise_$_DotSyntax_DelayAdditions
 __47-[FBLPromise(DotSyntax_DelayAdditions) delayOn]_block_invoke
 PromisesObjC/Sources/FBLPromises/FBLPromise+Delay.m
 __45-[FBLPromise(DotSyntax_DelayAdditions) delay]_block_invoke
-__44-[FBLPromise(DelayAdditions) onQueue:delay:]_block_invoke.8
+__44-[FBLPromise(DelayAdditions) onQueue:delay:]_block_invoke.10
 __44-[FBLPromise(DelayAdditions) onQueue:delay:]_block_invoke_2
 __44-[FBLPromise(DelayAdditions) onQueue:delay:]_block_invoke
 +[FBLPromise(DoAdditions) do:]
@@ -416,6 +411,7 @@ ___destroy_helper_block_e8_32s40s48s56s
 ___copy_helper_block_e8_32b40s48s56b
 __OBJC_$_CATEGORY_CLASS_METHODS_FBLPromise_$_RetryAdditions
 __OBJC_$_CATEGORY_FBLPromise_$_RetryAdditions
+_OBJC_SELECTOR_REFERENCES_.17
 ___block_descriptor_40_e8__e14_16?0?<?>8l
 ___block_descriptor_40_e8__e40_40?0q8d16?<B?q"NSError">24?<?>32l
 ___block_descriptor_40_e8__e72_48?0"NSObject<OS_dispatch_queue>"8q16d24?<B?q"NSError">32?<?>40l
@@ -423,6 +419,7 @@ __OBJC_$_CATEGORY_CLASS_METHODS_FBLPromise_$_DotSyntax_RetryAdditions
 __OBJC_$_CATEGORY_FBLPromise_$_DotSyntax_RetryAdditions
 _OBJC_CLASSLIST_REFERENCES_$_.32
 _OBJC_SELECTOR_REFERENCES_.34
+_OBJC_SELECTOR_REFERENCES_.36
 _OBJC_SELECTOR_REFERENCES_.38
 ___block_descriptor_80_e8_32s40s48bs56bs_e5_v8?0l
 _OBJC_SELECTOR_REFERENCES_.41
@@ -473,15 +470,14 @@ __43-[FBLPromise(DotSyntax_ThenAdditions) then]_block_invoke
 -[FBLPromise(TimeoutAdditions) timeout:]
 -[FBLPromise(TimeoutAdditions) onQueue:timeout:]
 ___48-[FBLPromise(TimeoutAdditions) onQueue:timeout:]_block_invoke
-___48-[FBLPromise(TimeoutAdditions) onQueue:timeout:]_block_invoke.7
-___48-[FBLPromise(TimeoutAdditions) onQueue:timeout:]_block_invoke.13
+___48-[FBLPromise(TimeoutAdditions) onQueue:timeout:]_block_invoke.9
+___48-[FBLPromise(TimeoutAdditions) onQueue:timeout:]_block_invoke.15
 ___copy_helper_block_e8_32w
 ___destroy_helper_block_e8_32w
 -[FBLPromise(DotSyntax_TimeoutAdditions) timeout]
 ___49-[FBLPromise(DotSyntax_TimeoutAdditions) timeout]_block_invoke
 -[FBLPromise(DotSyntax_TimeoutAdditions) timeoutOn]
 ___51-[FBLPromise(DotSyntax_TimeoutAdditions) timeoutOn]_block_invoke
-_OBJC_CLASSLIST_REFERENCES_$_.14
 ___block_descriptor_40_e8_32w_e5_v8?0l
 __OBJC_$_CATEGORY_INSTANCE_METHODS_FBLPromise_$_TimeoutAdditions
 __OBJC_$_CATEGORY_FBLPromise_$_TimeoutAdditions
@@ -493,8 +489,8 @@ PromisesObjC/Sources/FBLPromises/FBLPromise+Timeout.m
 __49-[FBLPromise(DotSyntax_TimeoutAdditions) timeout]_block_invoke
 __destroy_helper_block_e8_32w
 __copy_helper_block_e8_32w
-__48-[FBLPromise(TimeoutAdditions) onQueue:timeout:]_block_invoke.13
-__48-[FBLPromise(TimeoutAdditions) onQueue:timeout:]_block_invoke.7
+__48-[FBLPromise(TimeoutAdditions) onQueue:timeout:]_block_invoke.15
+__48-[FBLPromise(TimeoutAdditions) onQueue:timeout:]_block_invoke.9
 __48-[FBLPromise(TimeoutAdditions) onQueue:timeout:]_block_invoke
 -[FBLPromise(ValidateAdditions) validate:]
 -[FBLPromise(ValidateAdditions) onQueue:validate:]
@@ -617,6 +613,7 @@ ___block_descriptor_40_e8_32bs_e34_v24?0?<v?>8?<v?"NSError">16l
 ___block_descriptor_40_e8_32bs_e8_v16?08l
 ___block_descriptor_48_e8_32bs40bs_e20_v24?08"NSError"16l
 ___block_descriptor_48_e8_32bs40bs_e20_v24?0"NSError"816l
+_OBJC_SELECTOR_REFERENCES_.19
 _OBJC_CLASSLIST_REFERENCES_$_.22
 ___block_descriptor_48_e8_32bs40bs_e23_v32?0816"NSError"24l
 _OBJC_CLASSLIST_REFERENCES_$_.28
