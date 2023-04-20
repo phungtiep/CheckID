@@ -168,6 +168,7 @@ public struct CharSet {
 @_hasMissingDesignatedInitializers public class CheckIdCommons {
   public static func setLicense(licenseString: Swift.String, onCompletion: @escaping (Swift.Result<Swift.Bool, checkid.LicenseError>) -> Swift.Void)
   public static func setLanguage(language: Swift.String)
+  public static func setVersion(version: Swift.Int)
   @objc deinit
 }
 extension Foundation.Data {
@@ -352,9 +353,9 @@ public class PKCS7_ {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class MBLiveness {
-  public static func startFaceScan(pKeyID: Swift.String, pKeyDob: Swift.String, pKeyDoe: Swift.String, baseUrlString: Swift.String, accessKeyString: Swift.String, secretKeyString: Swift.String, xApiKeyString: Swift.String, regionString: Swift.String, serviceNameString: Swift.String, usernameString: Swift.String, publicKey: Swift.String, card_no: Swift.String, faceSelfie: Swift.String, onCompletion: @escaping (Swift.Result<[Swift.String : Any], checkid.FaceException>) -> Swift.Void)
-  public static func startFaceAuthen(pKeyID: Swift.String, pKeyDob: Swift.String, pKeyDoe: Swift.String, baseUrlString: Swift.String, accessKeyString: Swift.String, secretKeyString: Swift.String, xApiKeyString: Swift.String, regionString: Swift.String, serviceNameString: Swift.String, usernameString: Swift.String, publicKey: Swift.String, card_no: Swift.String, faceSelfie: Swift.String, onCompletion: @escaping (Swift.Result<[Swift.String : Any], checkid.FaceException>) -> Swift.Void)
-  public static func startLiveness(pKeyID: Swift.String, pKeyDob: Swift.String, pKeyDoe: Swift.String, baseUrlString: Swift.String, accessKeyString: Swift.String, secretKeyString: Swift.String, xApiKeyString: Swift.String, regionString: Swift.String, serviceNameString: Swift.String, usernameString: Swift.String, publicKey: Swift.String, card_no: Swift.String, faceSelfie: Swift.String, onCompletion: @escaping (Swift.Result<[Swift.String : Any], checkid.FaceException>) -> Swift.Void)
+  public static func startFaceScan(pKeyID: Swift.String, pKeyDob: Swift.String, pKeyDoe: Swift.String, baseUrlString: Swift.String, accessKeyString: Swift.String, secretKeyString: Swift.String, xApiKeyString: Swift.String, regionString: Swift.String, serviceNameString: Swift.String, usernameString: Swift.String, publicKey: Swift.String, card_no: Swift.String, faceSelfie: Swift.String, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
+  public static func startFaceAuthen(pKeyID: Swift.String, pKeyDob: Swift.String, pKeyDoe: Swift.String, baseUrlString: Swift.String, accessKeyString: Swift.String, secretKeyString: Swift.String, xApiKeyString: Swift.String, regionString: Swift.String, serviceNameString: Swift.String, usernameString: Swift.String, publicKey: Swift.String, card_no: Swift.String, faceSelfie: Swift.String, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
+  public static func startLiveness(pKeyID: Swift.String, pKeyDob: Swift.String, pKeyDoe: Swift.String, baseUrlString: Swift.String, accessKeyString: Swift.String, secretKeyString: Swift.String, xApiKeyString: Swift.String, regionString: Swift.String, serviceNameString: Swift.String, usernameString: Swift.String, publicKey: Swift.String, card_no: Swift.String, faceSelfie: Swift.String, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
   @objc deinit
 }
 public struct LivenessResult : Swift.Codable {
@@ -373,6 +374,9 @@ public struct VerificationResult : Swift.Codable {
   public let transaction_id: Swift.String
   public let final_result: checkid.FinalResult
   public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.VerificationResult {
+  public init()
   public init(from decoder: Swift.Decoder) throws
 }
 public struct VerificationResultOther : Swift.Codable {
@@ -384,6 +388,9 @@ public struct VerificationResultOther : Swift.Codable {
 public struct Claim_sources : Swift.Codable {
   public let JWT: Swift.String
   public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.Claim_sources {
+  public init()
   public init(from decoder: Swift.Decoder) throws
 }
 public struct FinalResult : Swift.Codable {
@@ -395,6 +402,9 @@ public struct FinalResult : Swift.Codable {
   public let liveness_confidence: Swift.Float
   public let claim_sources: checkid.Claim_sources
   public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.FinalResult {
+  public init()
   public init(from decoder: Swift.Decoder) throws
 }
 public struct FinalResultOther : Swift.Codable {
@@ -407,14 +417,17 @@ public struct FinalResultOther : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public struct FaceForCustomResultSuccess : Swift.Codable {
-  public let status: Swift.Float
-  public let message: Swift.String
-  public let transaction_id: Swift.String
-  public let provider: Swift.String
-  public let verification_result: checkid.VerificationResult
+public class FaceResult : Swift.Codable {
+  final public let status: Swift.Float
+  final public let message: Swift.String
+  final public let transaction_id: Swift.String
+  final public let provider: Swift.String
+  public var videoEvident: Swift.String
+  public var faceImageList: [Swift.String]
+  final public let verification_result: checkid.VerificationResult
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
 }
 public struct FaceCustomResultLivenessFail : Swift.Codable {
   public let status: Swift.Float
@@ -444,33 +457,20 @@ public struct FaceForLivenessCustomResult : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public enum ScanError : Swift.Error {
+public enum CheckIDError : Swift.Error {
   case SCAN_FAIL
   case SCAN_SUCCESS
   case LICENSE_NOT_VALID
   case NFC_FUNCTION_IS_NOT_ENABLED
-  public static func == (a: checkid.ScanError, b: checkid.ScanError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public enum NfcScanError : Swift.Error {
+  case COULD_NOT_CREATE_CAPTURE_DEVICE
   case NFC_CARD_VALIDATE_FAILED
   case NFC_FAILED
   case NFC_ADAPTER_NOT_SUPPORTED
   case NFC_NO_MRZ_SCANNED
   case NFC_SERVER_ERROR
-  case LICENSE_NOT_VALID
   case NFC_CARD_ACCESS_DENIED
   case USER_CANCELED
-  public static func == (a: checkid.NfcScanError, b: checkid.NfcScanError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public enum FaceError : Swift.Error {
+  case PASSIVE_AUTHENTICATION_FAILED
   case FACE_NETWORK_ERROR
   case NO_NFC_SCANNED
   case NOT_VALID_MRZ_AND_NFC_PROCESS
@@ -478,30 +478,36 @@ public enum FaceError : Swift.Error {
   case NO_PERSONAL_IDENTITY_FOUND_PLEASE_DO_PA_AUTHENTICATION_FIRST
   case LIVENESS_FAILED
   case FACE_MATCHING_FAIL
-  case LICENSE_NOT_VALID
-  case USER_CANCELED
   case DEVICE_NOT_CONNECTED_TO_THE_INTERNET
   case TOO_MUCH_RETRY
-  public static func == (a: checkid.FaceError, b: checkid.FaceError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public enum MobileIDScanSuccess : Swift.Error {
-  case SCAN_SUCCESS
-  public static func == (a: checkid.MobileIDScanSuccess, b: checkid.MobileIDScanSuccess) -> Swift.Bool
+  case OTP_AUTHORIZATION_NEEDED
+  case NFC_SERVER_UNKNOWN_EXCEPTION
+  case IDENTITY_ACCOUNT_IS_NOT_REGISTERED
+  case SCAN_FACE_TIME_OUT
+  case SDK_NOT_FOUND_DATA_EXCEPTION
+  case INTERNAL_SERVER_ERROR
+  case PARAMETER_IS_INVALID
+  case EMAIL_ALREADY_EXISTS_OR_PHONE_NUMBER_ALREADY_EXISTS
+  case UNKNOWN_EXCEPTION
+  case UNKNOWN_SUBJECTID_OR_PROCESSID
+  case INVALID_PROCESS_STATUS
+  public static func == (a: checkid.CheckIDError, b: checkid.CheckIDError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
 @_hasMissingDesignatedInitializers public class CheckIdICAO {
-  public static func startMrz(onCompletion: @escaping (Swift.Result<Swift.Bool, checkid.ScanError>) -> Swift.Void)
-  public static func startNfc(mobile_no: Swift.String, email: Swift.String, onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.NfcScanError>) -> Swift.Void)
-  public static func startFaceScan(nfcInfo: checkid.NFCInfo?, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceScanInfo, checkid.FaceError>) -> Swift.Void)
-  public static func startFaceAuth(card_no: Swift.String, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceAuthInfo, checkid.FaceError>) -> Swift.Void)
-  public static func startFaceLiveness(WithCardNo card_no: Swift.String = "", retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceLivenessInfo, checkid.FaceError>) -> Swift.Void)
+  public static func startMrz(onCompletion: @escaping (Swift.Result<Swift.Bool, checkid.CheckIDError>) -> Swift.Void)
+  public static func startNfc(mobile_no: Swift.String, email: Swift.String, onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
+  public static func startFaceScan(nfcInfo: checkid.NFCInfo?, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
+  public static func startFaceAuth(card_no: Swift.String, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
+  public static func startFaceLiveness(WithCardNo card_no: Swift.String = "", WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
+  public static func getOTPCodeWithPhoneNumber(mobile: Swift.String, onCompletion: @escaping (Swift.Result<checkid.OTPStatus, checkid.CheckIDError>) -> Swift.Void)
+  public static func getOTPCodeWithEmail(email: Swift.String, onCompletion: @escaping (Swift.Result<checkid.OTPStatus, checkid.CheckIDError>) -> Swift.Void)
+  public static func getPersonalInfomation(card_no: Swift.String, onCompletion: @escaping (Swift.Result<checkid.PersonalInformationResponse, checkid.CheckIDError>) -> Swift.Void)
+  public static func verificationWithMobile(otp: Swift.String, type: checkid.ProcessType, onCompletion: @escaping (Swift.Result<checkid.OtpVerificationResponse, checkid.CheckIDError>) -> Swift.Void)
+  public static func otpRegeneration(type: checkid.ProcessType, onCompletion: @escaping (Swift.Result<checkid.Response, checkid.CheckIDError>) -> Swift.Void)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class TestViewController : UIKit.UIViewController {
@@ -534,6 +540,20 @@ public class SecurityInfo {
   public func getObjectIdentifier() -> Swift.String
   public func getProtocolOIDString() -> Swift.String
   @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CheckIDScanMRZViewV2 : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var isScanning: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var vibrateOnResult: Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func startScanning()
+  @_Concurrency.MainActor(unsafe) public func stopScanning()
+}
+extension checkid.CheckIDScanMRZViewV2 : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
 }
 @available(iOS 13, *)
 public struct ResponseAPDU {
@@ -627,6 +647,12 @@ public enum DataGroupId : Swift.Int, Swift.CaseIterable {
   public var rawValue: Swift.Int {
     get
   }
+}
+public struct PassiveAuthenticationResponse : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.PassiveAuthenticationResponse {
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum LogLevel : Swift.Int, Swift.CaseIterable {
   case verbose
@@ -884,7 +910,7 @@ public struct FaceLivenessInfo {
   public var videoEvident: Swift.String
 }
 @objc @_inheritsConvenienceInitializers public class API : ObjectiveC.NSObject {
-  public static func passiveAuthentication(baseURL: Swift.String, username: Swift.String, xApiKey: Swift.String, accessKeyId: Swift.String, secretSigningKey: Swift.String, region: Swift.String, services: Swift.String, sessionKeyData: Swift.String, pa_data: Swift.String, mobile_no: Swift.String, email: Swift.String, onCompletion: @escaping (_ resultData: [Swift.String : Any]?, _ isSuccess: Swift.Bool) -> ())
+  public static func passiveAuthentication(baseURL: Swift.String, username: Swift.String, xApiKey: Swift.String, accessKeyId: Swift.String, secretSigningKey: Swift.String, region: Swift.String, services: Swift.String, sessionKeyData: Swift.String, pa_data: Swift.String, mobile_no: Swift.String, email: Swift.String, card_no: Swift.String, onCompletion: @escaping (Swift.Result<checkid.PassiveAuthenticationResponse, checkid.CheckIDError>) -> ())
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1085,7 +1111,7 @@ extension checkid.X509Certificate {
   }
 }
 public protocol CheckIDScanMRZViewDelegate : AnyObject {
-  func checkIDMrzScannerView(_ mrzScannerView: checkid.CheckIDScanMRZView, didFinnish scanResult: Swift.Result<Swift.String, checkid.ScanError>)
+  func checkIDMrzScannerView(_ mrzScannerView: checkid.CheckIDScanMRZView, didFinnish scanResult: Swift.Result<Swift.Bool, checkid.CheckIDError>)
   func checkIDMrzScannerView(_ mrzScannerView: checkid.CheckIDScanMRZView, didHandleScanImage image: Swift.String)
 }
 @objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) public class CheckIDScanMRZView : UIKit.UIView {
@@ -1322,12 +1348,12 @@ public protocol CheckIDScanFaceViewDelegate : AnyObject {
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didBlinkEye status: Swift.Bool)
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didCenterFace status: Swift.Bool)
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didCenterNose status: Swift.Bool)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleError error: checkid.FaceError)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleError error: checkid.CheckIDError)
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didFinish status: Swift.Bool)
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleDetectionType type: checkid.DetectionType)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleLivenessOk object: checkid.FaceForLivenessCustomResult)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleLivenessFailure object: checkid.FaceForLivenessCustomResult)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleScanFaceForResult object: checkid.FaceForCustomResultSuccess)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleLivenessOk object: checkid.FaceResult)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleLivenessFailure object: checkid.FaceResult)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleScanFaceForResult object: checkid.FaceResult)
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didMoveFaceCloser isCloser: Swift.Bool)
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHoldFaceSteady isHoldSteady: Swift.Bool)
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHadMoreOneFace isMoreOneFace: Swift.Bool)
@@ -1446,17 +1472,6 @@ public enum LicenseError : Swift.Error {
   public var hashValue: Swift.Int {
     get
   }
-}
-@_hasMissingDesignatedInitializers public class ICAOManager {
-  public static let shared: checkid.ICAOManager
-  public var baseUrlString: Swift.String?
-  public var accessKeyString: Swift.String?
-  public var secretKeyString: Swift.String?
-  public var xApiKeyString: Swift.String?
-  public var regionString: Swift.String?
-  public var serviceNameString: Swift.String?
-  public var usernameString: Swift.String?
-  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class X509Certificate : Swift.CustomStringConvertible {
   convenience public init(data: Foundation.Data) throws
@@ -1912,9 +1927,58 @@ public class NFCPassportModel {
   public func verifyActiveAuthentication(challenge: [Swift.UInt8], signature: [Swift.UInt8])
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class MobileIDNFCScan {
-  public static func startScanNFC(pKeyID: Swift.String, pKeyDob: Swift.String, pKeyDoe: Swift.String, baseUrlString: Swift.String, accessKeyString: Swift.String, secretKeyString: Swift.String, xApiKeyString: Swift.String, regionString: Swift.String, serviceNameString: Swift.String, usernameString: Swift.String, publicKey: Swift.String, mobile_no: Swift.String, email: Swift.String, onCompletion: @escaping (Swift.Result<[Swift.String : Any], checkid.NfcScanError>) -> Swift.Void)
-  @objc deinit
+public enum ProcessType {
+  case MOBILEVERIFICATION
+  case EMAILVERIFICATION
+  public static func == (a: checkid.ProcessType, b: checkid.ProcessType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum OTPStatus {
+  case SUCCESSFULLY
+  public static func == (a: checkid.OTPStatus, b: checkid.OTPStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Response : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.Response {
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct OtpVerificationResponse : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.OtpVerificationResponse {
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct SubjectCreate : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.SubjectCreate {
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct ProcessesCreate : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.ProcessesCreate {
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct PersonalInfomation : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.PersonalInfomation {
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct PersonalInformationResponse : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.PersonalInformationResponse {
+  public init(from decoder: Swift.Decoder) throws
 }
 extension checkid.MobileIDNFCResult : Swift.Equatable {}
 extension checkid.MobileIDNFCResult : Swift.Hashable {}
@@ -1922,14 +1986,8 @@ extension checkid.PACEMappingType : Swift.Equatable {}
 extension checkid.PACEMappingType : Swift.Hashable {}
 extension checkid.DetectionType : Swift.Equatable {}
 extension checkid.DetectionType : Swift.Hashable {}
-extension checkid.ScanError : Swift.Equatable {}
-extension checkid.ScanError : Swift.Hashable {}
-extension checkid.NfcScanError : Swift.Equatable {}
-extension checkid.NfcScanError : Swift.Hashable {}
-extension checkid.FaceError : Swift.Equatable {}
-extension checkid.FaceError : Swift.Hashable {}
-extension checkid.MobileIDScanSuccess : Swift.Equatable {}
-extension checkid.MobileIDScanSuccess : Swift.Hashable {}
+extension checkid.CheckIDError : Swift.Equatable {}
+extension checkid.CheckIDError : Swift.Hashable {}
 @available(iOS 13, macOS 10.15, *)
 extension checkid.DataGroupId : Swift.Equatable {}
 @available(iOS 13, macOS 10.15, *)
@@ -1982,3 +2040,7 @@ extension checkid.LicenseError : Swift.Equatable {}
 extension checkid.LicenseError : Swift.Hashable {}
 extension checkid.PassportAuthenticationStatus : Swift.Equatable {}
 extension checkid.PassportAuthenticationStatus : Swift.Hashable {}
+extension checkid.ProcessType : Swift.Equatable {}
+extension checkid.ProcessType : Swift.Hashable {}
+extension checkid.OTPStatus : Swift.Equatable {}
+extension checkid.OTPStatus : Swift.Hashable {}
