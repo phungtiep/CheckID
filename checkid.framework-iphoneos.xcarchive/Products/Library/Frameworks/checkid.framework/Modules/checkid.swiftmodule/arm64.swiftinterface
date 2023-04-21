@@ -30,6 +30,9 @@ import UIKit
 import Vision
 import _Concurrency
 @_exported import checkid
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
+}
 extension UIKit.UIImage {
   public func scaledImage(with size: CoreGraphics.CGSize) -> UIKit.UIImage?
 }

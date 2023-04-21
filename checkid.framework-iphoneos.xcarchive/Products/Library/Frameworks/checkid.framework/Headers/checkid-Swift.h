@@ -293,6 +293,7 @@ SWIFT_CLASS("_TtC7checkid18TestViewController")
 
 
 
+
 @interface UINavigationController (SWIFT_EXTENSION(checkid))
 @property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
 @end
