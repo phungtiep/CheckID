@@ -503,7 +503,7 @@ public enum CheckIDError : Swift.Error {
 @_hasMissingDesignatedInitializers public class CheckIdICAO {
   public static func startMrz(onCompletion: @escaping (Swift.Result<Swift.Bool, checkid.CheckIDError>) -> Swift.Void)
   public static func startNfc(mobile_no: Swift.String, email: Swift.String, onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
-  public static func startFaceScan(nfcInfo: checkid.NFCInfo?, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
+  public static func startFaceScan(nfcInfo: checkid.NFCInfo, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
   public static func startFaceAuth(card_no: Swift.String, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
   public static func startFaceLiveness(WithCardNo card_no: Swift.String = "", WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
   public static func getOTPCodeWithPhoneNumber(mobile: Swift.String, onCompletion: @escaping (Swift.Result<checkid.OTPStatus, checkid.CheckIDError>) -> Swift.Void)
@@ -1432,26 +1432,27 @@ public class Entropy {
   @objc deinit
 }
 public struct NFCInfo {
-  public var mrz: Swift.String
-  public var faceImage: UIKit.UIImage
-  public var full_name: Swift.String
-  public var gender: Swift.String
-  public var nationality: Swift.String
-  public var dob: Swift.String
-  public var ethnic: Swift.String
-  public var religion: Swift.String
-  public var place_of_origin: Swift.String
-  public var place_of_residence: Swift.String
-  public var personal_identification: Swift.String
-  public var parent_names: [Swift.String]
-  public var fullname_of_spouse: Swift.String
-  public var personal_number: Swift.String
-  public var ex_value: Swift.String
-  public var doi: Swift.String
-  public var doe: Swift.String
-  public var address: Swift.String
-  public var faceImageBase64: Swift.String
-  public var country: Swift.String
+  public var mrz: Swift.String?
+  public var faceImage: UIKit.UIImage?
+  public var full_name: Swift.String?
+  public var gender: Swift.String?
+  public var nationality: Swift.String?
+  public var dob: Swift.String?
+  public var ethnic: Swift.String?
+  public var religion: Swift.String?
+  public var place_of_origin: Swift.String?
+  public var place_of_residence: Swift.String?
+  public var personal_identification: Swift.String?
+  public var parent_names: [Swift.String]?
+  public var fullname_of_spouse: Swift.String?
+  public var personal_number: Swift.String?
+  public var ex_value: Swift.String?
+  public var doi: Swift.String?
+  public var doe: Swift.String?
+  public var address: Swift.String?
+  public var faceImageBase64: Swift.String?
+  public var country: Swift.String?
+  public init()
 }
 @_hasMissingDesignatedInitializers public class ASN1DEREncoder {
   public static func encodeSequence(content: Foundation.Data) -> Foundation.Data
