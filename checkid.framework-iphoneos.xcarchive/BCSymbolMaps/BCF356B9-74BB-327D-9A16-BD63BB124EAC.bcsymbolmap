@@ -1,6 +1,6 @@
 BCSymbolMap Version: 2.0
 Apple clang version 13.0.0 (clang-1300.0.29.30)
-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk
+/Applications/Xcode13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk
 iPhoneOS15.2.sdk
 /Users/mobile-id/Library/Developer/Xcode/DerivedData/checkid-cxuxjwzrqqouhhdasrpzrcjezhgi/Build/Intermediates.noindex/ArchiveIntermediates/checkid/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/SwiftyJSON.build/DerivedSources/SwiftyJSON_vers.c
 /Users/mobile-id/Documents/iOS/eKYC_Framework/checkid/Pods
@@ -882,7 +882,7 @@ $s10SwiftyJSON5IndexOyypGWOr
 $sSny10SwiftyJSON5IndexOyypGGWOs
 $sSDySSypGWOs
 _swift_stdlib_malloc_size
-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/lib/swift/shims/LibcShims.h
+/Applications/Xcode13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/lib/swift/shims/LibcShims.h
 $s10SwiftyJSON0B0VWOr
 $s10SwiftyJSON0B0VWOs
 $s10SwiftyJSON18writingOptionsKeysOMa

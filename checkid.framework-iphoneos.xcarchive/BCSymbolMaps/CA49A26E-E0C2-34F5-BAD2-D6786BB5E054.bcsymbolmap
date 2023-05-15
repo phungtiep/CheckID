@@ -1,6 +1,6 @@
 BCSymbolMap Version: 2.0
 Apple clang version 13.0.0 (clang-1300.0.29.30)
-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk
+/Applications/Xcode13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk
 iPhoneOS15.2.sdk
 /Users/mobile-id/Library/Developer/Xcode/DerivedData/checkid-cxuxjwzrqqouhhdasrpzrcjezhgi/Build/Intermediates.noindex/ArchiveIntermediates/checkid/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/SwiftyTesseract.build/DerivedSources/SwiftyTesseract_vers.c
 /Users/mobile-id/Documents/iOS/eKYC_Framework/checkid/Pods
@@ -459,7 +459,7 @@ objectdestroy.8
 objectdestroy.5
 __swift_project_boxed_opaque_existential_1
 _swift_stdlib_malloc_size
-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/lib/swift/shims/LibcShims.h
+/Applications/Xcode13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/lib/swift/shims/LibcShims.h
 $ss22_ContiguousArrayBufferV19_uninitializedCount15minimumCapacityAByxGSi_SitcfC15SwiftyTesseract15RecognizedBlockV_Tg5Tf4nnd_n
 $ss22_ContiguousArrayBufferV18_initStorageHeader5count8capacityySi_SitF15SwiftyTesseract15RecognizedBlockV_Tg5
 $ss22_ContiguousArrayBufferVAByxGycfC15SwiftyTesseract15RecognizedBlockV_Tg5

@@ -113,31 +113,6 @@ extension checkid.PKCS7_ {
   }
   public func receipt() -> checkid.PKCS7_.ReceiptInfo?
 }
-public enum MobileIDNFCResult : Swift.Error {
-  case NFC_OK
-  case NFC_CARD_VALIDATE_FAILED
-  case NFC_FAILED
-  case NFC_CARD_ACCESS_DENIED
-  case NFC_ADAPTER_NOT_SUPPORTED
-  public static func == (a: checkid.MobileIDNFCResult, b: checkid.MobileIDNFCResult) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers public class MobileIDNFCInfo {
-  public var docNo: Swift.String?
-  public var dg1: Swift.String?
-  public var dg2: Swift.String?
-  public var dg13: Swift.String?
-  public var dg14: Swift.String?
-  public var dg15: Swift.String?
-  public var efCom: Swift.String?
-  public var efCardAccess: Swift.String?
-  public var efSOD: Swift.String?
-  public func toPlainText() -> Swift.String
-  @objc deinit
-}
 @available(iOS 13, macOS 10.15, *)
 public enum NFCViewDisplayMessage {
   case requestPresentPassport
@@ -475,7 +450,6 @@ public enum CheckIDError : Swift.Error {
   case USER_CANCELED
   case PASSIVE_AUTHENTICATION_FAILED
   case FACE_NETWORK_ERROR
-  case NO_NFC_SCANNED
   case NOT_VALID_MRZ_AND_NFC_PROCESS
   case FACE_CHECK_FAILED
   case NO_PERSONAL_IDENTITY_FOUND_PLEASE_DO_PA_AUTHENTICATION_FIRST
@@ -503,7 +477,7 @@ public enum CheckIDError : Swift.Error {
 @_hasMissingDesignatedInitializers public class CheckIdICAO {
   public static func startMrz(onCompletion: @escaping (Swift.Result<Swift.Bool, checkid.CheckIDError>) -> Swift.Void)
   public static func startNfc(mobile_no: Swift.String, email: Swift.String, onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
-  public static func startFaceScan(nfcInfo: checkid.NFCInfo, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
+  public static func startFaceScan(retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
   public static func startFaceAuth(card_no: Swift.String, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
   public static func startFaceLiveness(WithCardNo card_no: Swift.String = "", WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
   public static func getOTPCodeWithPhoneNumber(mobile: Swift.String, onCompletion: @escaping (Swift.Result<checkid.OTPStatus, checkid.CheckIDError>) -> Swift.Void)
@@ -1984,8 +1958,6 @@ public struct PersonalInformationResponse : Swift.Codable {
 extension checkid.PersonalInformationResponse {
   public init(from decoder: Swift.Decoder) throws
 }
-extension checkid.MobileIDNFCResult : Swift.Equatable {}
-extension checkid.MobileIDNFCResult : Swift.Hashable {}
 extension checkid.PACEMappingType : Swift.Equatable {}
 extension checkid.PACEMappingType : Swift.Hashable {}
 extension checkid.DetectionType : Swift.Equatable {}

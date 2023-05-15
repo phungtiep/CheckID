@@ -1,6 +1,6 @@
 BCSymbolMap Version: 2.0
 Apple clang version 13.0.0 (clang-1300.0.29.30)
-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk
+/Applications/Xcode13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk
 iPhoneOS15.2.sdk
 /Users/mobile-id/Library/Developer/Xcode/DerivedData/checkid-cxuxjwzrqqouhhdasrpzrcjezhgi/Build/Intermediates.noindex/ArchiveIntermediates/checkid/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/CryptoSwift.build/DerivedSources/CryptoSwift_vers.c
 /Users/mobile-id/Documents/iOS/eKYC_Framework/checkid/Pods
@@ -149,7 +149,7 @@ ___swift_reflection_version
 Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 /Users/mobile-id/Documents/iOS/eKYC_Framework/checkid/Pods/CryptoSwift/Sources/CryptoSwift/CS_BigInt/Addition.swift
 _swift_stdlib_malloc_size
-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/lib/swift/shims/LibcShims.h
+/Applications/Xcode13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/lib/swift/shims/LibcShims.h
 __swift_instantiateConcreteTypeFromMangledName
 <compiler-generated>
 $sSa9_getCountSiyFSu_Tg5

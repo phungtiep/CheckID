@@ -1,6 +1,6 @@
 BCSymbolMap Version: 2.0
 Apple clang version 13.0.0 (clang-1300.0.29.30)
-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk
+/Applications/Xcode13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk
 iPhoneOS15.2.sdk
 /Users/mobile-id/Library/Developer/Xcode/DerivedData/checkid-cxuxjwzrqqouhhdasrpzrcjezhgi/Build/Intermediates.noindex/ArchiveIntermediates/checkid/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/SwiftyRSA.build/DerivedSources/SwiftyRSA_vers.c
 /Users/mobile-id/Documents/iOS/eKYC_Framework/checkid/Pods
@@ -345,7 +345,7 @@ $ss12_ArrayBufferV9_isNativeSbvg9SwiftyRSA9PublicKeyC_Tg5
 $ss12_ArrayBufferV21needsElementTypeCheckSbvg9SwiftyRSA9PublicKeyC_Tg5
 $ss12_ArrayBufferV20_isNativeTypeCheckedSbvg9SwiftyRSA9PublicKeyC_Tg5
 _swift_stdlib_malloc_size
-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/lib/swift/shims/LibcShims.h
+/Applications/Xcode13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/usr/lib/swift/shims/LibcShims.h
 __swift_instantiateConcreteTypeFromMangledName
 $s10Foundation4DataV15_RepresentationOyAESWcfCTf4nd_n
 $s10Foundation4DataV06InlineB0V5countAESi_tcfC
