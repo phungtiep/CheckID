@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.author       = 'PHUNGTSM @Mobile-ID Technology and Services Joint Stock Company'
   spec.source       = { :git => 'https://github.com/phungtiep/CheckID.git', :tag => '1.0.23.0512' }
   spec.requires_arc = true
-  spec.ios.deployment_target  = '13.0'
+  spec.ios.deployment_target  = '11.0'
   spec.dependency "GoogleMLKit/FaceDetection" , "3.2.0"
   spec.dependency "CryptoSwift"
   spec.dependency "SwiftyTesseract"
