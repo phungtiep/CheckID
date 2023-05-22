@@ -1,11 +1,11 @@
 Pod::Spec.new do |spec|
   spec.name         = 'checkid'
-  spec.version      = '1.0.23.0512'
+  spec.version      = '1.0.23.0522'
   spec.license      = 'MIT'
   spec.summary      = 'CheckID framework with Vietnamese Chip Citizen Card'
   spec.homepage     = 'https://github.com/phungtiep/CheckID'
   spec.author       = 'PHUNGTSM @Mobile-ID Technology and Services Joint Stock Company'
-  spec.source       = { :git => 'https://github.com/phungtiep/CheckID.git', :tag => '1.0.23.0512' }
+  spec.source       = { :git => 'https://github.com/phungtiep/CheckID.git', :tag => '1.0.23.0522' }
   spec.requires_arc = true
   spec.ios.deployment_target  = '11.0'
   spec.dependency "GoogleMLKit/FaceDetection" , "3.2.0"
