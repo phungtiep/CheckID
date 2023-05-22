@@ -9,10 +9,10 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
   spec.ios.deployment_target  = '11.0'
   spec.dependency "GoogleMLKit/FaceDetection" , "3.2.0"
-  spec.dependency "CryptoSwift"
+  spec.dependency "CryptoSwift" , "~> 1.6.0"
   spec.dependency "SwiftyTesseract"
-  spec.dependency "SwiftyRSA"
-  spec.dependency "SwiftyJSON"
+  spec.dependency "SwiftyRSA" , "~> 3.1.3"
+  spec.dependency "SwiftyJSON", "~> 4.0"
   spec.swift_version = "5.0"
   spec.vendored_frameworks = "checkid.xcframework"
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
