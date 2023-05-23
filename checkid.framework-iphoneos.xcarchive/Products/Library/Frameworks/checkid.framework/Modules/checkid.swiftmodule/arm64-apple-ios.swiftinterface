@@ -30,6 +30,7 @@ import UIKit
 import Vision
 import _Concurrency
 @_exported import checkid
+import simd
 extension UIKit.UIDevice {
   @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
 }
@@ -501,6 +502,7 @@ public enum CheckIDError : Swift.Error {
   case MISSING_JWT
   case OTP_CODE_IS_EXPIRED
   case IDENTITY_CARD_NUMBER_NO_EXISTED
+  case SUBJECT_INFORMATION_IS_INSUFFICIENT
   public static func == (a: checkid.CheckIDError, b: checkid.CheckIDError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
