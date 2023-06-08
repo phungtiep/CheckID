@@ -236,7 +236,7 @@ SWIFT_CLASS_NAMED("CheckIDScanFaceView")
 @class NSNumber;
 
 IB_DESIGNABLE
-SWIFT_CLASS("_TtC7checkid18CheckIDScanMRZView")
+SWIFT_CLASS("_TtC7checkid18CheckIDScanMRZView") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CheckIDScanMRZView : UIView
 @property (nonatomic) BOOL isScanning;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -246,12 +246,13 @@ SWIFT_CLASS("_TtC7checkid18CheckIDScanMRZView")
 @end
 
 
+SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CheckIDScanMRZView (SWIFT_EXTENSION(checkid)) <AVCaptureVideoDataOutputSampleBufferDelegate>
 - (void)captureOutput:(AVCaptureOutput * _Nonnull)output didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)connection;
 @end
 
 
-SWIFT_CLASS("_TtC7checkid20CheckIDScanMRZViewV2")
+SWIFT_CLASS("_TtC7checkid20CheckIDScanMRZViewV2") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CheckIDScanMRZViewV2 : UIView
 @property (nonatomic) BOOL isScanning;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -261,6 +262,7 @@ SWIFT_CLASS("_TtC7checkid20CheckIDScanMRZViewV2")
 @end
 
 
+SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CheckIDScanMRZViewV2 (SWIFT_EXTENSION(checkid)) <AVCaptureVideoDataOutputSampleBufferDelegate>
 - (void)captureOutput:(AVCaptureOutput * _Nonnull)output didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)connection;
 @end

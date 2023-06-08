@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name checkid
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name checkid
 import AVFoundation
 import AudioToolbox
 import CommonCrypto
@@ -330,7 +330,8 @@ public class PKCS7_ {
   }
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class MBLiveness {
+@_hasMissingDesignatedInitializers @available(iOS 13.0, *)
+public class MBLiveness {
   public static func startFaceScan(WithVersion version: Swift.Int = -1, WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), pKeyID: Swift.String, pKeyDob: Swift.String, pKeyDoe: Swift.String, baseUrlString: Swift.String, accessKeyString: Swift.String, secretKeyString: Swift.String, xApiKeyString: Swift.String, regionString: Swift.String, serviceNameString: Swift.String, usernameString: Swift.String, publicKey: Swift.String, card_no: Swift.String, faceSelfie: Swift.String, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
   public static func startFaceAuthen(WithVersion version: Swift.Int = -1, WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), pKeyID: Swift.String, pKeyDob: Swift.String, pKeyDoe: Swift.String, baseUrlString: Swift.String, accessKeyString: Swift.String, secretKeyString: Swift.String, xApiKeyString: Swift.String, regionString: Swift.String, serviceNameString: Swift.String, usernameString: Swift.String, publicKey: Swift.String, card_no: Swift.String, faceSelfie: Swift.String, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
   public static func startLiveness(WithVersion version: Swift.Int = -1, WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), pKeyID: Swift.String, pKeyDob: Swift.String, pKeyDoe: Swift.String, baseUrlString: Swift.String, accessKeyString: Swift.String, secretKeyString: Swift.String, xApiKeyString: Swift.String, regionString: Swift.String, serviceNameString: Swift.String, usernameString: Swift.String, publicKey: Swift.String, card_no: Swift.String, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
@@ -508,7 +509,8 @@ public enum CheckIDError : Swift.Error {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class CheckIdICAO {
+@_hasMissingDesignatedInitializers @available(iOS 13, *)
+public class CheckIdICAO {
   public static func startMrz(onCompletion: @escaping (Swift.Result<Swift.Bool, checkid.CheckIDError>) -> Swift.Void)
   public static func startNfc(mobile_no: Swift.String, email: Swift.String, onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
   public static func startFaceScan(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
@@ -553,7 +555,8 @@ public class SecurityInfo {
   public func getProtocolOIDString() -> Swift.String
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CheckIDScanMRZViewV2 : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @available(iOS 13.0, *)
+@_Concurrency.MainActor(unsafe) public class CheckIDScanMRZViewV2 : UIKit.UIView {
   @objc @_Concurrency.MainActor(unsafe) dynamic public var isScanning: Swift.Bool
   @_Concurrency.MainActor(unsafe) public var vibrateOnResult: Swift.Bool
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
@@ -564,6 +567,7 @@ public class SecurityInfo {
   @_Concurrency.MainActor(unsafe) public func startScanning()
   @_Concurrency.MainActor(unsafe) public func stopScanning()
 }
+@available(iOS 13.0, *)
 extension checkid.CheckIDScanMRZViewV2 : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
 }
@@ -859,7 +863,8 @@ public enum FaceMethod : Swift.String {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class AlertShow {
+@_hasMissingDesignatedInitializers @available(iOS 13.0, *)
+public class AlertShow {
   public static let shared: checkid.AlertShow
   public var windowsTemp: [UIKit.UIWindow]
   public func showAddWidget(completionBlock: ((Swift.String, Swift.String, Swift.String) -> Swift.Void)?)
@@ -1123,11 +1128,13 @@ extension checkid.X509Certificate {
     @objc deinit
   }
 }
+@available(iOS 13.0, *)
 public protocol CheckIDScanMRZViewDelegate : AnyObject {
   func checkIDMrzScannerView(_ mrzScannerView: checkid.CheckIDScanMRZView, didFinnish scanResult: Swift.Result<Swift.Bool, checkid.CheckIDError>)
   func checkIDMrzScannerView(_ mrzScannerView: checkid.CheckIDScanMRZView, didHandleScanImage image: Swift.String)
 }
-@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) public class CheckIDScanMRZView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @available(iOS 13.0, *)
+@IBDesignable @_Concurrency.MainActor(unsafe) public class CheckIDScanMRZView : UIKit.UIView {
   @objc @_Concurrency.MainActor(unsafe) dynamic public var isScanning: Swift.Bool
   @_Concurrency.MainActor(unsafe) public var vibrateOnResult: Swift.Bool
   @_Concurrency.MainActor(unsafe) weak public var delegate: checkid.CheckIDScanMRZViewDelegate?
@@ -1139,6 +1146,7 @@ public protocol CheckIDScanMRZViewDelegate : AnyObject {
   @_Concurrency.MainActor(unsafe) public func startScanning()
   @_Concurrency.MainActor(unsafe) public func stopScanning()
 }
+@available(iOS 13.0, *)
 extension checkid.CheckIDScanMRZView : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
 }
