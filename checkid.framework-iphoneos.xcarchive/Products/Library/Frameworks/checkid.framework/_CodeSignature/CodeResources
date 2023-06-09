@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		sYMh+2jyKMclOOKojD1zD1FDC7o=
+		VLRcQfeZ4TaP4ReOThwuzbmVaYM=
 		</data>
 		<key>CSCA Vietnam.cer</key>
 		<data>
@@ -542,7 +542,7 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		b856jIdPLmf6s3SewjWGmaGc3O0=
+		tQCmTAv1NTE3q5BOYk3znv718MA=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -554,7 +554,7 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		b856jIdPLmf6s3SewjWGmaGc3O0=
+		tQCmTAv1NTE3q5BOYk3znv718MA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -621,7 +621,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nKu9F4+tqA6WccBoMobialAZBMVS3yzKjursKHgSkpI=
+			ATQay8sNujASKI/vZPapgi+nBPzCkroFxG0Z2/t5bq8=
 			</data>
 		</dict>
 		<key>CSCA Vietnam.cer</key>
@@ -1552,7 +1552,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HISa4r/OTRX/DicC5DQDX6TRSwDroAGGUO2R53TB46I=
+			Dggr3EueKl/fVs3x8QN4gxsFNedx+6qRgSHuaA9vEPI=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
@@ -1573,7 +1573,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HISa4r/OTRX/DicC5DQDX6TRSwDroAGGUO2R53TB46I=
+			Dggr3EueKl/fVs3x8QN4gxsFNedx+6qRgSHuaA9vEPI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
