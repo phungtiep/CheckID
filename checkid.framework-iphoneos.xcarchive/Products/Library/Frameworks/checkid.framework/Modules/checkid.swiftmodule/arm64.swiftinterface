@@ -979,6 +979,7 @@ extension Foundation.Data {
   public var docNo: Swift.String?
   public var dob: Swift.String?
   public var doe: Swift.String?
+  public func setCard_no(card_no: Swift.String)
   public func setData(pID: Swift.String, pDob: Swift.String, pDoe: Swift.String)
   @objc deinit
 }
