@@ -503,6 +503,7 @@ public enum CheckIDError : Swift.Error {
   case OTP_CODE_IS_EXPIRED
   case IDENTITY_CARD_NUMBER_NO_EXISTED
   case SUBJECT_INFORMATION_IS_INSUFFICIENT
+  case OTP_CODE_IS_INVALID
   public static func == (a: checkid.CheckIDError, b: checkid.CheckIDError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
