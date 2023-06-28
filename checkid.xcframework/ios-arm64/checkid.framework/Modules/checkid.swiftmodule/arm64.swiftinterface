@@ -1000,6 +1000,7 @@ extension Foundation.Data {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class VerifyStep {
+  public static let shared: checkid.VerifyStep
   public func setStep1(isPerform: Swift.Bool)
   public func setStep2(isPerform: Swift.Bool)
   @objc deinit

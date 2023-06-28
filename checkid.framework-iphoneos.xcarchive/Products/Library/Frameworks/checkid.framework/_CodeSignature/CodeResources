@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		tkijaNILEvRnYzMpppyRqR5LOno=
+		VLRcQfeZ4TaP4ReOThwuzbmVaYM=
 		</data>
 		<key>CSCA Vietnam.cer</key>
 		<data>
@@ -538,11 +538,11 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		UZRZEEGsL8dwtLrTnzeHpWPl8b8=
+		LqVd0HZRoA53PcWTnpc45DmKgeA=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		5oMwFKAanUsoa75d7R+5AbXnHJE=
+		8k2az23vGBK327oo+/5n7bylOls=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -550,11 +550,11 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		UZRZEEGsL8dwtLrTnzeHpWPl8b8=
+		LqVd0HZRoA53PcWTnpc45DmKgeA=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		5oMwFKAanUsoa75d7R+5AbXnHJE=
+		8k2az23vGBK327oo+/5n7bylOls=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -621,7 +621,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+RKTuB2C3ydUCNE6DVso0e1WUBraHlfPAeJmicnfj0M=
+			ATQay8sNujASKI/vZPapgi+nBPzCkroFxG0Z2/t5bq8=
 			</data>
 		</dict>
 		<key>CSCA Vietnam.cer</key>
@@ -1545,14 +1545,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GZdOPnI4D7JjPZv8ln8mNQUXupI5EaunJMC6byPAskM=
+			NzakV/J8Nbpx8odQH93MABaGdUx5o4wO18mg+m3OZSY=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DsoFrBdo255nvyitAM04162xOVbyMKCRYhIC5xOTkAc=
+			/uk4lDBVFrXyQJfJYZ3FOvjkTpe2XDq8NUto7jrziR8=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
@@ -1566,14 +1566,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GZdOPnI4D7JjPZv8ln8mNQUXupI5EaunJMC6byPAskM=
+			NzakV/J8Nbpx8odQH93MABaGdUx5o4wO18mg+m3OZSY=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DsoFrBdo255nvyitAM04162xOVbyMKCRYhIC5xOTkAc=
+			/uk4lDBVFrXyQJfJYZ3FOvjkTpe2XDq8NUto7jrziR8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
