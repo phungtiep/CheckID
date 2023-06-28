@@ -537,7 +537,7 @@ public class CheckIdICAO {
   public static func createProcessId(subjectObj: checkid.SubjectCreate, processType: checkid.ProcessType, purpose: checkid.Purpose, WithJWT jwt: Swift.String = "", WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", onCompletion: @escaping (Swift.Result<checkid.ProcessesCreate, checkid.CheckIDError>) -> Swift.Void)
   public static func verifyOtp(otp: Swift.String, subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.PerformVerificationResponse, checkid.CheckIDError>) -> Swift.Void)
   public static func resendOtp(WithJWT jwt: Swift.String = "", subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.Response, checkid.CheckIDError>) -> Swift.Void)
-  public static func startNfcV2(subjectObj: checkid.SubjectCreate, onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
+  public static func startNfcV2(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class TestViewController : UIKit.UIViewController {
@@ -997,6 +997,11 @@ extension Foundation.Data {
   public var doe: Swift.String?
   public func setCard_no(card_no: Swift.String)
   public func setData(pID: Swift.String, pDob: Swift.String, pDoe: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class VerifyStep {
+  public func setStep1(isPerform: Swift.Bool)
+  public func setStep2(isPerform: Swift.Bool)
   @objc deinit
 }
 public enum OID : Swift.String {
@@ -1788,7 +1793,7 @@ public class PACEHandler {
 @objc @available(iOS 13, *)
 public class PassportReader : ObjectiveC.NSObject {
   public var passiveAuthenticationUsesOpenSSL: Swift.Bool
-  public init(logLevel: checkid.LogLevel = .info, masterListURL: Foundation.URL? = nil)
+  public init(logLevel: checkid.LogLevel = .debug, masterListURL: Foundation.URL? = nil)
   public func setMasterListURL(_ masterListURL: Foundation.URL)
   public func overrideNFCDataAmountToRead(amount: Swift.Int)
   public func readPassport(mrzKey: Swift.String, tags: [checkid.DataGroupId] = [], skipSecureElements: Swift.Bool = true, customDisplayMessage: ((checkid.NFCViewDisplayMessage) -> Swift.String?)? = nil, completed: @escaping (checkid.NFCPassportModel?, checkid.NFCPassportReaderError?) -> ())
