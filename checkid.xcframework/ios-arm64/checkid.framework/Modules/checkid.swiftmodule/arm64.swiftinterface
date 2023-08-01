@@ -384,6 +384,8 @@ public struct PerformResult : Swift.Codable {
   public let dg2: Swift.String
   public let dg13: Swift.String
   public let provider: Swift.String
+  public let dg11: Swift.String
+  public let dg12: Swift.String
   public func encode(to encoder: Swift.Encoder) throws
 }
 extension checkid.PerformResult {
@@ -530,9 +532,9 @@ public class CheckIdICAO {
   public static func startMrz(onCompletion: @escaping (Swift.Result<Swift.Bool, checkid.CheckIDError>) -> Swift.Void)
   public static func startNfc(mobile_no: Swift.String, email: Swift.String, onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
   public static func startFaceScan(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
-  public static func startFaceAuth(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), card_no: Swift.String, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
+  public static func startFaceAuth(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), document_no: Swift.String, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
   public static func startFaceLiveness(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), WithCardNo card_no: Swift.String = "", WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
-  public static func getIdentity(WithCard_no card_no: Swift.String = "", WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", onCompletion: @escaping (Swift.Result<checkid.eIdentitySubjectGetResponse, checkid.CheckIDError>) -> Swift.Void)
+  public static func getIdentity(WithCard_no card_no: Swift.String = "", WithPassport_no passport_no: Swift.String = "", WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", onCompletion: @escaping (Swift.Result<checkid.eIdentitySubjectGetResponse, checkid.CheckIDError>) -> Swift.Void)
   public static func createSubjectId(WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", onCompletion: @escaping (Swift.Result<checkid.SubjectCreate, checkid.CheckIDError>) -> Swift.Void)
   public static func createProcessId(subjectObj: checkid.SubjectCreate, processType: checkid.ProcessType, purpose: checkid.Purpose, WithJWT jwt: Swift.String = "", WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", onCompletion: @escaping (Swift.Result<checkid.ProcessesCreate, checkid.CheckIDError>) -> Swift.Void)
   public static func verifyOtp(otp: Swift.String, subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.PerformVerificationResponse, checkid.CheckIDError>) -> Swift.Void)
@@ -992,10 +994,12 @@ extension Foundation.Data {
 @_hasMissingDesignatedInitializers public class MrzObject {
   public static let shared: checkid.MrzObject
   public var card_no: Swift.String?
+  public var passport_no: Swift.String?
   public var docNo: Swift.String?
   public var dob: Swift.String?
   public var doe: Swift.String?
   public func setCard_no(card_no: Swift.String)
+  public func setPassport_no(passport_no: Swift.String)
   public func setData(pID: Swift.String, pDob: Swift.String, pDoe: Swift.String)
   @objc deinit
 }
@@ -1331,6 +1335,8 @@ public class DataGroup2 : checkid.DataGroup {
 }
 @_hasMissingDesignatedInitializers public class ICAOConfiguration {
   public static let shared: checkid.ICAOConfiguration
+  public var isPassport: Swift.Bool
+  public func setISPassport(isPassport: Swift.Bool)
   public var tittleScanViewController: Swift.String?
   public var tittleScanFaceViewController: Swift.String?
   public var tradeMarkLogo: UIKit.UIImage?
@@ -1494,6 +1500,9 @@ public struct NFCInfo {
   public var address: Swift.String?
   public var faceImageBase64: Swift.String?
   public var country: Swift.String?
+  public var documentType: checkid.DocumentType
+  public var placeOfBirth: Swift.String?
+  public var documentNumber: Swift.String?
   public init()
 }
 @_hasMissingDesignatedInitializers public class ASN1DEREncoder {
@@ -1763,6 +1772,15 @@ public struct QKMRZResult {
   public let isExpiryDateValid: Swift.Bool
   public let isPersonalNumberValid: Swift.Bool?
   public let allCheckDigitsValid: Swift.Bool
+}
+public enum DocumentType {
+  case PASSPORT
+  case CITIZEN_CARD
+  public static func == (a: checkid.DocumentType, b: checkid.DocumentType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
 public class OpenSSLUtils {
@@ -2134,6 +2152,8 @@ extension checkid.EntropyStringError : Swift.Equatable {}
 extension checkid.EntropyStringError : Swift.Hashable {}
 extension checkid.LicenseError : Swift.Equatable {}
 extension checkid.LicenseError : Swift.Hashable {}
+extension checkid.DocumentType : Swift.Equatable {}
+extension checkid.DocumentType : Swift.Hashable {}
 extension checkid.PassportAuthenticationStatus : Swift.Equatable {}
 extension checkid.PassportAuthenticationStatus : Swift.Hashable {}
 extension checkid.ProcessType : Swift.Equatable {}
