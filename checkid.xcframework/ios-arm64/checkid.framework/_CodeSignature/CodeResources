@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		sYMh+2jyKMclOOKojD1zD1FDC7o=
+		OlXp0vUtNHvotANFBSQaiZ1ClxU=
 		</data>
 		<key>CSCA Vietnam.cer</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>GoogleMVFaceDetectorResources.bundle/Info.plist</key>
 		<data>
-		DCqJCjQV6bILT9sP+48wjN23L9E=
+		pz6hfgf7sE4X6TdcGW1kZxdEwmU=
 		</data>
 		<key>GoogleMVFaceDetectorResources.bundle/LMprec_600.emd</key>
 		<data>
@@ -526,7 +526,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		oVt6Fzi2bADCNZosv9G4JJCPR4w=
+		wWt4tvJl9NQdqE68uH2Nfcdiv3k=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -538,11 +538,11 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		j8Uz9G5/4kHVBh6bwOBiPx7fWDU=
+		sdm57w8CTT5Hitr1FwT+vDMB1TY=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		28O4u6K5GS05pQADzwj4DHcRz+w=
+		ssZVzDNrhblfyo1vUtJdiLsi4cM=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -550,11 +550,11 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		j8Uz9G5/4kHVBh6bwOBiPx7fWDU=
+		sdm57w8CTT5Hitr1FwT+vDMB1TY=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		28O4u6K5GS05pQADzwj4DHcRz+w=
+		ssZVzDNrhblfyo1vUtJdiLsi4cM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -621,7 +621,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nKu9F4+tqA6WccBoMobialAZBMVS3yzKjursKHgSkpI=
+			dJ/lwAE3nCzp6jZ0fMNucU00QO4JnJu2mDik1wsmF0Y=
 			</data>
 		</dict>
 		<key>CSCA Vietnam.cer</key>
@@ -705,7 +705,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xxGKHJFmQBCDkS8vzViAchQPfsTsgbutxjVy6MU1qXw=
+			Ac9mpd0uIIXGJe8VjQ86hrIaTldkRnAGAeXat834mBc=
 			</data>
 		</dict>
 		<key>GoogleMVFaceDetectorResources.bundle/LMprec_600.emd</key>
@@ -1545,14 +1545,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6/VIlSji102Yiwxwx/LVszMwX+WNKbITrzQESVIDoKY=
+			pxIJyqWC7yn9Aj9qOvGWWJIl1/CuCxl/bdng//aCtJM=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hElK0DOjNOKkMKu7q9iE/kMS6/Z9nLAfDEx/uoIK8Z0=
+			qrqraYEWMSeLyjsi3fEV1FWkW0+yKEa6VhnlQgELvf4=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
@@ -1566,14 +1566,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6/VIlSji102Yiwxwx/LVszMwX+WNKbITrzQESVIDoKY=
+			pxIJyqWC7yn9Aj9qOvGWWJIl1/CuCxl/bdng//aCtJM=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hElK0DOjNOKkMKu7q9iE/kMS6/Z9nLAfDEx/uoIK8Z0=
+			qrqraYEWMSeLyjsi3fEV1FWkW0+yKEa6VhnlQgELvf4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
