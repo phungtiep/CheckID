@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		OlXp0vUtNHvotANFBSQaiZ1ClxU=
+		VLRcQfeZ4TaP4ReOThwuzbmVaYM=
 		</data>
 		<key>CSCA Vietnam.cer</key>
 		<data>
@@ -162,7 +162,7 @@
 		</data>
 		<key>Headers/checkid-Swift.h</key>
 		<data>
-		t504X7BKY2T61fuyT9+JhNMC6Yc=
+		rd1/gwup+JVkct+ZggEG4UWSLfM=
 		</data>
 		<key>Headers/checkid.h</key>
 		<data>
@@ -534,27 +534,27 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		RfrVJCIKyNZgdrLI4+xL7Nhb4VQ=
+		kL7Fhrlkn7gIidY/k8b16N9cRr0=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		sdm57w8CTT5Hitr1FwT+vDMB1TY=
+		YksY/rPm2+VeP6KNupEC+p3RdCk=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		ssZVzDNrhblfyo1vUtJdiLsi4cM=
+		+4C+vU18A9yeyer/4VVpBsRWLt0=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		RfrVJCIKyNZgdrLI4+xL7Nhb4VQ=
+		kL7Fhrlkn7gIidY/k8b16N9cRr0=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		sdm57w8CTT5Hitr1FwT+vDMB1TY=
+		YksY/rPm2+VeP6KNupEC+p3RdCk=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		ssZVzDNrhblfyo1vUtJdiLsi4cM=
+		+4C+vU18A9yeyer/4VVpBsRWLt0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -621,7 +621,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dJ/lwAE3nCzp6jZ0fMNucU00QO4JnJu2mDik1wsmF0Y=
+			ATQay8sNujASKI/vZPapgi+nBPzCkroFxG0Z2/t5bq8=
 			</data>
 		</dict>
 		<key>CSCA Vietnam.cer</key>
@@ -894,7 +894,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SY6Jzk6QA7oXLHyN6FTJcIC0E/8XMgTvlnOWraZY3Ho=
+			MniZpMqkQc2Jo5eLsuKrbjEN5QIxDAt89LlUqpNgmXA=
 			</data>
 		</dict>
 		<key>Headers/checkid.h</key>
@@ -1538,42 +1538,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jX3sucZcXHKDrMK/XrbvhDiNorW0l/WSsif4AAZ6ngo=
+			ego1GHbh7Obur7INB4k9UfgR+USMgOEcn95IJqiQdR4=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pxIJyqWC7yn9Aj9qOvGWWJIl1/CuCxl/bdng//aCtJM=
+			UgmSzKB1BsdzclsL6LWr3YZoApqZ6X0QURRXXeUIj48=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qrqraYEWMSeLyjsi3fEV1FWkW0+yKEa6VhnlQgELvf4=
+			yR/x7HOYo70uuD6WzAaV/cR8AYa+lFhKg53rPyZnK5k=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jX3sucZcXHKDrMK/XrbvhDiNorW0l/WSsif4AAZ6ngo=
+			ego1GHbh7Obur7INB4k9UfgR+USMgOEcn95IJqiQdR4=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pxIJyqWC7yn9Aj9qOvGWWJIl1/CuCxl/bdng//aCtJM=
+			UgmSzKB1BsdzclsL6LWr3YZoApqZ6X0QURRXXeUIj48=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qrqraYEWMSeLyjsi3fEV1FWkW0+yKEa6VhnlQgELvf4=
+			yR/x7HOYo70uuD6WzAaV/cR8AYa+lFhKg53rPyZnK5k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

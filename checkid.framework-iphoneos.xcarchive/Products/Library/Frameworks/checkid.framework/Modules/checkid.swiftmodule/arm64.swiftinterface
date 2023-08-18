@@ -2,6 +2,7 @@
 // swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name checkid
 import AVFoundation
+import Accelerate
 import AudioToolbox
 import CommonCrypto
 import CoreGraphics
@@ -12,10 +13,12 @@ import CryptoKit
 import CryptoSwift
 import CryptoTokenKit
 import Foundation
+import ImageIO
 import LocalAuthentication
 import MLImage
 import MLKitFaceDetection
 import MLKitVision
+import MobileCoreServices
 import Network
 import Photos
 import SQLite3
@@ -38,6 +41,15 @@ extension UIKit.UIImage {
 }
 @_hasMissingDesignatedInitializers public class Reachability {
   @objc deinit
+}
+public enum DocumentTypeOCR : Swift.String {
+  case CARD
+  case DOCUMENT
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
 }
 @_hasMissingDesignatedInitializers @available(iOS 13, *)
 public class TagReader {
@@ -143,6 +155,36 @@ public struct CharSet {
   public init(_ chars: Swift.String) throws
   public func bytesNeeded(bits: Swift.Float) -> Swift.Int
 }
+extension UIKit.UIImage {
+  public func gaussianBlurred(_ bias: Swift.Int32 = 0) -> UIKit.UIImage?
+}
+public enum NYXImageType {
+  case png
+  case jpeg
+  case gif
+  case bmp
+  case tiff
+  public static func == (a: checkid.NYXImageType, b: checkid.NYXImageType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension CoreGraphics.CGImage {
+  public func save(to url: Foundation.URL) -> Swift.Bool
+  public func save(to url: Foundation.URL, type: checkid.NYXImageType) -> Swift.Bool
+  public func save(to url: Foundation.URL, type: checkid.NYXImageType, backgroundFillColor: UIKit.UIColor) -> Swift.Bool
+  public func save(toPath path: Swift.String) -> Swift.Bool
+  public func save(toPath path: Swift.String, type: checkid.NYXImageType) -> Swift.Bool
+  public func save(toPath path: Swift.String, type: checkid.NYXImageType, backgroundFillColor: UIKit.UIColor?) -> Swift.Bool
+}
+extension CoreGraphics.CGImage {
+  public class func makeGrayGradient(width: Swift.Int, height: Swift.Int, fromAlpha: CoreGraphics.CGFloat, toAlpha: CoreGraphics.CGFloat) -> CoreGraphics.CGImage?
+  public class func makeFromString(_ string: Swift.String, font: UIKit.UIFont, fontColor: UIKit.UIColor, backgroundColor: UIKit.UIColor, maxSize: CoreGraphics.CGSize) -> CoreGraphics.CGImage?
+}
+extension CoreGraphics.CGImage {
+  public func hasAlpha() -> Swift.Bool
+}
 @_hasMissingDesignatedInitializers public class CheckIdCommons {
   public static func setLicense(licenseString: Swift.String, onCompletion: @escaping (Swift.Result<Swift.Bool, checkid.CheckIDError>) -> Swift.Void)
   public static func setLanguage(language: Swift.String)
@@ -172,6 +214,17 @@ extension Swift.String {
     get
   }
   @objc deinit
+}
+extension CoreGraphics.CGImage {
+  public func horizontallyFlipped() -> CoreGraphics.CGImage?
+  public func verticallyFlipped() -> CoreGraphics.CGImage?
+  public func rotated(radians: CoreGraphics.CGFloat) -> CoreGraphics.CGImage?
+  public func rotated(degrees: CoreGraphics.CGFloat) -> CoreGraphics.CGImage?
+  public func rotated(degrees: CoreGraphics.CGFloat, flipOverHorizontalAxis: Swift.Bool, flipOverVerticalAxis: Swift.Bool) -> CoreGraphics.CGImage?
+  public func rotated(radians: CoreGraphics.CGFloat, flipOverHorizontalAxis: Swift.Bool, flipOverVerticalAxis: Swift.Bool) -> CoreGraphics.CGImage?
+  public func pixelsRotated(degrees: Swift.Float) -> CoreGraphics.CGImage?
+  public func pixelsRotated(radians: Swift.Float) -> CoreGraphics.CGImage?
+  public func reflected(height: Swift.Int = 0, fromAlpha: CoreGraphics.CGFloat = 1.0, toAlpha: CoreGraphics.CGFloat = 0.0) -> CoreGraphics.CGImage?
 }
 public enum PACEMappingType {
   case GM
@@ -310,6 +363,81 @@ extension checkid.PassiveAuthenticationError : Foundation.LocalizedError {
     get
   }
 }
+extension CoreGraphics.CGRect {
+  public init(_ origin: CoreGraphics.CGPoint, _ size: CoreGraphics.CGSize)
+  public init(_ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat, _ width: CoreGraphics.CGFloat, _ height: CoreGraphics.CGFloat)
+  public init(_ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat, _ size: CoreGraphics.CGSize)
+  public init(_ origin: CoreGraphics.CGPoint, _ width: CoreGraphics.CGFloat, _ height: CoreGraphics.CGFloat)
+  public init(_ x: Swift.Int, _ y: Swift.Int, _ width: Swift.Int, _ height: Swift.Int)
+  public var x: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var y: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var centerX: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var centerY: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var left: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var right: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var top: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var bottom: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  public var topLeft: CoreGraphics.CGPoint {
+    get
+    set
+  }
+  public var topCenter: CoreGraphics.CGPoint {
+    get
+    set
+  }
+  public var topRight: CoreGraphics.CGPoint {
+    get
+    set
+  }
+  public var centerLeft: CoreGraphics.CGPoint {
+    get
+    set
+  }
+  public var center: CoreGraphics.CGPoint {
+    get
+    set
+  }
+  public var centerRight: CoreGraphics.CGPoint {
+    get
+    set
+  }
+  public var bottomLeft: CoreGraphics.CGPoint {
+    get
+    set
+  }
+  public var bottomCenter: CoreGraphics.CGPoint {
+    get
+    set
+  }
+  public var bottomRight: CoreGraphics.CGPoint {
+    get
+    set
+  }
+}
 public class PKCS7_ {
   final public let mainBlock: checkid.ASN1Object
   public init(data: Foundation.Data) throws
@@ -355,6 +483,15 @@ public struct VerificationResult : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
 }
 extension checkid.VerificationResult {
+  public init()
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct ProcessResult : Swift.Codable {
+  public let provider: Swift.String
+  public let final_result: checkid.FinalResult
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.ProcessResult {
   public init()
   public init(from decoder: Swift.Decoder) throws
 }
@@ -428,6 +565,7 @@ public class FaceResult : Swift.Codable {
   public var faceImageList: [Swift.String]
   public var process_type: Swift.String
   public var verification_result: checkid.VerificationResult
+  public var process_result: checkid.ProcessResult
   public init(from perform: checkid.PerformVerificationResponse)
   required public init(from decoder: Swift.Decoder) throws
   @objc deinit
@@ -529,6 +667,38 @@ public enum CheckIDError : Swift.Error {
     get
   }
 }
+extension CoreGraphics.CGPoint {
+  public init(_ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
+  public init(_ x: Swift.Int, _ y: Swift.Int)
+  public func ceilled() -> CoreGraphics.CGPoint
+  public func floored() -> CoreGraphics.CGPoint
+  public func rounded() -> CoreGraphics.CGPoint
+}
+public protocol NYXProgressiveImageViewDelegate : AnyObject {
+  func imageDidLoadWithImage(image: UIKit.UIImage)
+  func imageDownloadCompletedWithImage(image: UIKit.UIImage)
+  func imageDownloadFailedWithData(data: Foundation.Data?)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class NYXProgressiveImageView : UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) weak public var delegate: checkid.NYXProgressiveImageViewDelegate?
+  @_Concurrency.MainActor(unsafe) public var isDownloading: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isCaching: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var timeoutInterval: Swift.Double
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func loadImage(atUrl url: Foundation.URL)
+  @objc deinit
+}
+extension checkid.NYXProgressiveImageView : Foundation.URLSessionDelegate {
+}
+extension checkid.NYXProgressiveImageView {
+  @_Concurrency.MainActor(unsafe) public class func cachesDirectoryURL() -> Foundation.URL?
+  @_Concurrency.MainActor(unsafe) public class func resetCache()
+}
 @_hasMissingDesignatedInitializers @available(iOS 13, *)
 public class CheckIdICAO {
   public static func startMrz(onCompletion: @escaping (Swift.Result<Swift.Bool, checkid.CheckIDError>) -> Swift.Void)
@@ -542,6 +712,7 @@ public class CheckIdICAO {
   public static func verifyOtp(otp: Swift.String, subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.PerformVerificationResponse, checkid.CheckIDError>) -> Swift.Void)
   public static func resendOtp(WithJWT jwt: Swift.String = "", subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.Response, checkid.CheckIDError>) -> Swift.Void)
   public static func startNfcV2(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
+  public static func getOCRInfo(WithFront front: Swift.String = "", WithBack back: Swift.String, onCompletion: @escaping (Swift.Result<checkid.OcrInfo, checkid.CheckIDError>) -> Swift.Void)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class TestViewController : UIKit.UIViewController {
@@ -552,6 +723,9 @@ public class CheckIdICAO {
 }
 @_hasMissingDesignatedInitializers public class RegisterConfig {
   @objc deinit
+}
+extension UIKit.UIImage {
+  public func masked(withImage maskImage: UIKit.UIImage) -> UIKit.UIImage?
 }
 @available(iOS 13, *)
 public class BACHandler {
@@ -568,6 +742,25 @@ extension UIKit.UINavigationController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
     @_Concurrency.MainActor(unsafe) @objc get
   }
+}
+public let numberOfComponentsPerARBGPixel: Swift.Int
+public let numberOfComponentsPerRGBAPixel: Swift.Int
+public let numberOfComponentsPerGrayPixel: Swift.Int
+public let minPixelComponentValue: Swift.UInt8
+public let maxPixelComponentValue: Swift.UInt8
+public struct RGBAPixel {
+  public var r: Swift.UInt8
+  public var g: Swift.UInt8
+  public var b: Swift.UInt8
+  public var a: Swift.UInt8
+  public init(r: Swift.UInt8, g: Swift.UInt8, b: Swift.UInt8, a: Swift.UInt8)
+}
+public struct ARGBPixel {
+  public var a: Swift.UInt8
+  public var r: Swift.UInt8
+  public var g: Swift.UInt8
+  public var b: Swift.UInt8
+  public init(a: Swift.UInt8, r: Swift.UInt8, g: Swift.UInt8, b: Swift.UInt8)
 }
 @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
 public class SecurityInfo {
@@ -590,6 +783,20 @@ public class SecurityInfo {
 @available(iOS 13.0, *)
 extension checkid.CheckIDScanMRZViewV2 : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+}
+extension UIKit.UIImage {
+  public func resized(to size: CoreGraphics.CGSize) -> UIKit.UIImage
+  public func cropped(toSize: CoreGraphics.CGSize) -> UIKit.UIImage?
+  public func cropped(toSize: CoreGraphics.CGSize, mode: checkid.NYXCropMode) -> UIKit.UIImage?
+  public func smartCropped(toSize: CoreGraphics.CGSize) -> UIKit.UIImage?
+  public func scaled(factor: CoreGraphics.CGFloat) -> UIKit.UIImage?
+  public func scaled(toSize: CoreGraphics.CGSize) -> UIKit.UIImage?
+  public func scaled(toSize: CoreGraphics.CGSize, mode: checkid.NYXScaleMode) -> UIKit.UIImage?
+}
+extension CoreGraphics.CGContext {
+  public class func ARGBBitmapContext(width: Swift.Int, height: Swift.Int, withAlpha: Swift.Bool) -> CoreGraphics.CGContext?
+  public class func RGBABitmapContext(width: Swift.Int, height: Swift.Int, withAlpha: Swift.Bool) -> CoreGraphics.CGContext?
+  public class func GrayBitmapContext(width: Swift.Int, height: Swift.Int) -> CoreGraphics.CGContext?
 }
 @available(iOS 13, *)
 public struct ResponseAPDU {
@@ -728,6 +935,20 @@ public class ChipAuthenticationInfo : checkid.SecurityInfo {
   public static func toKeyLength(oid: Swift.String) throws -> Swift.Int
   @objc deinit
 }
+extension UIKit.UIColor {
+  convenience public init(rgb: Swift.Int32, alpha: CoreGraphics.CGFloat)
+  convenience public init(rgb: Swift.Int32)
+  convenience public init(hexString: Swift.String, defaultColor: UIKit.UIColor)
+  convenience public init(hexString: Swift.String)
+  public func colorWithMinimumSaturation(_ minSaturation: CoreGraphics.CGFloat) -> UIKit.UIColor
+  public func inverted() -> UIKit.UIColor
+  public func isBlackOrWhite() -> Swift.Bool
+  public func isContrasting(fromColor color: UIKit.UIColor) -> Swift.Bool
+  public func isDark() -> Swift.Bool
+  public func isDistinct(fromColor color: UIKit.UIColor) -> Swift.Bool
+  public func toHexadecimalStringRepresentation() -> Swift.String
+}
+prefix public func ~ (color: UIKit.UIColor) -> UIKit.UIColor
 extension checkid.PKCS7_ {
   public var signatures: [checkid.SignatureInfo]? {
     get
@@ -808,6 +1029,13 @@ public enum FaceException : Swift.Error {
   }
   @objc deinit
 }
+extension UIKit.UIImage {
+  public class func makeGrayGradient(width: Swift.Int, height: Swift.Int, fromAlpha: CoreGraphics.CGFloat, toAlpha: CoreGraphics.CGFloat) -> UIKit.UIImage?
+  public class func makeFromString(_ string: Swift.String, font: UIKit.UIFont, fontColor: UIKit.UIColor, backgroundColor: UIKit.UIColor, maxSize: CoreGraphics.CGSize) -> UIKit.UIImage?
+  public func tinted(withColor color: UIKit.UIColor, opacity: CoreGraphics.CGFloat = 0.0) -> UIKit.UIImage?
+  public func forceSameOrientation() -> UIKit.UIImage
+}
+public func + (lhs: UIKit.UIImage, rhs: UIKit.UIImage) -> UIKit.UIImage?
 @_hasMissingDesignatedInitializers public class ASN1Identifier : Swift.CustomStringConvertible {
   public enum Class : Swift.UInt8 {
     case universal
@@ -873,10 +1101,28 @@ public class ChipAuthenticationPublicKeyInfo : checkid.SecurityInfo {
   public func getKeyId() -> Swift.Int
   @objc deinit
 }
+public enum SamplingEdge {
+  case left
+  case right
+  public static func == (a: checkid.SamplingEdge, b: checkid.SamplingEdge) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+final public class KawaiiColors {
+  public init(image: UIKit.UIImage)
+  convenience public init(image: UIKit.UIImage, precision: Swift.Int)
+  convenience public init(image: UIKit.UIImage, samplingEdge: checkid.SamplingEdge)
+  convenience public init(image: UIKit.UIImage, precision: Swift.Int, samplingEdge: checkid.SamplingEdge)
+  final public func analyze()
+  @objc deinit
+}
 public enum FaceMethod : Swift.String {
   case LIVENESS
   case KYC
   case VERIFY
+  case KYC_NON_CHIP
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -1097,6 +1343,24 @@ public class CardAccess {
     get
   }
   @objc deinit
+}
+public func clamp<T>(_ value: T, lower: T, upper: T) -> T where T : Swift.Comparable
+public func degreesToRadians(_ value: Swift.Float) -> Swift.Float
+public func radiansToDegrees(_ value: Swift.Float) -> Swift.Float
+public func degreesToRadians(_ value: Swift.Double) -> Swift.Double
+public func radiansToDegrees(_ value: Swift.Double) -> Swift.Double
+public func degreesToRadians(_ value: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
+public func radiansToDegrees(_ value: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
+extension UIKit.UIImage {
+  public func horizontallyFlipped() -> UIKit.UIImage?
+  public func verticallyFlipped() -> UIKit.UIImage?
+  public func rotated(radians: CoreGraphics.CGFloat) -> UIKit.UIImage?
+  public func rotated(degrees: CoreGraphics.CGFloat) -> UIKit.UIImage?
+  public func rotated(degrees: CoreGraphics.CGFloat, flipOverHorizontalAxis: Swift.Bool, flipOverVerticalAxis: Swift.Bool) -> UIKit.UIImage?
+  public func rotated(radians: CoreGraphics.CGFloat, flipOverHorizontalAxis: Swift.Bool, flipOverVerticalAxis: Swift.Bool) -> UIKit.UIImage?
+  public func pixelsRotated(degrees: Swift.Float) -> UIKit.UIImage?
+  public func pixelsRotated(radians: Swift.Float) -> UIKit.UIImage?
+  public func reflected(height: Swift.Int = 0, fromAlpha: CoreGraphics.CGFloat = 1.0, toAlpha: CoreGraphics.CGFloat = 0.0) -> UIKit.UIImage?
 }
 extension checkid.X509Certificate {
   @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BasicConstraintExtension : checkid.X509Extension {
@@ -1390,11 +1654,26 @@ public class DataGroup2 : checkid.DataGroup {
   public func setNavTitleAttribute(textColor: UIKit.UIColor, font: UIKit.UIFont)
   public func setIsEnroll(enroll: Swift.Bool)
   public func setAuditISO(audit: Swift.Bool)
+  public var document_ocr_type: checkid.DocumentTypeOCR?
+  public func setTypeDocumentOCR(type: checkid.DocumentTypeOCR)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
 public class NotImplementedDG : checkid.DataGroup {
   @objc deinit
+}
+extension CoreGraphics.CGImage {
+  public func alphaed(value: CoreGraphics.CGFloat) -> CoreGraphics.CGImage?
+  public func brightened(value: Swift.Float) -> CoreGraphics.CGImage?
+  public func contrasted(value: Swift.Float) -> CoreGraphics.CGImage?
+  public func edgeDetected(_ bias: Swift.Int32 = 0) -> CoreGraphics.CGImage?
+  public func embossed(_ bias: Swift.Int32 = 0) -> CoreGraphics.CGImage?
+  public func gammaCorrected(value: Swift.Float) -> CoreGraphics.CGImage?
+  public func grayscaled() -> CoreGraphics.CGImage?
+  public func inverted() -> CoreGraphics.CGImage?
+  public func sepiaed() -> CoreGraphics.CGImage?
+  public func sharpened(_ bias: Swift.Int32 = 0) -> CoreGraphics.CGImage?
+  public func unsharpened(_ bias: Swift.Int32 = 0) -> CoreGraphics.CGImage?
 }
 public protocol CheckIDScanFaceViewDelegate : AnyObject {
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didBlinkEye status: Swift.Bool)
@@ -1416,6 +1695,7 @@ public protocol CheckIDScanFaceViewDelegate : AnyObject {
   @_Concurrency.MainActor(unsafe) public var mobile: Swift.String
   @_Concurrency.MainActor(unsafe) public var email: Swift.String
   @_Concurrency.MainActor(unsafe) public var methodType: checkid.FaceMethod?
+  @_Concurrency.MainActor(unsafe) public var original_frame: Swift.String
   @_Concurrency.MainActor(unsafe) public var borderCornerRadius: CoreGraphics.CGFloat
   @_Concurrency.MainActor(unsafe) public var subjectObj: checkid.SubjectCreate
   @_Concurrency.MainActor(unsafe) public func finalizeCordinate()
@@ -1481,6 +1761,14 @@ public class Entropy {
   public func string(bits: Swift.Float, charset: checkid.CharSet, using bytes: [Swift.UInt8]) throws -> Swift.String
   @objc deinit
 }
+extension UIKit.UIImage {
+  public func save(to url: Foundation.URL) -> Swift.Bool
+  public func save(to url: Foundation.URL, type: checkid.NYXImageType) -> Swift.Bool
+  public func save(to url: Foundation.URL, type: checkid.NYXImageType, backgroundFillColor: UIKit.UIColor) -> Swift.Bool
+  public func save(toPath path: Swift.String) -> Swift.Bool
+  public func save(toPath path: Swift.String, type: checkid.NYXImageType) -> Swift.Bool
+  public func save(toPath path: Swift.String, type: checkid.NYXImageType, backgroundFillColor: UIKit.UIColor?) -> Swift.Bool
+}
 public struct NFCInfo {
   public var mrz: Swift.String?
   public var faceImage: UIKit.UIImage?
@@ -1507,6 +1795,39 @@ public struct NFCInfo {
   public var documentNumber: Swift.String?
   public init()
 }
+public enum NYXCropMode {
+  case topLeft
+  case topCenter
+  case topRight
+  case bottomLeft
+  case bottomCenter
+  case bottomRight
+  case leftCenter
+  case rightCenter
+  case center
+  public static func == (a: checkid.NYXCropMode, b: checkid.NYXCropMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum NYXScaleMode {
+  case scaleToFill
+  case aspectFit
+  case aspectFill
+  public static func == (a: checkid.NYXScaleMode, b: checkid.NYXScaleMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension CoreGraphics.CGImage {
+  public func cropped(toSize: CoreGraphics.CGSize) -> CoreGraphics.CGImage?
+  public func cropped(toSize: CoreGraphics.CGSize, mode: checkid.NYXCropMode) -> CoreGraphics.CGImage?
+  public func scaled(factor: CoreGraphics.CGFloat) -> CoreGraphics.CGImage?
+  public func scaled(toSize: CoreGraphics.CGSize) -> CoreGraphics.CGImage?
+  public func scaled(toSize: CoreGraphics.CGSize, mode: checkid.NYXScaleMode) -> CoreGraphics.CGImage?
+}
 @_hasMissingDesignatedInitializers public class ASN1DEREncoder {
   public static func encodeSequence(content: Foundation.Data) -> Foundation.Data
   @objc deinit
@@ -1516,6 +1837,14 @@ extension Foundation.Data {
     get
   }
 }
+extension CoreGraphics.CGSize {
+  public init(_ width: CoreGraphics.CGFloat, _ height: CoreGraphics.CGFloat)
+  public init(_ width: Swift.Int, _ height: Swift.Int)
+  public func ceilled() -> CoreGraphics.CGSize
+  public func floored() -> CoreGraphics.CGSize
+  public func rounded() -> CoreGraphics.CGSize
+}
+public func * (lhs: CoreGraphics.CGSize, rhs: CoreGraphics.CGFloat) -> CoreGraphics.CGSize
 public enum LicenseError : Swift.Error {
   case LICENSE_NOT_FOUND
   case LICENSE_EXPIRED
@@ -1689,6 +2018,43 @@ public func calcSHA256Hash(_ data: [Swift.UInt8]) -> [Swift.UInt8]
 public func calcSHA512Hash(_ data: [Swift.UInt8]) -> [Swift.UInt8]
 @available(iOS 13, macOS 10.15, *)
 public func calcSHA384Hash(_ data: [Swift.UInt8]) -> [Swift.UInt8]
+@available(iOS 13.0, *)
+public protocol CheckIDScanDocumentViewDelegate : AnyObject {
+  func checkIDScanDocumentView(_ mrzScannerView: checkid.CheckIDScanDocumentView, didHandleError error: checkid.CheckIDError)
+  func checkIDScanDocumentView(_ mrzScannerView: checkid.CheckIDScanDocumentView, didHandleCaptureImageBase64 image: Swift.String)
+  func checkIDScanDocumentView(_ mrzScannerView: checkid.CheckIDScanDocumentView, didHandleCaptureAsUIImage uiImage: UIKit.UIImage)
+}
+@objc @_inheritsConvenienceInitializers @available(iOS 13.0, *)
+@_Concurrency.MainActor(unsafe) public class CheckIDScanDocumentView : UIKit.UIView, AVFoundation.AVCapturePhotoCaptureDelegate {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var isScanning: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var vibrateOnResult: Swift.Bool
+  @_Concurrency.MainActor(unsafe) weak public var delegate: checkid.CheckIDScanDocumentViewDelegate?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func startScanning()
+  @_Concurrency.MainActor(unsafe) public func stopScanning()
+  @_Concurrency.MainActor(unsafe) public func capture()
+}
+@available(iOS 13.0, *)
+extension checkid.CheckIDScanDocumentView : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVFoundation.AVCapturePhoto, error: Swift.Error?)
+}
+extension UIKit.UIImage {
+  public func alphaed(value: CoreGraphics.CGFloat) -> UIKit.UIImage?
+  public func brightened(value: Swift.Float) -> UIKit.UIImage?
+  public func contrasted(value: Swift.Float) -> UIKit.UIImage?
+  public func edgeDetected(_ bias: Swift.Int32 = 0) -> UIKit.UIImage?
+  public func embossed(_ bias: Swift.Int32 = 0) -> UIKit.UIImage?
+  public func gammaCorrected(value: Swift.Float) -> UIKit.UIImage?
+  public func grayscaled() -> UIKit.UIImage?
+  public func inverted() -> UIKit.UIImage?
+  public func sepiaed() -> UIKit.UIImage?
+  public func sharpened(_ bias: Swift.Int32 = 0) -> UIKit.UIImage?
+  public func unsharpened(_ bias: Swift.Int32 = 0) -> UIKit.UIImage?
+}
 open class KeychainWrapper {
   @available(*, deprecated, message: "KeychainWrapper.defaultKeychainWrapper is deprecated since version 2.2.1, use KeychainWrapper.standard instead")
   public static let defaultKeychainWrapper: checkid.KeychainWrapper
@@ -1784,6 +2150,9 @@ public enum DocumentType {
     get
   }
 }
+extension CoreGraphics.CGImage {
+  public func masked(withImage maskImage: CoreGraphics.CGImage) -> CoreGraphics.CGImage?
+}
 @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
 public class OpenSSLUtils {
   public static func getOpenSSLError() -> Swift.String
@@ -1800,6 +2169,7 @@ public class PACEHandler {
   public func doPACE(mrzKey: Swift.String, completed: @escaping (Swift.Bool) -> ())
   @objc deinit
 }
+public func exifOrientationToUIImageOrientation(_ exifOrientation: Swift.Int) -> UIKit.UIImage.Orientation
 @_hasMissingDesignatedInitializers public class UIUtilities {
   public static func addCircle(atPoint point: CoreGraphics.CGPoint, to view: UIKit.UIView, color: UIKit.UIColor, radius: CoreGraphics.CGFloat)
   public static func addLineSegment(fromPoint: CoreGraphics.CGPoint, toPoint: CoreGraphics.CGPoint, inView: UIKit.UIView, color: UIKit.UIColor, width: CoreGraphics.CGFloat)
@@ -1856,6 +2226,9 @@ public func DESDecrypt(key: [Swift.UInt8], message: [Swift.UInt8], iv: [Swift.UI
   public static let countryName: checkid.ASN1DistinguishedNames
   public static let email: checkid.ASN1DistinguishedNames
   @objc deinit
+}
+extension CoreGraphics.CGImage {
+  public func gaussianBlurred(_ bias: Swift.Int32 = 0) -> CoreGraphics.CGImage?
 }
 public enum PassportAuthenticationStatus {
   case notDone
@@ -2035,6 +2408,7 @@ extension checkid.Response {
 }
 public struct PerformVerificationResponse : Swift.Codable {
   public let perform_result: checkid.PerformResult
+  public var process_result: checkid.ProcessResult
   public init()
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -2098,6 +2472,47 @@ public struct eIdentitySubjectGetResponse : Swift.Codable {
 extension checkid.eIdentitySubjectGetResponse {
   public init(from decoder: Swift.Decoder) throws
 }
+public struct OcrInfo : Swift.Codable {
+  public let status: Swift.Float
+  public let message: Swift.String
+  public let dtis_id: Swift.String
+  public let document_data: checkid.DocumentData
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.OcrInfo {
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct DocumentData : Swift.Codable {
+  public let document_number: Swift.String
+  public let full_name: Swift.String
+  public let birth_date: Swift.String
+  public let place_of_origin: Swift.String
+  public let gender: Swift.String
+  public let place_of_residence: Swift.String
+  public let province: Swift.String
+  public let district: Swift.String
+  public let ward: Swift.String
+  public let province_code: Swift.String
+  public let district_code: Swift.String
+  public let ward_code: Swift.String
+  public let street: Swift.String
+  public let nationality: Swift.String
+  public let religion: Swift.String
+  public let ethnicity: Swift.String
+  public let expiryDate: Swift.String
+  public let issuance_date: Swift.String
+  public let issuance_by: Swift.String
+  public let document_type: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension checkid.DocumentData {
+  public init(from decoder: Swift.Decoder) throws
+}
+extension checkid.DocumentTypeOCR : Swift.Equatable {}
+extension checkid.DocumentTypeOCR : Swift.Hashable {}
+extension checkid.DocumentTypeOCR : Swift.RawRepresentable {}
+extension checkid.NYXImageType : Swift.Equatable {}
+extension checkid.NYXImageType : Swift.Hashable {}
 extension checkid.PACEMappingType : Swift.Equatable {}
 extension checkid.PACEMappingType : Swift.Hashable {}
 extension checkid.DetectionType : Swift.Equatable {}
@@ -2123,6 +2538,8 @@ extension checkid.ASN1Identifier.Class : Swift.RawRepresentable {}
 extension checkid.ASN1Identifier.TagNumber : Swift.Equatable {}
 extension checkid.ASN1Identifier.TagNumber : Swift.Hashable {}
 extension checkid.ASN1Identifier.TagNumber : Swift.RawRepresentable {}
+extension checkid.SamplingEdge : Swift.Equatable {}
+extension checkid.SamplingEdge : Swift.Hashable {}
 extension checkid.FaceMethod : Swift.Equatable {}
 extension checkid.FaceMethod : Swift.Hashable {}
 extension checkid.FaceMethod : Swift.RawRepresentable {}
@@ -2152,6 +2569,10 @@ extension checkid.CertificateItem2 : Swift.Hashable {}
 extension checkid.CertificateItem2 : Swift.RawRepresentable {}
 extension checkid.EntropyStringError : Swift.Equatable {}
 extension checkid.EntropyStringError : Swift.Hashable {}
+extension checkid.NYXCropMode : Swift.Equatable {}
+extension checkid.NYXCropMode : Swift.Hashable {}
+extension checkid.NYXScaleMode : Swift.Equatable {}
+extension checkid.NYXScaleMode : Swift.Hashable {}
 extension checkid.LicenseError : Swift.Equatable {}
 extension checkid.LicenseError : Swift.Hashable {}
 extension checkid.DocumentType : Swift.Equatable {}

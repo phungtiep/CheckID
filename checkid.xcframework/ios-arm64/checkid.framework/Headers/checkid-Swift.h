@@ -191,6 +191,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import AVFoundation;
 @import CoreGraphics;
 @import CoreMedia;
+@import Foundation;
 @import ObjectiveC;
 @import UIKit;
 #endif
@@ -218,7 +219,26 @@ SWIFT_CLASS("_TtC7checkid3API")
 
 
 
+@class NSNumber;
 @class NSCoder;
+
+SWIFT_CLASS("_TtC7checkid23CheckIDScanDocumentView") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface CheckIDScanDocumentView : UIView <AVCapturePhotoCaptureDelegate>
+@property (nonatomic) BOOL isScanning;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)prepareForInterfaceBuilder;
+- (void)layoutSubviews;
+@end
+
+@class AVCapturePhotoOutput;
+@class AVCapturePhoto;
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface CheckIDScanDocumentView (SWIFT_EXTENSION(checkid)) <AVCaptureVideoDataOutputSampleBufferDelegate>
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhoto:(AVCapturePhoto * _Nonnull)photo error:(NSError * _Nullable)error;
+@end
+
 
 SWIFT_CLASS_NAMED("CheckIDScanFaceView")
 @interface CheckIDScanFace : UIView
@@ -233,7 +253,6 @@ SWIFT_CLASS_NAMED("CheckIDScanFaceView")
 - (void)captureOutput:(AVCaptureOutput * _Nonnull)output didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)connection;
 @end
 
-@class NSNumber;
 
 IB_DESIGNABLE
 SWIFT_CLASS("_TtC7checkid18CheckIDScanMRZView") SWIFT_AVAILABILITY(ios,introduced=13.0)
@@ -269,6 +288,21 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 
 
 
+@class UIImage;
+
+SWIFT_CLASS("_TtC7checkid23NYXProgressiveImageView")
+@interface NYXProgressiveImageView : UIImageView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image highlightedImage:(UIImage * _Nullable)highlightedImage OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@interface NYXProgressiveImageView (SWIFT_EXTENSION(checkid)) <NSURLSessionDelegate>
+@end
+
 
 SWIFT_CLASS("_TtC7checkid14PassportReader") SWIFT_AVAILABILITY(ios,introduced=13)
 @interface PassportReader : NSObject
@@ -287,6 +321,14 @@ SWIFT_CLASS("_TtC7checkid18TestViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
+
+
+
+
+
 
 
 
