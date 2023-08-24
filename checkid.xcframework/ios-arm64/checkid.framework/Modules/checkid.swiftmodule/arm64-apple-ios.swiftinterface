@@ -712,7 +712,7 @@ public class CheckIdICAO {
   public static func verifyOtp(otp: Swift.String, subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.PerformVerificationResponse, checkid.CheckIDError>) -> Swift.Void)
   public static func resendOtp(WithJWT jwt: Swift.String = "", subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.Response, checkid.CheckIDError>) -> Swift.Void)
   public static func startNfcV2(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
-  public static func getOCRInfo(WithFront front: Swift.String = "", WithBack back: Swift.String = "", onCompletion: @escaping (Swift.Result<checkid.OcrInfo, checkid.CheckIDError>) -> Swift.Void)
+  public static func getOCRInfo(WithFront front: Swift.String = "", WithBack back: Swift.String = "", WithType type: checkid.OCRType, onCompletion: @escaping (Swift.Result<checkid.OcrInfo, checkid.CheckIDError>) -> Swift.Void)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class TestViewController : UIKit.UIViewController {
@@ -2510,6 +2510,21 @@ public struct DocumentData : Swift.Codable {
 extension checkid.DocumentData {
   public init(from decoder: Swift.Decoder) throws
 }
+public enum OCRType : Swift.String {
+  case UNKNOWN
+  case PASSPORT
+  case CITIZEN_CARD
+  case CITIZEN_CARD_NON_CHIP
+  case DRIVER_LICENSE
+  case IDENTITY_CARD
+  case BUSINESS_REGISTRATION
+  case VEHICLE_REGISTRATION
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 extension checkid.DocumentTypeOCR : Swift.Equatable {}
 extension checkid.DocumentTypeOCR : Swift.Hashable {}
 extension checkid.DocumentTypeOCR : Swift.RawRepresentable {}
@@ -2587,3 +2602,6 @@ extension checkid.Purpose : Swift.Equatable {}
 extension checkid.Purpose : Swift.Hashable {}
 extension checkid.OTPStatus : Swift.Equatable {}
 extension checkid.OTPStatus : Swift.Hashable {}
+extension checkid.OCRType : Swift.Equatable {}
+extension checkid.OCRType : Swift.Hashable {}
+extension checkid.OCRType : Swift.RawRepresentable {}
