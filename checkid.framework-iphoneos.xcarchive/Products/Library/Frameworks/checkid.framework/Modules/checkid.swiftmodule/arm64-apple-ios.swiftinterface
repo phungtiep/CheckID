@@ -712,7 +712,7 @@ public class CheckIdICAO {
   public static func verifyOtp(otp: Swift.String, subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.PerformVerificationResponse, checkid.CheckIDError>) -> Swift.Void)
   public static func resendOtp(WithJWT jwt: Swift.String = "", subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.Response, checkid.CheckIDError>) -> Swift.Void)
   public static func startNfcV2(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
-  public static func getOCRInfo(WithFront front: Swift.String = "", WithBack back: Swift.String, onCompletion: @escaping (Swift.Result<checkid.OcrInfo, checkid.CheckIDError>) -> Swift.Void)
+  public static func getOCRInfo(WithFront front: Swift.String = "", WithBack back: Swift.String = "", onCompletion: @escaping (Swift.Result<checkid.OcrInfo, checkid.CheckIDError>) -> Swift.Void)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class TestViewController : UIKit.UIViewController {
@@ -2499,10 +2499,12 @@ public struct DocumentData : Swift.Codable {
   public let nationality: Swift.String
   public let religion: Swift.String
   public let ethnicity: Swift.String
-  public let expiryDate: Swift.String
+  public let expiry_date: Swift.String
   public let issuance_date: Swift.String
   public let issuance_by: Swift.String
   public let document_type: Swift.String
+  public let identification: Swift.String
+  public let portrait_image: Swift.String
   public func encode(to encoder: Swift.Encoder) throws
 }
 extension checkid.DocumentData {

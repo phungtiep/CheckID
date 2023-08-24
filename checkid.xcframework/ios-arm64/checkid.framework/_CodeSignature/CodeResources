@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		ZMvekh/0SHm4HpK2vvq/hNNvjdc=
+		PiT/qXfdDp53Ymr/F+G3DYicGeY=
 		</data>
 		<key>CSCA Vietnam.cer</key>
 		<data>
@@ -538,11 +538,11 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		YksY/rPm2+VeP6KNupEC+p3RdCk=
+		xRhvF1RkYQnBAw0sDVLDF3gvhfs=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		+4C+vU18A9yeyer/4VVpBsRWLt0=
+		Kfl4a+LpUht3tL1EMVlwXZLbhxg=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -550,11 +550,11 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		YksY/rPm2+VeP6KNupEC+p3RdCk=
+		xRhvF1RkYQnBAw0sDVLDF3gvhfs=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		+4C+vU18A9yeyer/4VVpBsRWLt0=
+		Kfl4a+LpUht3tL1EMVlwXZLbhxg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -601,6 +601,10 @@
 		<data>
 		LCB9HKlImEGzlmLulZhNhPNS9fs=
 		</data>
+		<key>tessdata/._ocrb.traineddata</key>
+		<data>
+		q94P5BLEjKykVRCC9eY6noihgks=
+		</data>
 		<key>tessdata/ocrb.traineddata</key>
 		<data>
 		LCB9HKlImEGzlmLulZhNhPNS9fs=
@@ -621,7 +625,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1Glse86QjSfKOXQWdMW3QC3eZIUzeDlspU5uOKz/kak=
+			h+/Ym5K6tu7mNYEaCq08G54iXhvuDrav0q9GToTE0ts=
 			</data>
 		</dict>
 		<key>CSCA Vietnam.cer</key>
@@ -1545,14 +1549,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UgmSzKB1BsdzclsL6LWr3YZoApqZ6X0QURRXXeUIj48=
+			QWj+BOGVoaE1MIjooiI8ht3stvWLBXT0rGZ4skPMMKY=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yR/x7HOYo70uuD6WzAaV/cR8AYa+lFhKg53rPyZnK5k=
+			RWCdMEr+VCUs+bKmYXIgIOSA0xilVNch6if1Mh7UdZE=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
@@ -1566,14 +1570,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UgmSzKB1BsdzclsL6LWr3YZoApqZ6X0QURRXXeUIj48=
+			QWj+BOGVoaE1MIjooiI8ht3stvWLBXT0rGZ4skPMMKY=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yR/x7HOYo70uuD6WzAaV/cR8AYa+lFhKg53rPyZnK5k=
+			RWCdMEr+VCUs+bKmYXIgIOSA0xilVNch6if1Mh7UdZE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1646,6 +1650,13 @@
 			<key>hash2</key>
 			<data>
 			f2wpUj+pNsfvU9JZZIPiG4LVBjfz8ebGf31P6lkOJS0=
+			</data>
+		</dict>
+		<key>tessdata/._ocrb.traineddata</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			j/qZluepmE3CWE1C6xaElA1WqOzqhzNG9WrSBW5Jxy4=
 			</data>
 		</dict>
 		<key>tessdata/ocrb.traineddata</key>
