@@ -488,6 +488,7 @@ extension checkid.VerificationResult {
 }
 public struct ProcessResult : Swift.Codable {
   public let provider: Swift.String
+  public let description: Swift.String
   public let final_result: checkid.FinalResult
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -2505,6 +2506,8 @@ public struct DocumentData : Swift.Codable {
   public let document_type: Swift.String
   public let identification: Swift.String
   public let portrait_image: Swift.String
+  public let qr_data: Swift.String
+  public let mrz: Swift.String
   public func encode(to encoder: Swift.Encoder) throws
 }
 extension checkid.DocumentData {
