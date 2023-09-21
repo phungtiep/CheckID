@@ -2021,9 +2021,9 @@ public func calcSHA512Hash(_ data: [Swift.UInt8]) -> [Swift.UInt8]
 public func calcSHA384Hash(_ data: [Swift.UInt8]) -> [Swift.UInt8]
 @available(iOS 13.0, *)
 public protocol CheckIDScanDocumentViewDelegate : AnyObject {
-  func checkIDScanDocumentView(_ mrzScannerView: checkid.CheckIDScanDocumentView, didHandleError error: checkid.CheckIDError)
-  func checkIDScanDocumentView(_ mrzScannerView: checkid.CheckIDScanDocumentView, didHandleCaptureImageBase64 image: Swift.String)
-  func checkIDScanDocumentView(_ mrzScannerView: checkid.CheckIDScanDocumentView, didHandleCaptureAsUIImage uiImage: UIKit.UIImage)
+  func checkIDScanDocumentView(_ scanDocumentView: checkid.CheckIDScanDocumentView, didHandleError error: checkid.CheckIDError)
+  func checkIDScanDocumentView(_ scanDocumentView: checkid.CheckIDScanDocumentView, didHandleCaptureImageBase64 image: Swift.String)
+  func checkIDScanDocumentView(_ scanDocumentView: checkid.CheckIDScanDocumentView, didHandleCaptureAsUIImage uiImage: UIKit.UIImage)
 }
 @objc @_inheritsConvenienceInitializers @available(iOS 13.0, *)
 @_Concurrency.MainActor(unsafe) public class CheckIDScanDocumentView : UIKit.UIView, AVFoundation.AVCapturePhotoCaptureDelegate {
