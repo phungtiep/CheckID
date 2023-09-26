@@ -1689,6 +1689,7 @@ public protocol CheckIDScanFaceViewDelegate : AnyObject {
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didMoveFaceCloser isCloser: Swift.Bool)
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHoldFaceSteady isHoldSteady: Swift.Bool)
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHadMoreOneFace isMoreOneFace: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, getFaceFrameTimeOut value: Swift.Int)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(CheckIDScanFace) @_Concurrency.MainActor(unsafe) public class CheckIDScanFaceView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) weak public var delegate: checkid.CheckIDScanFaceViewDelegate?
@@ -2508,6 +2509,8 @@ public struct DocumentData : Swift.Codable {
   public let portrait_image: Swift.String
   public let qr_data: Swift.String
   public let mrz: Swift.String
+  public let passport_number: Swift.String
+  public let name_vie: Swift.String
   public func encode(to encoder: Swift.Encoder) throws
 }
 extension checkid.DocumentData {
