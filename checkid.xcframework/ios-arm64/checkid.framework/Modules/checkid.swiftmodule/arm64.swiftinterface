@@ -662,6 +662,8 @@ public enum CheckIDError : Swift.Error {
   case IDENTITY_CARD_NUMBER_IS_EXISTED
   case PASSPORT_NUMBER_NO_EXISTED
   case INVALID_DOCUMENT_TYPE
+  case ERROR_OCCUR_WHEN_DETECT_QR
+  case QR_CODE_INVALID
   public static func == (a: checkid.CheckIDError, b: checkid.CheckIDError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -1337,6 +1339,28 @@ public class DataGroup14 : checkid.DataGroup {
     get
   }
   @objc deinit
+}
+@available(iOS 13.0, *)
+public protocol ScanQRCodeOnDocumentViewDelegate : AnyObject {
+  func scanQRCodeOnDocumentView(_ scanQryptoView: checkid.ScanQRCodeOnDocumentView, didHandleData data: checkid.IdentityCardQR)
+  func scanQRCodeOnDocumentView(_ scanQryptoView: checkid.ScanQRCodeOnDocumentView, didHandleError error: checkid.CheckIDError)
+}
+@objc @_inheritsConvenienceInitializers @available(iOS 13.0, *)
+@_Concurrency.MainActor(unsafe) public class ScanQRCodeOnDocumentView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var isScanning: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var vibrateOnResult: Swift.Bool
+  @_Concurrency.MainActor(unsafe) weak public var delegate: checkid.ScanQRCodeOnDocumentViewDelegate?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func startScanning()
+  @_Concurrency.MainActor(unsafe) public func stopScanning()
+}
+@available(iOS 13.0, *)
+extension checkid.ScanQRCodeOnDocumentView : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
 }
 @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
 public class CardAccess {
@@ -2367,6 +2391,17 @@ public class NFCPassportModel {
   public func verifyPassport(masterListURL: Foundation.URL?, useCMSVerification: Swift.Bool = false)
   public func verifyActiveAuthentication(challenge: [Swift.UInt8], signature: [Swift.UInt8])
   @objc deinit
+}
+public struct IdentityCardQR : Swift.Codable {
+  public let id_number: Swift.String
+  public let old_9_digits_id_number: Swift.String
+  public let full_name: Swift.String
+  public let date_of_birth: Swift.String
+  public let gender: Swift.String
+  public let place_of_residence: Swift.String
+  public let date_of_issuce: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum ProcessType {
   case MOBILE_AUTHENTICATION

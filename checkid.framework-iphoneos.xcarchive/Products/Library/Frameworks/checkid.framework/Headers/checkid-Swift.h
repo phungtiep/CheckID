@@ -312,6 +312,22 @@ SWIFT_CLASS("_TtC7checkid14PassportReader") SWIFT_AVAILABILITY(ios,introduced=13
 
 
 
+
+SWIFT_CLASS("_TtC7checkid24ScanQRCodeOnDocumentView") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface ScanQRCodeOnDocumentView : UIView
+@property (nonatomic) BOOL isScanning;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)prepareForInterfaceBuilder;
+- (void)layoutSubviews;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface ScanQRCodeOnDocumentView (SWIFT_EXTENSION(checkid)) <AVCaptureVideoDataOutputSampleBufferDelegate>
+- (void)captureOutput:(AVCaptureOutput * _Nonnull)output didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)connection;
+@end
+
 @class NSString;
 @class NSBundle;
 
