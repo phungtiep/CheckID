@@ -863,6 +863,7 @@ extension checkid.KeychainWrapper {
 }
 @available(iOS 13, macOS 10.15, *)
 public enum DataGroupId : Swift.Int, Swift.CaseIterable {
+  case CARD_ACCESS
   case COM
   case DG1
   case DG2
