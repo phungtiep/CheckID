@@ -542,7 +542,7 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		P+galZErTvR908DbXocO+vAUK1Y=
+		opYGepMbwtQsEtpEnatpml3bJT0=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -554,7 +554,7 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		P+galZErTvR908DbXocO+vAUK1Y=
+		opYGepMbwtQsEtpEnatpml3bJT0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1556,7 +1556,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bd9U/IDACDHU6aEazVEtU8r2ucvXMKLHHfU23XXf/7o=
+			fvPvrf6y/NDCQR5wY7xegBeCqouMabTvO92lH/+CLtc=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
@@ -1577,7 +1577,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bd9U/IDACDHU6aEazVEtU8r2ucvXMKLHHfU23XXf/7o=
+			fvPvrf6y/NDCQR5wY7xegBeCqouMabTvO92lH/+CLtc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
