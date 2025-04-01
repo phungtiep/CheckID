@@ -11,6 +11,10 @@ FOUNDATION_EXPORT double checkidVersionNumber;
 
 //! Project version string for checkid.
 FOUNDATION_EXPORT const unsigned char checkidVersionString[];
+#import "ft301u.h"
+#import "wintypes.h"
+#import "winscard.h"
+#import "ReaderInterface.h"
 
 // In this header, you should import all the public headers of your framework using statements like #import "checkid/PublicHeader.h"
 #import "pem2.h"

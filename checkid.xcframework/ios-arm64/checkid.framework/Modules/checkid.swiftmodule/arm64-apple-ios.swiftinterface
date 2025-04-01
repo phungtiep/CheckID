@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name checkid
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name checkid
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
 import Accelerate
 import AudioToolbox
@@ -12,6 +13,7 @@ import CoreVideo
 import CryptoKit
 import CryptoSwift
 import CryptoTokenKit
+import DeveloperToolsSupport
 import Foundation
 import ImageIO
 import LocalAuthentication
@@ -31,13 +33,16 @@ import SystemConfiguration
 import UIKit
 import Vision
 import _Concurrency
+import _CoreNFC_UIKit
+import _StringProcessing
+import _SwiftConcurrencyShims
 @_exported import checkid
 import simd
 extension UIKit.UIDevice {
-  @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static let modelName: Swift.String
 }
 extension UIKit.UIImage {
-  public func scaledImage(with size: CoreGraphics.CGSize) -> UIKit.UIImage?
+  public func scaledImage(with size: CoreFoundation.CGSize) -> UIKit.UIImage?
 }
 @_hasMissingDesignatedInitializers public class Reachability {
   @objc deinit
@@ -179,8 +184,8 @@ extension CoreGraphics.CGImage {
   public func save(toPath path: Swift.String, type: checkid.NYXImageType, backgroundFillColor: UIKit.UIColor?) -> Swift.Bool
 }
 extension CoreGraphics.CGImage {
-  public class func makeGrayGradient(width: Swift.Int, height: Swift.Int, fromAlpha: CoreGraphics.CGFloat, toAlpha: CoreGraphics.CGFloat) -> CoreGraphics.CGImage?
-  public class func makeFromString(_ string: Swift.String, font: UIKit.UIFont, fontColor: UIKit.UIColor, backgroundColor: UIKit.UIColor, maxSize: CoreGraphics.CGSize) -> CoreGraphics.CGImage?
+  public class func makeGrayGradient(width: Swift.Int, height: Swift.Int, fromAlpha: CoreFoundation.CGFloat, toAlpha: CoreFoundation.CGFloat) -> CoreGraphics.CGImage?
+  public class func makeFromString(_ string: Swift.String, font: UIKit.UIFont, fontColor: UIKit.UIColor, backgroundColor: UIKit.UIColor, maxSize: CoreFoundation.CGSize) -> CoreGraphics.CGImage?
 }
 extension CoreGraphics.CGImage {
   public func hasAlpha() -> Swift.Bool
@@ -218,13 +223,13 @@ extension Swift.String {
 extension CoreGraphics.CGImage {
   public func horizontallyFlipped() -> CoreGraphics.CGImage?
   public func verticallyFlipped() -> CoreGraphics.CGImage?
-  public func rotated(radians: CoreGraphics.CGFloat) -> CoreGraphics.CGImage?
-  public func rotated(degrees: CoreGraphics.CGFloat) -> CoreGraphics.CGImage?
-  public func rotated(degrees: CoreGraphics.CGFloat, flipOverHorizontalAxis: Swift.Bool, flipOverVerticalAxis: Swift.Bool) -> CoreGraphics.CGImage?
-  public func rotated(radians: CoreGraphics.CGFloat, flipOverHorizontalAxis: Swift.Bool, flipOverVerticalAxis: Swift.Bool) -> CoreGraphics.CGImage?
+  public func rotated(radians: CoreFoundation.CGFloat) -> CoreGraphics.CGImage?
+  public func rotated(degrees: CoreFoundation.CGFloat) -> CoreGraphics.CGImage?
+  public func rotated(degrees: CoreFoundation.CGFloat, flipOverHorizontalAxis: Swift.Bool, flipOverVerticalAxis: Swift.Bool) -> CoreGraphics.CGImage?
+  public func rotated(radians: CoreFoundation.CGFloat, flipOverHorizontalAxis: Swift.Bool, flipOverVerticalAxis: Swift.Bool) -> CoreGraphics.CGImage?
   public func pixelsRotated(degrees: Swift.Float) -> CoreGraphics.CGImage?
   public func pixelsRotated(radians: Swift.Float) -> CoreGraphics.CGImage?
-  public func reflected(height: Swift.Int = 0, fromAlpha: CoreGraphics.CGFloat = 1.0, toAlpha: CoreGraphics.CGFloat = 0.0) -> CoreGraphics.CGImage?
+  public func reflected(height: Swift.Int = 0, fromAlpha: CoreFoundation.CGFloat = 1.0, toAlpha: CoreFoundation.CGFloat = 0.0) -> CoreGraphics.CGImage?
 }
 public enum PACEMappingType {
   case GM
@@ -363,77 +368,77 @@ extension checkid.PassiveAuthenticationError : Foundation.LocalizedError {
     get
   }
 }
-extension CoreGraphics.CGRect {
-  public init(_ origin: CoreGraphics.CGPoint, _ size: CoreGraphics.CGSize)
-  public init(_ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat, _ width: CoreGraphics.CGFloat, _ height: CoreGraphics.CGFloat)
-  public init(_ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat, _ size: CoreGraphics.CGSize)
-  public init(_ origin: CoreGraphics.CGPoint, _ width: CoreGraphics.CGFloat, _ height: CoreGraphics.CGFloat)
+extension CoreFoundation.CGRect {
+  public init(_ origin: CoreFoundation.CGPoint, _ size: CoreFoundation.CGSize)
+  public init(_ x: CoreFoundation.CGFloat, _ y: CoreFoundation.CGFloat, _ width: CoreFoundation.CGFloat, _ height: CoreFoundation.CGFloat)
+  public init(_ x: CoreFoundation.CGFloat, _ y: CoreFoundation.CGFloat, _ size: CoreFoundation.CGSize)
+  public init(_ origin: CoreFoundation.CGPoint, _ width: CoreFoundation.CGFloat, _ height: CoreFoundation.CGFloat)
   public init(_ x: Swift.Int, _ y: Swift.Int, _ width: Swift.Int, _ height: Swift.Int)
-  public var x: CoreGraphics.CGFloat {
+  public var x: CoreFoundation.CGFloat {
     get
     set
   }
-  public var y: CoreGraphics.CGFloat {
+  public var y: CoreFoundation.CGFloat {
     get
     set
   }
-  public var centerX: CoreGraphics.CGFloat {
+  public var centerX: CoreFoundation.CGFloat {
     get
     set
   }
-  public var centerY: CoreGraphics.CGFloat {
+  public var centerY: CoreFoundation.CGFloat {
     get
     set
   }
-  public var left: CoreGraphics.CGFloat {
+  public var left: CoreFoundation.CGFloat {
     get
     set
   }
-  public var right: CoreGraphics.CGFloat {
+  public var right: CoreFoundation.CGFloat {
     get
     set
   }
-  public var top: CoreGraphics.CGFloat {
+  public var top: CoreFoundation.CGFloat {
     get
     set
   }
-  public var bottom: CoreGraphics.CGFloat {
+  public var bottom: CoreFoundation.CGFloat {
     get
     set
   }
-  public var topLeft: CoreGraphics.CGPoint {
+  public var topLeft: CoreFoundation.CGPoint {
     get
     set
   }
-  public var topCenter: CoreGraphics.CGPoint {
+  public var topCenter: CoreFoundation.CGPoint {
     get
     set
   }
-  public var topRight: CoreGraphics.CGPoint {
+  public var topRight: CoreFoundation.CGPoint {
     get
     set
   }
-  public var centerLeft: CoreGraphics.CGPoint {
+  public var centerLeft: CoreFoundation.CGPoint {
     get
     set
   }
-  public var center: CoreGraphics.CGPoint {
+  public var center: CoreFoundation.CGPoint {
     get
     set
   }
-  public var centerRight: CoreGraphics.CGPoint {
+  public var centerRight: CoreFoundation.CGPoint {
     get
     set
   }
-  public var bottomLeft: CoreGraphics.CGPoint {
+  public var bottomLeft: CoreFoundation.CGPoint {
     get
     set
   }
-  public var bottomCenter: CoreGraphics.CGPoint {
+  public var bottomCenter: CoreFoundation.CGPoint {
     get
     set
   }
-  public var bottomRight: CoreGraphics.CGPoint {
+  public var bottomRight: CoreFoundation.CGPoint {
     get
     set
   }
@@ -468,47 +473,47 @@ public class MBLiveness {
 public struct LivenessResult : Swift.Codable {
   public let liveness_threshold: Swift.Float
   public let liveness_confidence: Swift.Float
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct MatchingResult : Swift.Codable {
   public let match_threshold: Swift.Float
   public let match_confidence: Swift.Float
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct VerificationResult : Swift.Codable {
   public let transaction_id: Swift.String
   public let final_result: checkid.FinalResult
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.VerificationResult {
   public init()
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct ProcessResult : Swift.Codable {
   public let provider: Swift.String
   public let description: Swift.String
   public let final_result: checkid.FinalResult
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.ProcessResult {
   public init()
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct VerificationResultOther : Swift.Codable {
   public let transaction_id: Swift.String
   public let final_result: checkid.FinalResultOther
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Claim_sources : Swift.Codable {
   public let JWT: Swift.String
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.Claim_sources {
   public init()
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct PerformResult : Swift.Codable {
   public let final_result: checkid.FinalResult
@@ -524,11 +529,11 @@ public struct PerformResult : Swift.Codable {
   public let provider: Swift.String
   public let dg11: Swift.String
   public let dg12: Swift.String
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.PerformResult {
   public init()
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct FinalResult : Swift.Codable {
   public let match_threshold: Swift.Float
@@ -540,11 +545,11 @@ public struct FinalResult : Swift.Codable {
   public let claim_sources: checkid.Claim_sources
   public let mobile: Swift.String
   public let email: Swift.String
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.FinalResult {
   public init()
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct FinalResultOther : Swift.Codable {
   public let match_threshold: Swift.Float
@@ -553,8 +558,8 @@ public struct FinalResultOther : Swift.Codable {
   public let liveness: Swift.Bool
   public let liveness_threshold: Swift.Float
   public let liveness_confidence: Swift.Float
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public class FaceResult : Swift.Codable {
   public var status: Swift.Float
@@ -568,9 +573,9 @@ public class FaceResult : Swift.Codable {
   public var verification_result: checkid.VerificationResult
   public var process_result: checkid.ProcessResult
   public init(from perform: checkid.PerformVerificationResponse)
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct FaceCustomResultLivenessFail : Swift.Codable {
   public let status: Swift.Float
@@ -578,8 +583,8 @@ public struct FaceCustomResultLivenessFail : Swift.Codable {
   public let transaction_id: Swift.String
   public let description: Swift.String
   public let liveness_result: checkid.LivenessResult
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct FaceCustomResultMatchingFail : Swift.Codable {
   public let status: Swift.Float
@@ -588,8 +593,8 @@ public struct FaceCustomResultMatchingFail : Swift.Codable {
   public let description: Swift.String
   public let liveness_result: checkid.LivenessResult
   public let matching_result: checkid.MatchingResult
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct FaceForLivenessCustomResult : Swift.Codable {
   public let status: Swift.Float
@@ -597,8 +602,8 @@ public struct FaceForLivenessCustomResult : Swift.Codable {
   public let transaction_id: Swift.String
   public let provider: Swift.String
   public let verification_result: checkid.VerificationResultOther
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum CheckIDError : Swift.Error {
   case SCAN_FAIL
@@ -670,37 +675,37 @@ public enum CheckIDError : Swift.Error {
     get
   }
 }
-extension CoreGraphics.CGPoint {
-  public init(_ x: CoreGraphics.CGFloat, _ y: CoreGraphics.CGFloat)
+extension CoreFoundation.CGPoint {
+  public init(_ x: CoreFoundation.CGFloat, _ y: CoreFoundation.CGFloat)
   public init(_ x: Swift.Int, _ y: Swift.Int)
-  public func ceilled() -> CoreGraphics.CGPoint
-  public func floored() -> CoreGraphics.CGPoint
-  public func rounded() -> CoreGraphics.CGPoint
+  public func ceilled() -> CoreFoundation.CGPoint
+  public func floored() -> CoreFoundation.CGPoint
+  public func rounded() -> CoreFoundation.CGPoint
 }
 public protocol NYXProgressiveImageViewDelegate : AnyObject {
   func imageDidLoadWithImage(image: UIKit.UIImage)
   func imageDownloadCompletedWithImage(image: UIKit.UIImage)
   func imageDownloadFailedWithData(data: Foundation.Data?)
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class NYXProgressiveImageView : UIKit.UIImageView {
-  @_Concurrency.MainActor(unsafe) weak public var delegate: checkid.NYXProgressiveImageViewDelegate?
-  @_Concurrency.MainActor(unsafe) public var isDownloading: Swift.Bool {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class NYXProgressiveImageView : UIKit.UIImageView {
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any checkid.NYXProgressiveImageViewDelegate)?
+  @_Concurrency.MainActor @preconcurrency public var isDownloading: Swift.Bool {
     get
   }
-  @_Concurrency.MainActor(unsafe) public var isCaching: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var timeoutInterval: Swift.Double
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) public func loadImage(atUrl url: Foundation.URL)
+  @_Concurrency.MainActor @preconcurrency public var isCaching: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var timeoutInterval: Swift.Double
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(image: UIKit.UIImage?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency public func loadImage(atUrl url: Foundation.URL)
   @objc deinit
 }
 extension checkid.NYXProgressiveImageView : Foundation.URLSessionDelegate {
 }
 extension checkid.NYXProgressiveImageView {
-  @_Concurrency.MainActor(unsafe) public class func cachesDirectoryURL() -> Foundation.URL?
-  @_Concurrency.MainActor(unsafe) public class func resetCache()
+  @_Concurrency.MainActor @preconcurrency public class func cachesDirectoryURL() -> Foundation.URL?
+  @_Concurrency.MainActor @preconcurrency public class func resetCache()
 }
 @_hasMissingDesignatedInitializers @available(iOS 13, *)
 public class CheckIdICAO {
@@ -714,14 +719,16 @@ public class CheckIdICAO {
   public static func createProcessId(subjectObj: checkid.SubjectCreate, processType: checkid.ProcessType, purpose: checkid.Purpose, WithJWT jwt: Swift.String = "", WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", onCompletion: @escaping (Swift.Result<checkid.ProcessesCreate, checkid.CheckIDError>) -> Swift.Void)
   public static func verifyOtp(otp: Swift.String, subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.PerformVerificationResponse, checkid.CheckIDError>) -> Swift.Void)
   public static func resendOtp(WithJWT jwt: Swift.String = "", subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.Response, checkid.CheckIDError>) -> Swift.Void)
+  public static func startNfcOffline(onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
   public static func startNfcV2(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
   public static func getOCRInfo(WithFront front: Swift.String = "", WithBack back: Swift.String = "", WithType type: checkid.OCRType, onCompletion: @escaping (Swift.Result<checkid.OcrInfo, checkid.CheckIDError>) -> Swift.Void)
+  public static func testFunction(base64: Swift.String)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class TestViewController : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class TestViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class RegisterConfig {
@@ -742,8 +749,8 @@ public class BACHandler {
   @objc deinit
 }
 extension UIKit.UINavigationController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @_Concurrency.MainActor(unsafe) @objc get
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
   }
 }
 public let numberOfComponentsPerARBGPixel: Swift.Int
@@ -772,29 +779,29 @@ public class SecurityInfo {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @available(iOS 13.0, *)
-@_Concurrency.MainActor(unsafe) public class CheckIDScanMRZViewV2 : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var isScanning: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var vibrateOnResult: Swift.Bool
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+@_Concurrency.MainActor @preconcurrency public class CheckIDScanMRZViewV2 : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var isScanning: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var vibrateOnResult: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
-  @objc override dynamic public func prepareForInterfaceBuilder()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) public func startScanning()
-  @_Concurrency.MainActor(unsafe) public func stopScanning()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency public func startScanning()
+  @_Concurrency.MainActor @preconcurrency public func stopScanning()
 }
 @available(iOS 13.0, *)
 extension checkid.CheckIDScanMRZViewV2 : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
 }
 extension UIKit.UIImage {
-  public func resized(to size: CoreGraphics.CGSize) -> UIKit.UIImage
-  public func cropped(toSize: CoreGraphics.CGSize) -> UIKit.UIImage?
-  public func cropped(toSize: CoreGraphics.CGSize, mode: checkid.NYXCropMode) -> UIKit.UIImage?
-  public func smartCropped(toSize: CoreGraphics.CGSize) -> UIKit.UIImage?
-  public func scaled(factor: CoreGraphics.CGFloat) -> UIKit.UIImage?
-  public func scaled(toSize: CoreGraphics.CGSize) -> UIKit.UIImage?
-  public func scaled(toSize: CoreGraphics.CGSize, mode: checkid.NYXScaleMode) -> UIKit.UIImage?
+  public func resized(to size: CoreFoundation.CGSize) -> UIKit.UIImage
+  public func cropped(toSize: CoreFoundation.CGSize) -> UIKit.UIImage?
+  public func cropped(toSize: CoreFoundation.CGSize, mode: checkid.NYXCropMode) -> UIKit.UIImage?
+  public func smartCropped(toSize: CoreFoundation.CGSize) -> UIKit.UIImage?
+  public func scaled(factor: CoreFoundation.CGFloat) -> UIKit.UIImage?
+  public func scaled(toSize: CoreFoundation.CGSize) -> UIKit.UIImage?
+  public func scaled(toSize: CoreFoundation.CGSize, mode: checkid.NYXScaleMode) -> UIKit.UIImage?
 }
 extension CoreGraphics.CGContext {
   public class func ARGBBitmapContext(width: Swift.Int, height: Swift.Int, withAlpha: Swift.Bool) -> CoreGraphics.CGContext?
@@ -832,7 +839,7 @@ extension checkid.KeychainWrapper {
     get
     set
   }
-  public subscript(key: checkid.KeychainWrapper.Key) -> CoreGraphics.CGFloat? {
+  public subscript(key: checkid.KeychainWrapper.Key) -> CoreFoundation.CGFloat? {
     get
     set
   }
@@ -846,7 +853,7 @@ extension checkid.KeychainWrapper {
   public func bool(forKey key: checkid.KeychainWrapper.Key) -> Swift.Bool?
   public func integer(forKey key: checkid.KeychainWrapper.Key) -> Swift.Int?
   public func float(forKey key: checkid.KeychainWrapper.Key) -> Swift.Float?
-  public func cgFloat(forKey key: checkid.KeychainWrapper.Key) -> CoreGraphics.CGFloat?
+  public func cgFloat(forKey key: checkid.KeychainWrapper.Key) -> CoreFoundation.CGFloat?
   public func double(forKey key: checkid.KeychainWrapper.Key) -> Swift.Double?
   public func string(forKey key: checkid.KeychainWrapper.Key) -> Swift.String?
 }
@@ -886,9 +893,11 @@ public enum DataGroupId : Swift.Int, Swift.CaseIterable {
   public func getName() -> Swift.String
   public static func getIDFromName(name: Swift.String) -> checkid.DataGroupId
   public init?(rawValue: Swift.Int)
+  @available(iOS 13, macOS 10.15, *)
   public typealias AllCases = [checkid.DataGroupId]
+  @available(iOS 13, macOS 10.15, *)
   public typealias RawValue = Swift.Int
-  public static var allCases: [checkid.DataGroupId] {
+  nonisolated public static var allCases: [checkid.DataGroupId] {
     get
   }
   public var rawValue: Swift.Int {
@@ -896,10 +905,10 @@ public enum DataGroupId : Swift.Int, Swift.CaseIterable {
   }
 }
 public struct PassiveAuthenticationResponse : Swift.Codable {
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.PassiveAuthenticationResponse {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum LogLevel : Swift.Int, Swift.CaseIterable {
   case verbose
@@ -910,7 +919,7 @@ public enum LogLevel : Swift.Int, Swift.CaseIterable {
   public init?(rawValue: Swift.Int)
   public typealias AllCases = [checkid.LogLevel]
   public typealias RawValue = Swift.Int
-  public static var allCases: [checkid.LogLevel] {
+  nonisolated public static var allCases: [checkid.LogLevel] {
     get
   }
   public var rawValue: Swift.Int {
@@ -940,11 +949,11 @@ public class ChipAuthenticationInfo : checkid.SecurityInfo {
   @objc deinit
 }
 extension UIKit.UIColor {
-  convenience public init(rgb: Swift.Int32, alpha: CoreGraphics.CGFloat)
+  convenience public init(rgb: Swift.Int32, alpha: CoreFoundation.CGFloat)
   convenience public init(rgb: Swift.Int32)
   convenience public init(hexString: Swift.String, defaultColor: UIKit.UIColor)
   convenience public init(hexString: Swift.String)
-  public func colorWithMinimumSaturation(_ minSaturation: CoreGraphics.CGFloat) -> UIKit.UIColor
+  public func colorWithMinimumSaturation(_ minSaturation: CoreFoundation.CGFloat) -> UIKit.UIColor
   public func inverted() -> UIKit.UIColor
   public func isBlackOrWhite() -> Swift.Bool
   public func isContrasting(fromColor color: UIKit.UIColor) -> Swift.Bool
@@ -1034,9 +1043,9 @@ public enum FaceException : Swift.Error {
   @objc deinit
 }
 extension UIKit.UIImage {
-  public class func makeGrayGradient(width: Swift.Int, height: Swift.Int, fromAlpha: CoreGraphics.CGFloat, toAlpha: CoreGraphics.CGFloat) -> UIKit.UIImage?
-  public class func makeFromString(_ string: Swift.String, font: UIKit.UIFont, fontColor: UIKit.UIColor, backgroundColor: UIKit.UIColor, maxSize: CoreGraphics.CGSize) -> UIKit.UIImage?
-  public func tinted(withColor color: UIKit.UIColor, opacity: CoreGraphics.CGFloat = 0.0) -> UIKit.UIImage?
+  public class func makeGrayGradient(width: Swift.Int, height: Swift.Int, fromAlpha: CoreFoundation.CGFloat, toAlpha: CoreFoundation.CGFloat) -> UIKit.UIImage?
+  public class func makeFromString(_ string: Swift.String, font: UIKit.UIFont, fontColor: UIKit.UIColor, backgroundColor: UIKit.UIColor, maxSize: CoreFoundation.CGSize) -> UIKit.UIImage?
+  public func tinted(withColor color: UIKit.UIColor, opacity: CoreFoundation.CGFloat = 0.0) -> UIKit.UIImage?
   public func forceSameOrientation() -> UIKit.UIImage
 }
 public func + (lhs: UIKit.UIImage, rhs: UIKit.UIImage) -> UIKit.UIImage?
@@ -1221,6 +1230,7 @@ public enum DocTypeEnum : Swift.String {
   case TD2
   case OTHER
   public init?(rawValue: Swift.String)
+  @available(iOS 13, macOS 10.15, *)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -1231,6 +1241,27 @@ public class DataGroup1 : checkid.DataGroup {
   public var elements: [Swift.String : Swift.String] {
     get
   }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Dg13Obj {
+  public var personalNumber: Swift.String
+  public var anotherName: Swift.String
+  public var fullName: Swift.String
+  public var birthday: Swift.String
+  public var gender: Swift.String
+  public var nationality: Swift.String
+  public var ethnic: Swift.String
+  public var religion: Swift.String
+  public var place_of_origin: Swift.String
+  public var place_of_residence: Swift.String
+  public var personal_identification: Swift.String
+  public var issuance_date: Swift.String
+  public var expiry_date: Swift.String
+  public var ex_identification_document: Swift.String
+  public var parent_names: [Swift.String]
+  public var fullName_of_spouse: Swift.String
+  public var sn_chip_card: Swift.String
+  public init()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ASN1DERDecoder {
@@ -1347,21 +1378,21 @@ public protocol ScanQRCodeOnDocumentViewDelegate : AnyObject {
   func scanQRCodeOnDocumentView(_ scanQryptoView: checkid.ScanQRCodeOnDocumentView, didHandleError error: checkid.CheckIDError)
 }
 @objc @_inheritsConvenienceInitializers @available(iOS 13.0, *)
-@_Concurrency.MainActor(unsafe) public class ScanQRCodeOnDocumentView : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var isScanning: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var vibrateOnResult: Swift.Bool
-  @_Concurrency.MainActor(unsafe) weak public var delegate: checkid.ScanQRCodeOnDocumentViewDelegate?
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+@_Concurrency.MainActor @preconcurrency public class ScanQRCodeOnDocumentView : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var isScanning: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var vibrateOnResult: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any checkid.ScanQRCodeOnDocumentViewDelegate)?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
-  @objc override dynamic public func prepareForInterfaceBuilder()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) public func startScanning()
-  @_Concurrency.MainActor(unsafe) public func stopScanning()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency public func startScanning()
+  @_Concurrency.MainActor @preconcurrency public func stopScanning()
 }
 @available(iOS 13.0, *)
 extension checkid.ScanQRCodeOnDocumentView : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
 }
 @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
 public class CardAccess {
@@ -1375,18 +1406,18 @@ public func degreesToRadians(_ value: Swift.Float) -> Swift.Float
 public func radiansToDegrees(_ value: Swift.Float) -> Swift.Float
 public func degreesToRadians(_ value: Swift.Double) -> Swift.Double
 public func radiansToDegrees(_ value: Swift.Double) -> Swift.Double
-public func degreesToRadians(_ value: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
-public func radiansToDegrees(_ value: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
+public func degreesToRadians(_ value: CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
+public func radiansToDegrees(_ value: CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
 extension UIKit.UIImage {
   public func horizontallyFlipped() -> UIKit.UIImage?
   public func verticallyFlipped() -> UIKit.UIImage?
-  public func rotated(radians: CoreGraphics.CGFloat) -> UIKit.UIImage?
-  public func rotated(degrees: CoreGraphics.CGFloat) -> UIKit.UIImage?
-  public func rotated(degrees: CoreGraphics.CGFloat, flipOverHorizontalAxis: Swift.Bool, flipOverVerticalAxis: Swift.Bool) -> UIKit.UIImage?
-  public func rotated(radians: CoreGraphics.CGFloat, flipOverHorizontalAxis: Swift.Bool, flipOverVerticalAxis: Swift.Bool) -> UIKit.UIImage?
+  public func rotated(radians: CoreFoundation.CGFloat) -> UIKit.UIImage?
+  public func rotated(degrees: CoreFoundation.CGFloat) -> UIKit.UIImage?
+  public func rotated(degrees: CoreFoundation.CGFloat, flipOverHorizontalAxis: Swift.Bool, flipOverVerticalAxis: Swift.Bool) -> UIKit.UIImage?
+  public func rotated(radians: CoreFoundation.CGFloat, flipOverHorizontalAxis: Swift.Bool, flipOverVerticalAxis: Swift.Bool) -> UIKit.UIImage?
   public func pixelsRotated(degrees: Swift.Float) -> UIKit.UIImage?
   public func pixelsRotated(radians: Swift.Float) -> UIKit.UIImage?
-  public func reflected(height: Swift.Int = 0, fromAlpha: CoreGraphics.CGFloat = 1.0, toAlpha: CoreGraphics.CGFloat = 0.0) -> UIKit.UIImage?
+  public func reflected(height: Swift.Int = 0, fromAlpha: CoreFoundation.CGFloat = 1.0, toAlpha: CoreFoundation.CGFloat = 0.0) -> UIKit.UIImage?
 }
 extension checkid.X509Certificate {
   @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BasicConstraintExtension : checkid.X509Extension {
@@ -1453,21 +1484,21 @@ public protocol CheckIDScanMRZViewDelegate : AnyObject {
   func checkIDMrzScannerView(_ mrzScannerView: checkid.CheckIDScanMRZView, didHandleScanImage image: Swift.String)
 }
 @objc @_inheritsConvenienceInitializers @available(iOS 13.0, *)
-@IBDesignable @_Concurrency.MainActor(unsafe) public class CheckIDScanMRZView : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var isScanning: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var vibrateOnResult: Swift.Bool
-  @_Concurrency.MainActor(unsafe) weak public var delegate: checkid.CheckIDScanMRZViewDelegate?
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+@IBDesignable @_Concurrency.MainActor @preconcurrency public class CheckIDScanMRZView : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var isScanning: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var vibrateOnResult: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any checkid.CheckIDScanMRZViewDelegate)?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
-  @objc override dynamic public func prepareForInterfaceBuilder()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) public func startScanning()
-  @_Concurrency.MainActor(unsafe) public func stopScanning()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency public func startScanning()
+  @_Concurrency.MainActor @preconcurrency public func stopScanning()
 }
 @available(iOS 13.0, *)
 extension checkid.CheckIDScanMRZView : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
 }
 @_hasMissingDesignatedInitializers public class ASN1Object : Swift.CustomStringConvertible {
   public var rawValue: Foundation.Data?
@@ -1484,6 +1515,7 @@ extension checkid.CheckIDScanMRZView : AVFoundation.AVCaptureVideoDataOutputSamp
   public var asString: Swift.String? {
     get
   }
+  public func loadArrayOutput()
   public func printAsn1(insets: Swift.String = "") -> Swift.String
   @objc deinit
 }
@@ -1508,6 +1540,7 @@ public enum CertificateItem : Swift.String {
   case notBefore
   case notAfter
   public init?(rawValue: Swift.String)
+  @available(iOS 13, macOS 10.15, *)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -1642,7 +1675,7 @@ public class DataGroup2 : checkid.DataGroup {
   public var textColor: UIKit.UIColor?
   public var statusBarBackgroundColor: UIKit.UIColor?
   public var scanMrzBorderColor: UIKit.UIColor?
-  public var scanMrzCornerRadius: CoreGraphics.CGFloat?
+  public var scanMrzCornerRadius: CoreFoundation.CGFloat?
   public var buttonTitleEnableColor: UIKit.UIColor?
   public var buttonTitleDisableColor: UIKit.UIColor?
   public var placeHolderTextColor: UIKit.UIColor?
@@ -1667,14 +1700,14 @@ public class DataGroup2 : checkid.DataGroup {
   public func setNavigationBarBackgroundColor(color: UIKit.UIColor)
   public func setNavigationBarTitleColor(color: UIKit.UIColor)
   public func setNavigationBarLeftItemsTintColor(color: UIKit.UIColor)
-  public func setLeftInfoFont(fontName: Swift.String, size: CoreGraphics.CGFloat)
-  public func setRightInfoFont(fontName: Swift.String, size: CoreGraphics.CGFloat)
+  public func setLeftInfoFont(fontName: Swift.String, size: CoreFoundation.CGFloat)
+  public func setRightInfoFont(fontName: Swift.String, size: CoreFoundation.CGFloat)
   public func setTextColor(color: UIKit.UIColor)
   public func setStatusBarBackgroundColor(color: UIKit.UIColor)
   public var tittleInputViewController: Swift.String?
   public func setTittleInputViewController(string: Swift.String)
   public func setScanMrzBorderColor(color: UIKit.UIColor)
-  public func setScanMrzCornerRadius(value: CoreGraphics.CGFloat)
+  public func setScanMrzCornerRadius(value: CoreFoundation.CGFloat)
   public func setButtonTitleEnableColor(color: UIKit.UIColor)
   public func setButtonTitleDisableColor(color: UIKit.UIColor)
   public func setNavTitleAttribute(textColor: UIKit.UIColor, font: UIKit.UIFont)
@@ -1689,7 +1722,7 @@ public class NotImplementedDG : checkid.DataGroup {
   @objc deinit
 }
 extension CoreGraphics.CGImage {
-  public func alphaed(value: CoreGraphics.CGFloat) -> CoreGraphics.CGImage?
+  public func alphaed(value: CoreFoundation.CGFloat) -> CoreGraphics.CGImage?
   public func brightened(value: Swift.Float) -> CoreGraphics.CGImage?
   public func contrasted(value: Swift.Float) -> CoreGraphics.CGImage?
   public func edgeDetected(_ bias: Swift.Int32 = 0) -> CoreGraphics.CGImage?
@@ -1716,27 +1749,27 @@ public protocol CheckIDScanFaceViewDelegate : AnyObject {
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHadMoreOneFace isMoreOneFace: Swift.Bool)
   func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, getFaceFrameTimeOut value: Swift.Int)
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(CheckIDScanFace) @_Concurrency.MainActor(unsafe) public class CheckIDScanFaceView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) weak public var delegate: checkid.CheckIDScanFaceViewDelegate?
-  @_Concurrency.MainActor(unsafe) public var card_no: Swift.String
-  @_Concurrency.MainActor(unsafe) public var mobile: Swift.String
-  @_Concurrency.MainActor(unsafe) public var email: Swift.String
-  @_Concurrency.MainActor(unsafe) public var methodType: checkid.FaceMethod?
-  @_Concurrency.MainActor(unsafe) public var original_frame: Swift.String
-  @_Concurrency.MainActor(unsafe) public var borderCornerRadius: CoreGraphics.CGFloat
-  @_Concurrency.MainActor(unsafe) public var subjectObj: checkid.SubjectCreate
-  @_Concurrency.MainActor(unsafe) public func finalizeCordinate()
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(CheckIDScanFace) @_Concurrency.MainActor @preconcurrency public class CheckIDScanFaceView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any checkid.CheckIDScanFaceViewDelegate)?
+  @_Concurrency.MainActor @preconcurrency public var card_no: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var mobile: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var email: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var methodType: checkid.FaceMethod?
+  @_Concurrency.MainActor @preconcurrency public var original_frame: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var borderCornerRadius: CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency public var subjectObj: checkid.SubjectCreate
+  @_Concurrency.MainActor @preconcurrency public func finalizeCordinate()
   @objc deinit
-  @_Concurrency.MainActor(unsafe) public func getChallenge(finished: @escaping () -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func getCoordinatesOfFaceFrame() -> CoreGraphics.CGRect
-  @_Concurrency.MainActor(unsafe) public func finalizeChallenge(onComplete: @escaping (Swift.Bool) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func getVideoEvident() -> Swift.String
-  @_Concurrency.MainActor(unsafe) public func startSession()
-  @_Concurrency.MainActor(unsafe) public func stopSession()
-  @_Concurrency.MainActor(unsafe) public func startCountDownFrameTimeOut()
+  @_Concurrency.MainActor @preconcurrency public func getChallenge(finished: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func getCoordinatesOfFaceFrame() -> CoreFoundation.CGRect
+  @_Concurrency.MainActor @preconcurrency public func finalizeChallenge(onComplete: @escaping (Swift.Bool) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func getVideoEvident() -> Swift.String
+  @_Concurrency.MainActor @preconcurrency public func startSession()
+  @_Concurrency.MainActor @preconcurrency public func stopSession()
+  @_Concurrency.MainActor @preconcurrency public func startCountDownFrameTimeOut()
 }
 extension checkid.CheckIDScanFaceView : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
 public class DataGroup7 : checkid.DataGroup {
@@ -1820,6 +1853,14 @@ public struct NFCInfo {
   public var documentType: checkid.DocumentType
   public var placeOfBirth: Swift.String?
   public var documentNumber: Swift.String?
+  public var dg1: Swift.String?
+  public var dg2: Swift.String?
+  public var dg13: Swift.String?
+  public var dg14: Swift.String?
+  public var dg15: Swift.String?
+  public var efCardAccess: Swift.String?
+  public var sod: Swift.String?
+  public var com: Swift.String?
   public init()
 }
 public enum NYXCropMode {
@@ -1849,11 +1890,11 @@ public enum NYXScaleMode {
   }
 }
 extension CoreGraphics.CGImage {
-  public func cropped(toSize: CoreGraphics.CGSize) -> CoreGraphics.CGImage?
-  public func cropped(toSize: CoreGraphics.CGSize, mode: checkid.NYXCropMode) -> CoreGraphics.CGImage?
-  public func scaled(factor: CoreGraphics.CGFloat) -> CoreGraphics.CGImage?
-  public func scaled(toSize: CoreGraphics.CGSize) -> CoreGraphics.CGImage?
-  public func scaled(toSize: CoreGraphics.CGSize, mode: checkid.NYXScaleMode) -> CoreGraphics.CGImage?
+  public func cropped(toSize: CoreFoundation.CGSize) -> CoreGraphics.CGImage?
+  public func cropped(toSize: CoreFoundation.CGSize, mode: checkid.NYXCropMode) -> CoreGraphics.CGImage?
+  public func scaled(factor: CoreFoundation.CGFloat) -> CoreGraphics.CGImage?
+  public func scaled(toSize: CoreFoundation.CGSize) -> CoreGraphics.CGImage?
+  public func scaled(toSize: CoreFoundation.CGSize, mode: checkid.NYXScaleMode) -> CoreGraphics.CGImage?
 }
 @_hasMissingDesignatedInitializers public class ASN1DEREncoder {
   public static func encodeSequence(content: Foundation.Data) -> Foundation.Data
@@ -1864,14 +1905,14 @@ extension Foundation.Data {
     get
   }
 }
-extension CoreGraphics.CGSize {
-  public init(_ width: CoreGraphics.CGFloat, _ height: CoreGraphics.CGFloat)
+extension CoreFoundation.CGSize {
+  public init(_ width: CoreFoundation.CGFloat, _ height: CoreFoundation.CGFloat)
   public init(_ width: Swift.Int, _ height: Swift.Int)
-  public func ceilled() -> CoreGraphics.CGSize
-  public func floored() -> CoreGraphics.CGSize
-  public func rounded() -> CoreGraphics.CGSize
+  public func ceilled() -> CoreFoundation.CGSize
+  public func floored() -> CoreFoundation.CGSize
+  public func rounded() -> CoreFoundation.CGSize
 }
-public func * (lhs: CoreGraphics.CGSize, rhs: CoreGraphics.CGFloat) -> CoreGraphics.CGSize
+public func * (lhs: CoreFoundation.CGSize, rhs: CoreFoundation.CGFloat) -> CoreFoundation.CGSize
 public enum LicenseError : Swift.Error {
   case LICENSE_NOT_FOUND
   case LICENSE_EXPIRED
@@ -2052,25 +2093,25 @@ public protocol CheckIDScanDocumentViewDelegate : AnyObject {
   func checkIDScanDocumentView(_ scanDocumentView: checkid.CheckIDScanDocumentView, didHandleCaptureAsUIImage uiImage: UIKit.UIImage)
 }
 @objc @_inheritsConvenienceInitializers @available(iOS 13.0, *)
-@_Concurrency.MainActor(unsafe) public class CheckIDScanDocumentView : UIKit.UIView, AVFoundation.AVCapturePhotoCaptureDelegate {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var isScanning: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var vibrateOnResult: Swift.Bool
-  @_Concurrency.MainActor(unsafe) weak public var delegate: checkid.CheckIDScanDocumentViewDelegate?
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+@_Concurrency.MainActor @preconcurrency public class CheckIDScanDocumentView : UIKit.UIView, AVFoundation.AVCapturePhotoCaptureDelegate {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var isScanning: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var vibrateOnResult: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any checkid.CheckIDScanDocumentViewDelegate)?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
-  @objc override dynamic public func prepareForInterfaceBuilder()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) public func startScanning()
-  @_Concurrency.MainActor(unsafe) public func stopScanning()
-  @_Concurrency.MainActor(unsafe) public func capture()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency public func startScanning()
+  @_Concurrency.MainActor @preconcurrency public func stopScanning()
+  @_Concurrency.MainActor @preconcurrency public func capture()
 }
 @available(iOS 13.0, *)
 extension checkid.CheckIDScanDocumentView : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVFoundation.AVCapturePhoto, error: Swift.Error?)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func photoOutput(_ output: AVFoundation.AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVFoundation.AVCapturePhoto, error: (any Swift.Error)?)
 }
 extension UIKit.UIImage {
-  public func alphaed(value: CoreGraphics.CGFloat) -> UIKit.UIImage?
+  public func alphaed(value: CoreFoundation.CGFloat) -> UIKit.UIImage?
   public func brightened(value: Swift.Float) -> UIKit.UIImage?
   public func contrasted(value: Swift.Float) -> UIKit.UIImage?
   public func edgeDetected(_ bias: Swift.Int32 = 0) -> UIKit.UIImage?
@@ -2101,7 +2142,7 @@ open class KeychainWrapper {
   open func double(forKey key: Swift.String, withAccessibility accessibility: checkid.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Double?
   open func bool(forKey key: Swift.String, withAccessibility accessibility: checkid.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool?
   open func string(forKey key: Swift.String, withAccessibility accessibility: checkid.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.String?
-  open func object(forKey key: Swift.String, withAccessibility accessibility: checkid.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Foundation.NSCoding?
+  open func object(forKey key: Swift.String, withAccessibility accessibility: checkid.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> (any Foundation.NSCoding)?
   open func data(forKey key: Swift.String, withAccessibility accessibility: checkid.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Foundation.Data?
   open func dataRef(forKey key: Swift.String, withAccessibility accessibility: checkid.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Foundation.Data?
   @discardableResult
@@ -2115,7 +2156,7 @@ open class KeychainWrapper {
   @discardableResult
   open func set(_ value: Swift.String, forKey key: Swift.String, withAccessibility accessibility: checkid.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
   @discardableResult
-  open func set(_ value: Foundation.NSCoding, forKey key: Swift.String, withAccessibility accessibility: checkid.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
+  open func set(_ value: any Foundation.NSCoding, forKey key: Swift.String, withAccessibility accessibility: checkid.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
   @discardableResult
   open func set(_ value: Foundation.Data, forKey key: Swift.String, withAccessibility accessibility: checkid.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
   @available(*, deprecated, message: "remove is deprecated since version 2.2.1, use removeObject instead")
@@ -2198,10 +2239,10 @@ public class PACEHandler {
 }
 public func exifOrientationToUIImageOrientation(_ exifOrientation: Swift.Int) -> UIKit.UIImage.Orientation
 @_hasMissingDesignatedInitializers public class UIUtilities {
-  public static func addCircle(atPoint point: CoreGraphics.CGPoint, to view: UIKit.UIView, color: UIKit.UIColor, radius: CoreGraphics.CGFloat)
-  public static func addLineSegment(fromPoint: CoreGraphics.CGPoint, toPoint: CoreGraphics.CGPoint, inView: UIKit.UIView, color: UIKit.UIColor, width: CoreGraphics.CGFloat)
-  public static func addRectangle(_ rectangle: CoreGraphics.CGRect, to view: UIKit.UIView, color: UIKit.UIColor)
-  public static func addRectangleNose(_ rectangle: CoreGraphics.CGRect, to view: UIKit.UIView, color: UIKit.UIColor)
+  public static func addCircle(atPoint point: CoreFoundation.CGPoint, to view: UIKit.UIView, color: UIKit.UIColor, radius: CoreFoundation.CGFloat)
+  public static func addLineSegment(fromPoint: CoreFoundation.CGPoint, toPoint: CoreFoundation.CGPoint, inView: UIKit.UIView, color: UIKit.UIColor, width: CoreFoundation.CGFloat)
+  public static func addRectangle(_ rectangle: CoreFoundation.CGRect, to view: UIKit.UIView, color: UIKit.UIColor)
+  public static func addRectangleNose(_ rectangle: CoreFoundation.CGRect, to view: UIKit.UIView, color: UIKit.UIColor)
   public static func addShape(withPoints points: [Foundation.NSValue]?, to view: UIKit.UIView, color: UIKit.UIColor)
   public static func imageOrientation(fromDevicePosition devicePosition: AVFoundation.AVCaptureDevice.Position = .back) -> UIKit.UIImage.Orientation
   public static func createUIImage(from imageBuffer: CoreVideo.CVImageBuffer, orientation: UIKit.UIImage.Orientation) -> UIKit.UIImage?
@@ -2220,7 +2261,7 @@ public class PassportReader : ObjectiveC.NSObject {
 @available(iOS 13, *)
 extension checkid.PassportReader : CoreNFC.NFCTagReaderSessionDelegate {
   public func tagReaderSessionDidBecomeActive(_ session: CoreNFC.NFCTagReaderSession)
-  public func tagReaderSession(_ session: CoreNFC.NFCTagReaderSession, didInvalidateWithError error: Swift.Error)
+  public func tagReaderSession(_ session: CoreNFC.NFCTagReaderSession, didInvalidateWithError error: any Swift.Error)
   public func tagReaderSession(_ session: CoreNFC.NFCTagReaderSession, didDetect tags: [CoreNFC.NFCTag])
 }
 @available(iOS 13, macOS 10.15, *)
@@ -2365,7 +2406,7 @@ public class NFCPassportModel {
   public var activeAuthenticationSignature: [Swift.UInt8] {
     get
   }
-  public var verificationErrors: [Swift.Error] {
+  public var verificationErrors: [any Swift.Error] {
     get
   }
   public var isPACESupported: Swift.Bool {
@@ -2401,8 +2442,8 @@ public struct IdentityCardQR : Swift.Codable {
   public let gender: Swift.String
   public let place_of_residence: Swift.String
   public let date_of_issuce: Swift.String
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum ProcessType {
   case MOBILE_AUTHENTICATION
@@ -2439,34 +2480,34 @@ public enum OTPStatus {
   }
 }
 public struct Response : Swift.Codable {
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.Response {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct PerformVerificationResponse : Swift.Codable {
   public let perform_result: checkid.PerformResult
   public var process_result: checkid.ProcessResult
   public init()
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.PerformVerificationResponse {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct SubjectCreate : Swift.Codable {
   public init()
   public init(subject_id: Swift.String)
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.SubjectCreate {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct ProcessesCreate : Swift.Codable {
   public init()
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.ProcessesCreate {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct PersonalInfomation : Swift.Codable {
   public let email: Swift.String
@@ -2488,16 +2529,16 @@ public struct PersonalInfomation : Swift.Codable {
   public let dg1_value: Swift.String
   public let dg2_value: Swift.String
   public let dg13_value: Swift.String
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.PersonalInfomation {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct PersonalInformationResponse : Swift.Codable {
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.PersonalInformationResponse {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct eIdentitySubjectGetResponse : Swift.Codable {
   public let status: Swift.Float
@@ -2505,20 +2546,20 @@ public struct eIdentitySubjectGetResponse : Swift.Codable {
   public let dtis_id: Swift.String
   public let description: Swift.String
   public let personal_informations: checkid.PersonalInfomation
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.eIdentitySubjectGetResponse {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct OcrInfo : Swift.Codable {
   public let status: Swift.Float
   public let message: Swift.String
   public let dtis_id: Swift.String
   public let document_data: checkid.DocumentData
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.OcrInfo {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct DocumentData : Swift.Codable {
   public let document_number: Swift.String
@@ -2547,10 +2588,10 @@ public struct DocumentData : Swift.Codable {
   public let mrz: Swift.String
   public let passport_number: Swift.String
   public let name_vie: Swift.String
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.DocumentData {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum OCRType : Swift.String {
   case UNKNOWN

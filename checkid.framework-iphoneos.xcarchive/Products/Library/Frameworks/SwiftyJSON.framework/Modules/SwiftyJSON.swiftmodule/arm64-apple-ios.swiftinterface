@@ -1,10 +1,13 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target arm64-apple-ios8.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SwiftyJSON
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target arm64-apple-ios8.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name SwiftyJSON
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import Foundation
 import Swift
 @_exported import SwiftyJSON
 import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
 public enum SwiftyJSONError : Swift.Int, Swift.Error {
   case unsupportedType
   case indexOutOfBounds
@@ -111,11 +114,11 @@ extension Swift.String : SwiftyJSON.JSONSubscriptType {
   }
 }
 extension SwiftyJSON.JSON {
-  public subscript(path: [SwiftyJSON.JSONSubscriptType]) -> SwiftyJSON.JSON {
+  public subscript(path: [any SwiftyJSON.JSONSubscriptType]) -> SwiftyJSON.JSON {
     get
     set
   }
-  public subscript(path: SwiftyJSON.JSONSubscriptType...) -> SwiftyJSON.JSON {
+  public subscript(path: any SwiftyJSON.JSONSubscriptType...) -> SwiftyJSON.JSON {
     get
     set
   }
@@ -351,8 +354,8 @@ public enum writingOptionsKeys {
   }
 }
 extension SwiftyJSON.JSON : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 extension SwiftyJSON.SwiftyJSONError : Swift.Equatable {}
 extension SwiftyJSON.SwiftyJSONError : Swift.Hashable {}

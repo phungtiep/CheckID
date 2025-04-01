@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		VLRcQfeZ4TaP4ReOThwuzbmVaYM=
+		u2xeleqOSDNiN4xQ7cD/9iwapmg=
 		</data>
 		<key>CSCA Vietnam.cer</key>
 		<data>
@@ -14,31 +14,31 @@
 		</data>
 		<key>CheckIDScanFace.nib</key>
 		<data>
-		VIam5bWgZJVMJ6e0VnjYwShkBHY=
+		5SXK1YVw5oGTSavAiZciHhRmKEM=
 		</data>
 		<key>CheckLiveNessViewController.nib</key>
 		<data>
-		s34gY/XfcTi8Z64sWE4UB4GFpVs=
+		jfCmGHPKMqkXusw1iorpvNvhkug=
 		</data>
 		<key>Confirm1TableViewCell.nib</key>
 		<data>
-		WuI+ftGGb+MZircp3ZZtROPCIXY=
+		0dNA5ZmjU3JUGOoW/QEUazklZpk=
 		</data>
 		<key>Edit9LastIDViewController.nib</key>
 		<data>
-		iRvOsM6rNkjDa7HrXIM7a+Nmo/0=
+		AWT2GAkyFYeXUv8vB5IHuANEAEs=
 		</data>
 		<key>EditDobViewController.nib</key>
 		<data>
-		NLjREJHqOX1jiiXmyZIR8uWmHJA=
+		6fp+IAvzfYYM5yr4NySUWEvg7QY=
 		</data>
 		<key>EditDoeViewController.nib</key>
 		<data>
-		cO9JS9tdatyjaIgDDuJzdS4dxAQ=
+		QAw9syQMekxQG83afkqxBoXbJ78=
 		</data>
 		<key>EditKeyInfoIDViewController.nib</key>
 		<data>
-		a3nmcBHTiN8iJOVOAfzqAPlm6xs=
+		O85fj9TlXlGf5FSOoDPrBYIYsGc=
 		</data>
 		<key>GoogleMVFaceDetectorResources.bundle/BCLjoy_200.emd</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>GoogleMVFaceDetectorResources.bundle/Info.plist</key>
 		<data>
-		XxxyDYlx0LXHjOzSooP5I4BfZXg=
+		ZtTIOuNAykMC8AnOcuJ2qxuRZq0=
 		</data>
 		<key>GoogleMVFaceDetectorResources.bundle/LMprec_600.emd</key>
 		<data>
@@ -95,6 +95,10 @@
 		<key>Headers/QKMRZScanner.h</key>
 		<data>
 		tQT2qpb7hC3pBGAeJ9ENrstvsz4=
+		</data>
+		<key>Headers/ReaderInterface.h</key>
+		<data>
+		bQCJeMItz3hP+yirkxBgHyBG3A8=
 		</data>
 		<key>Headers/SwiftKeychainWrapper.h</key>
 		<data>
@@ -162,11 +166,11 @@
 		</data>
 		<key>Headers/checkid-Swift.h</key>
 		<data>
-		3ZWoFPXz3eqyOfGnzcR96H5FuHg=
+		dJgP3AU4LVhhMwlZHh/+hmkjieQ=
 		</data>
 		<key>Headers/checkid.h</key>
 		<data>
-		ShPEX+h6w6AxCzYcSxoOciqFIjk=
+		CXNsq3NivN2u+FUt3Uge86QYE9w=
 		</data>
 		<key>Headers/cmac.h</key>
 		<data>
@@ -283,6 +287,10 @@
 		<key>Headers/evperr.h</key>
 		<data>
 		PZu6BXu+VhXMmtzlDABjCp2iPCQ=
+		</data>
+		<key>Headers/ft301u.h</key>
+		<data>
+		ph00Tsar2FAuKJJxqYzEnXioMY8=
 		</data>
 		<key>Headers/hmac.h</key>
 		<data>
@@ -504,6 +512,14 @@
 		<data>
 		z86NA1raOekUIG8wooArzGinSUw=
 		</data>
+		<key>Headers/winscard.h</key>
+		<data>
+		2i1rQxze1fA13Wr0/Ke3kxFneog=
+		</data>
+		<key>Headers/wintypes.h</key>
+		<data>
+		V4QNbJN3RGEZzEQ0P/myxNRrP74=
+		</data>
 		<key>Headers/x509.h</key>
 		<data>
 		35jwQ9SzUu1yeMhSc8Fxqbv1KNY=
@@ -526,39 +542,35 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		SWHWI3hYcEDpG+7mIJI6c51LUJQ=
+		+W5u4ccyBY4Mg3PvPkb0zehSsXU=
 		</data>
 		<key>LICENSE</key>
 		<data>
 		02ZY9sMRyfvS0JdjLELFaw9ffoA=
 		</data>
+		<key>Modules/checkid.swiftmodule/arm64-apple-ios.abi.json</key>
+		<data>
+		Fmp5zA3lVAJrWA6USAJ9acwipFw=
+		</data>
+		<key>Modules/checkid.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
+		<data>
+		/d19E5OqeNQx6eqUHOZW3rosXuM=
+		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		kL7Fhrlkn7gIidY/k8b16N9cRr0=
+		hz8QXUEMGxJn1TfRdvHFbqAtQVI=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		EUoTAWo5F2vPlGds4STbL4+8hzo=
+		/d19E5OqeNQx6eqUHOZW3rosXuM=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		opYGepMbwtQsEtpEnatpml3bJT0=
-		</data>
-		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		kL7Fhrlkn7gIidY/k8b16N9cRr0=
-		</data>
-		<key>Modules/checkid.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		EUoTAWo5F2vPlGds4STbL4+8hzo=
-		</data>
-		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		opYGepMbwtQsEtpEnatpml3bJT0=
+		b/OU9VpMdZhv144cloA7f9AJTo8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		F1lwBbKElbdIYt/uxJU6t933EtE=
+		5dAKit7HjuPWhVjedPyFH7gUNAs=
 		</data>
 		<key>README.md</key>
 		<data>
@@ -566,7 +578,7 @@
 		</data>
 		<key>TestStoryboard.storyboardc/8zo-lH-1dn-view-rZv-xm-OWt.nib</key>
 		<data>
-		bhmFeqewii1dYgTajW+R0osW9WI=
+		+Gbm9z8XieBrqRXd1DnfS+rUskU=
 		</data>
 		<key>TestStoryboard.storyboardc/Info.plist</key>
 		<data>
@@ -582,11 +594,11 @@
 		</data>
 		<key>TestStoryboard.storyboardc/Y6W-OH-hqX-view-5EZ-qb-Rvc.nib</key>
 		<data>
-		Ujr1A2AF6jiQHzqc3tZl+YXEddw=
+		tRUY9q1kDXZTlsLpb0mIH/UeevE=
 		</data>
 		<key>WaitingViewController.nib</key>
 		<data>
-		IRbmGEyy92FGyEo4OLh5hDbCiy8=
+		b5FrXPAm7ojGLybf3LaI9aDE20o=
 		</data>
 		<key>en.lproj/Languages.strings</key>
 		<dict>
@@ -625,7 +637,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ATQay8sNujASKI/vZPapgi+nBPzCkroFxG0Z2/t5bq8=
+			BDZpo+cvjKV2ogGcY7MeZc/eI6EAkNZE2j9YhAFroOg=
 			</data>
 		</dict>
 		<key>CSCA Vietnam.cer</key>
@@ -639,49 +651,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			H66rASkBYcylazIH/TeHZLQME8p/ekIpFvHyhxiZMbY=
+			WWCP2EVM4tDJqbsG1mBoliMWlK5h2i4mrIzPffBNRfk=
 			</data>
 		</dict>
 		<key>CheckLiveNessViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vuj6bGSbU6gIcG+CY4gbwWuRaD59opFPPWFsnLoxA+c=
+			ohBkfTEtyWrk/wL6COaCYhGLq0y+qyV1dKqsMpENaLE=
 			</data>
 		</dict>
 		<key>Confirm1TableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			74Jy4DLOK7vlIhmNaSkTCCd1YZ4c6OaRD4+UjSyXLfs=
+			QjHjXKlpdzC9yKkmJuzLgjJW7pSasQ3cDH6tMX1vA1M=
 			</data>
 		</dict>
 		<key>Edit9LastIDViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bSZGxs7FILUQ7VJwlPEisfIuNS2Mso8k1/uicWOCsOU=
+			srbA9l8Xr8Ii62CdnHIJl8rkYVlCMjCVjLrSe8DOJEU=
 			</data>
 		</dict>
 		<key>EditDobViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OJT7zj9n8ELGxW64l+S/V+rOKWaHCukPcL+M7KCLZjQ=
+			OGjYcZsxws1dK2p16vlWI+VJzsFE5vx944wcepg4ks0=
 			</data>
 		</dict>
 		<key>EditDoeViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uBuZqeKmgLJnk9HODXLjFjhpdKVTFc3/daZW6PkHGNo=
+			UXbrDRF15dfjRgEzj+lQu5if1FXsz2znPOgENi9xhow=
 			</data>
 		</dict>
 		<key>EditKeyInfoIDViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dNQeag3GTuiqQJw0L0yF/+SUOa85Olu/y7gDT3ogAC8=
+			QeD9PcJjHU4q6MQUxS/PxfKZJcLrA+GL0L0qFkVxl44=
 			</data>
 		</dict>
 		<key>GoogleMVFaceDetectorResources.bundle/BCLjoy_200.emd</key>
@@ -709,7 +721,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iJ2HvfqMQhY58a7shEG5BKe6UpuqsFYAGd4Rs1h2MgU=
+			CHhOXX0ar9tG7JDQOuFpnSba6N/CxOxTBvymKxX8gvs=
 			</data>
 		</dict>
 		<key>GoogleMVFaceDetectorResources.bundle/LMprec_600.emd</key>
@@ -780,6 +792,13 @@
 			<key>hash2</key>
 			<data>
 			l0iHCxv+4q0PamLy0EKbpB1rNfTVj2U47aWLbGu/n5E=
+			</data>
+		</dict>
+		<key>Headers/ReaderInterface.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EyPSvp9x1US5XQl0AwVGxE//sWv3jBN1GbYZ8KjOgcU=
 			</data>
 		</dict>
 		<key>Headers/SwiftKeychainWrapper.h</key>
@@ -898,14 +917,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XnyxJSTQMtJE7xVwOnUQv0qBsyHzBt9WmHqOKBCgzQo=
+			y+BRcJRlO9DgoZO2oqKdcZpdj8az+/GdOA66T6+MdeM=
 			</data>
 		</dict>
 		<key>Headers/checkid.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			n53+O+Ft/CPFJxSo2izj0q0k8q8+WoUseslmxJtE8F8=
+			VJzSEvPmB7VIasNgglXf1k06RUCf3iwPMijKGbg2/Uw=
 			</data>
 		</dict>
 		<key>Headers/cmac.h</key>
@@ -1109,6 +1128,13 @@
 			<key>hash2</key>
 			<data>
 			pH5xQ2cJaDakUJut4reRBAl5Cu+rxo3rxgyeZ63ZxhM=
+			</data>
+		</dict>
+		<key>Headers/ft301u.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PPsyy1TUvjp4kWD3YNqoWenvgJWmsJOKVIq39qEkark=
 			</data>
 		</dict>
 		<key>Headers/hmac.h</key>
@@ -1496,6 +1522,20 @@
 			8m++ZS8hrGhkVg0zbrzJzniL6tiVCsUUV9QZo3jvC3k=
 			</data>
 		</dict>
+		<key>Headers/winscard.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kgC677cK52JeT29sCA9cYHwt9R+ZaLLmfMXnSQcBQkw=
+			</data>
+		</dict>
+		<key>Headers/wintypes.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/nDwp0ydW7le5hPZNug8E5SegtVaeVyxNeP8WPGuVPg=
+			</data>
+		</dict>
 		<key>Headers/x509.h</key>
 		<dict>
 			<key>hash2</key>
@@ -1538,53 +1578,46 @@
 			NpFVPeGIGC74+UJ3DxOPTiAgiPyL3/S/SdCa8uok0m4=
 			</data>
 		</dict>
+		<key>Modules/checkid.swiftmodule/arm64-apple-ios.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0kjJFNEpS/Qu5Wcca09Y2eEY9PHFETKpBVxhoigP4B0=
+			</data>
+		</dict>
+		<key>Modules/checkid.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			C6PxHLk8AcpTomzgKQBvmmtYUvskpLJBxcoHMer/TiI=
+			</data>
+		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ego1GHbh7Obur7INB4k9UfgR+USMgOEcn95IJqiQdR4=
+			mjV/OR4or0xszaOWSo9NvTohBRKfkgC5iquNSNae4OU=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ym/SvbU88vAq7LEUmcuwyCxivYVrgFobUjrAk+0EmO8=
+			C6PxHLk8AcpTomzgKQBvmmtYUvskpLJBxcoHMer/TiI=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fvPvrf6y/NDCQR5wY7xegBeCqouMabTvO92lH/+CLtc=
-			</data>
-		</dict>
-		<key>Modules/checkid.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ego1GHbh7Obur7INB4k9UfgR+USMgOEcn95IJqiQdR4=
-			</data>
-		</dict>
-		<key>Modules/checkid.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Ym/SvbU88vAq7LEUmcuwyCxivYVrgFobUjrAk+0EmO8=
-			</data>
-		</dict>
-		<key>Modules/checkid.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			fvPvrf6y/NDCQR5wY7xegBeCqouMabTvO92lH/+CLtc=
+			T8IiZn1gfCQG/1JMjFhmwp4HGkowGuQFAzps/GM5xl0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6khBDEZXj++xymhG0GtF1J/YpaRl8oxdd0NB3uOyJLs=
+			KO9vMawtgl9T9vl3huTUr/z+b5jvSvq/6xkB8WFEwBQ=
 			</data>
 		</dict>
 		<key>README.md</key>
@@ -1598,7 +1631,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7pWlpP4YW9xAV5BFcxWu4twu5Rf8H9MfxhhS7dAcjWQ=
+			ie8sfr9AXtPZUBYOSyecGvumUBoaykzMlKUJWE+MPK0=
 			</data>
 		</dict>
 		<key>TestStoryboard.storyboardc/Info.plist</key>
@@ -1626,14 +1659,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CxXKzPuXCV5mPl/tp0pZtXriTJsk1R1qmlPwkiRs3lo=
+			zirgyKZRLgb2hjrtqzUTx23xRHelGbaqqMM9SgC8+jE=
 			</data>
 		</dict>
 		<key>WaitingViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EElKqA7ho8woerHxwAq72bLdhM3lg/ppNqhk8xOKUV4=
+			DaKupSBUHwIbFNz20LxLgvFW6QuAfnJ7FDGxbJV5O5Q=
 			</data>
 		</dict>
 		<key>en.lproj/Languages.strings</key>

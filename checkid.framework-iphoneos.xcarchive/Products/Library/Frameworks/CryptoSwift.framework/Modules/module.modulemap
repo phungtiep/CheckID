@@ -6,6 +6,6 @@ framework module CryptoSwift {
 }
 
 module CryptoSwift.Swift {
-    header "CryptoSwift-Swift.h"
-    requires objc
+  header "CryptoSwift-Swift.h"
+  requires objc
 }

@@ -6,6 +6,6 @@ framework module SwiftyTesseract {
 }
 
 module SwiftyTesseract.Swift {
-    header "SwiftyTesseract-Swift.h"
-    requires objc
+  header "SwiftyTesseract-Swift.h"
+  requires objc
 }

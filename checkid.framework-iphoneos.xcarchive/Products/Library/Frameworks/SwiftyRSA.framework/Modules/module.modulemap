@@ -6,6 +6,6 @@ framework module SwiftyRSA {
 }
 
 module SwiftyRSA.Swift {
-    header "SwiftyRSA-Swift.h"
-    requires objc
+  header "SwiftyRSA-Swift.h"
+  requires objc
 }

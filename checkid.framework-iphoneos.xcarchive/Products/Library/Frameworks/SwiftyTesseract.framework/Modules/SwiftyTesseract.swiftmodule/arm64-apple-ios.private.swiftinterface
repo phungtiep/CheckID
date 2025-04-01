@@ -1,12 +1,15 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SwiftyTesseract
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name SwiftyTesseract
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import Combine
 import Foundation
 import Swift
 @_exported import SwiftyTesseract
 import UIKit
 import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
 import libtesseract
 extension Foundation.Bundle : SwiftyTesseract.LanguageModelDataSource {
   public var pathToTrainedData: Swift.String {
@@ -137,7 +140,7 @@ extension SwiftyTesseract.RecognitionLanguage : Swift.CustomStringConvertible {
 }
 public struct RecognizedBlock {
   public var text: Swift.String
-  public var boundingBox: CoreGraphics.CGRect
+  public var boundingBox: CoreFoundation.CGRect
   public var confidence: Swift.Float
 }
 public enum ResultIteratorLevel : libtesseract.TessPageIteratorLevel.RawValue {
@@ -175,8 +178,8 @@ public enum ResultIteratorLevel : libtesseract.TessPageIteratorLevel.RawValue {
   public var version: Swift.String? {
     get
   }
-  convenience public init(languages: [SwiftyTesseract.RecognitionLanguage], dataSource: SwiftyTesseract.LanguageModelDataSource = Bundle.main, engineMode: SwiftyTesseract.EngineMode = .lstmOnly)
-  convenience public init(language: SwiftyTesseract.RecognitionLanguage, dataSource: SwiftyTesseract.LanguageModelDataSource = Bundle.main, engineMode: SwiftyTesseract.EngineMode = .lstmOnly)
+  convenience public init(languages: [SwiftyTesseract.RecognitionLanguage], dataSource: any SwiftyTesseract.LanguageModelDataSource = Bundle.main, engineMode: SwiftyTesseract.EngineMode = .lstmOnly)
+  convenience public init(language: SwiftyTesseract.RecognitionLanguage, dataSource: any SwiftyTesseract.LanguageModelDataSource = Bundle.main, engineMode: SwiftyTesseract.EngineMode = .lstmOnly)
   @available(*, deprecated, message: "migrate to init(language:dataSource:engineMode:)")
   convenience public init(language: SwiftyTesseract.RecognitionLanguage, bundle: Foundation.Bundle = .main, engineMode: SwiftyTesseract.EngineMode = .lstmOnly)
   @available(*, deprecated, message: "migrate to init(languages:dataSource:engineMode:)")
@@ -186,15 +189,15 @@ public enum ResultIteratorLevel : libtesseract.TessPageIteratorLevel.RawValue {
 extension SwiftyTesseract.SwiftyTesseract {
   @available(*, deprecated, message: "use performOCR(on:) or performOCRPublisher(on:)")
   public func performOCR(on image: UIKit.UIImage, completionHandler: (Swift.String?) -> ())
-  public func performOCR(on image: UIKit.UIImage) -> Swift.Result<Swift.String, Swift.Error>
+  public func performOCR(on image: UIKit.UIImage) -> Swift.Result<Swift.String, any Swift.Error>
   @available(iOS 13.0, *)
-  public func performOCRPublisher(on image: UIKit.UIImage) -> Combine.AnyPublisher<Swift.String, Swift.Error>
+  public func performOCRPublisher(on image: UIKit.UIImage) -> Combine.AnyPublisher<Swift.String, any Swift.Error>
 }
 extension SwiftyTesseract.SwiftyTesseract {
   public func createPDF(from images: [UIKit.UIImage]) throws -> Foundation.Data
 }
 extension SwiftyTesseract.SwiftyTesseract {
-  public func recognizedBlocks(for level: SwiftyTesseract.ResultIteratorLevel) -> Swift.Result<[SwiftyTesseract.RecognizedBlock], Swift.Error>
+  public func recognizedBlocks(for level: SwiftyTesseract.ResultIteratorLevel) -> Swift.Result<[SwiftyTesseract.RecognizedBlock], any Swift.Error>
 }
 extension SwiftyTesseract.SwiftyTesseract {
   public enum Error : Swift.Error {
