@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		u2xeleqOSDNiN4xQ7cD/9iwapmg=
+		TnIrgWY3W+/+E9R/c3urds1U4rU=
 		</data>
 		<key>CSCA Vietnam.cer</key>
 		<data>
@@ -95,10 +95,6 @@
 		<key>Headers/QKMRZScanner.h</key>
 		<data>
 		tQT2qpb7hC3pBGAeJ9ENrstvsz4=
-		</data>
-		<key>Headers/ReaderInterface.h</key>
-		<data>
-		bQCJeMItz3hP+yirkxBgHyBG3A8=
 		</data>
 		<key>Headers/SwiftKeychainWrapper.h</key>
 		<data>
@@ -287,10 +283,6 @@
 		<key>Headers/evperr.h</key>
 		<data>
 		PZu6BXu+VhXMmtzlDABjCp2iPCQ=
-		</data>
-		<key>Headers/ft301u.h</key>
-		<data>
-		ph00Tsar2FAuKJJxqYzEnXioMY8=
 		</data>
 		<key>Headers/hmac.h</key>
 		<data>
@@ -512,14 +504,6 @@
 		<data>
 		z86NA1raOekUIG8wooArzGinSUw=
 		</data>
-		<key>Headers/winscard.h</key>
-		<data>
-		2i1rQxze1fA13Wr0/Ke3kxFneog=
-		</data>
-		<key>Headers/wintypes.h</key>
-		<data>
-		V4QNbJN3RGEZzEQ0P/myxNRrP74=
-		</data>
 		<key>Headers/x509.h</key>
 		<data>
 		35jwQ9SzUu1yeMhSc8Fxqbv1KNY=
@@ -566,7 +550,7 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		b/OU9VpMdZhv144cloA7f9AJTo8=
+		LeXZFZz5cAjZHfhF/0r9q3IoupQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -637,7 +621,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BDZpo+cvjKV2ogGcY7MeZc/eI6EAkNZE2j9YhAFroOg=
+			MxutfhZxhXlh08I9qlbBiVBFqNx19nWvgCi85uWV/l4=
 			</data>
 		</dict>
 		<key>CSCA Vietnam.cer</key>
@@ -792,13 +776,6 @@
 			<key>hash2</key>
 			<data>
 			l0iHCxv+4q0PamLy0EKbpB1rNfTVj2U47aWLbGu/n5E=
-			</data>
-		</dict>
-		<key>Headers/ReaderInterface.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			EyPSvp9x1US5XQl0AwVGxE//sWv3jBN1GbYZ8KjOgcU=
 			</data>
 		</dict>
 		<key>Headers/SwiftKeychainWrapper.h</key>
@@ -1128,13 +1105,6 @@
 			<key>hash2</key>
 			<data>
 			pH5xQ2cJaDakUJut4reRBAl5Cu+rxo3rxgyeZ63ZxhM=
-			</data>
-		</dict>
-		<key>Headers/ft301u.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			PPsyy1TUvjp4kWD3YNqoWenvgJWmsJOKVIq39qEkark=
 			</data>
 		</dict>
 		<key>Headers/hmac.h</key>
@@ -1522,20 +1492,6 @@
 			8m++ZS8hrGhkVg0zbrzJzniL6tiVCsUUV9QZo3jvC3k=
 			</data>
 		</dict>
-		<key>Headers/winscard.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			kgC677cK52JeT29sCA9cYHwt9R+ZaLLmfMXnSQcBQkw=
-			</data>
-		</dict>
-		<key>Headers/wintypes.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			/nDwp0ydW7le5hPZNug8E5SegtVaeVyxNeP8WPGuVPg=
-			</data>
-		</dict>
 		<key>Headers/x509.h</key>
 		<dict>
 			<key>hash2</key>
@@ -1610,7 +1566,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			T8IiZn1gfCQG/1JMjFhmwp4HGkowGuQFAzps/GM5xl0=
+			U2wYiS+T696Jwv2Gk7WZgCIGP7KsI348ANBWdNmmdkM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
