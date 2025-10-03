@@ -1,15 +1,15 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name checkid
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name checkid
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
 import AVFoundation
 import Accelerate
 import AudioToolbox
+import Combine
 import CommonCrypto
 import CoreGraphics
 import CoreMedia
 import CoreNFC
-import CoreVideo
 import CryptoKit
 import CryptoSwift
 import CryptoTokenKit
@@ -17,9 +17,6 @@ import DeveloperToolsSupport
 import Foundation
 import ImageIO
 import LocalAuthentication
-import MLImage
-import MLKitFaceDetection
-import MLKitVision
 import MobileCoreServices
 import Network
 import Photos
@@ -28,7 +25,6 @@ import Swift
 import SwiftUI
 import SwiftyJSON
 import SwiftyRSA
-import SwiftyTesseract
 import SystemConfiguration
 import UIKit
 import Vision
@@ -37,6 +33,7 @@ import _CoreNFC_UIKit
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_exported import checkid
+import libtesseract
 import simd
 extension UIKit.UIDevice {
   @_Concurrency.MainActor @preconcurrency public static let modelName: Swift.String
@@ -59,6 +56,68 @@ public enum DocumentTypeOCR : Swift.String {
 @_hasMissingDesignatedInitializers @available(iOS 13, *)
 public class TagReader {
   @objc deinit
+}
+@available(iOS 13.0, *)
+public protocol ScanFaceCustomViewDelegate : AnyObject {
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, didBlinkEye status: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, didCenterFace status: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, didCenterNose status: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, didHandleError error: checkid.CheckIDError)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, didFinish status: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, didHandleDetectionType type: checkid.DetectionType)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, didHandleLivenessOk object: checkid.FaceResult)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, didHandleLivenessFailure object: checkid.FaceResult)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, didHandleScanFaceForResult object: checkid.FaceResult)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, didMoveFaceCloser isCloser: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, didHoldFaceSteady isHoldSteady: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, didHadMoreOneFace isMoreOneFace: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, getFaceFrameTimeOut value: Swift.Int)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomView, getFaceFrame list: [Swift.String])
+  func didRequestDismiss()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
+@objc(ScanFaceCustomView) @_Concurrency.MainActor @preconcurrency public class ScanFaceCustomView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any checkid.ScanFaceCustomViewDelegate)?
+  @_Concurrency.MainActor @preconcurrency public var card_no: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var faceSelfie: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var mobile: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var email: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var methodType: checkid.FaceMethod
+  @_Concurrency.MainActor @preconcurrency public var authorizationType: checkid.FaceAuthorizationType
+  @_Concurrency.MainActor @preconcurrency public var subjectObj: checkid.SubjectCreate
+  @_Concurrency.MainActor @preconcurrency public var original_frame: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var topTitle: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var completionHandleResult: ((Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency public var maxRetries: Swift.Int
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak public var centerAlertView: UIKit.UIStackView!
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak public var cameraView: UIKit.UIView!
+  @_Concurrency.MainActor @preconcurrency public var isHiddenNavBar: Swift.Bool?
+  @_Concurrency.MainActor @preconcurrency public var titleText: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var dimColor: UIKit.UIColor
+  @_Concurrency.MainActor @preconcurrency public var request_id: Swift.String
+  @_Concurrency.MainActor @preconcurrency public func loadRetryCount()
+  @_Concurrency.MainActor @preconcurrency public func saveRetryCount()
+  @_Concurrency.MainActor @preconcurrency public func increaseRetry()
+  @_Concurrency.MainActor @preconcurrency public func resetRetryCount()
+  @_Concurrency.MainActor @preconcurrency public func retryKey(for id: Swift.String) -> Swift.String
+  @_Concurrency.MainActor @preconcurrency public func setupUI()
+  @_Concurrency.MainActor @preconcurrency public func hiddenNavBar(isHidden: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func setBackGroundColor(color: UIKit.UIColor)
+  @_Concurrency.MainActor @preconcurrency public func initialize()
+  @_Concurrency.MainActor @preconcurrency public func finalizeCordinate()
+  @_Concurrency.MainActor @preconcurrency public func startSession()
+  @_Concurrency.MainActor @preconcurrency public func stopSession()
+  @_Concurrency.MainActor @preconcurrency public func setupAlertView()
+  @_Concurrency.MainActor @preconcurrency public func drawOvalView()
+  @_Concurrency.MainActor @preconcurrency public func getChallenge(onCompletion: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func finalizeChallenge(onComplete: @escaping (Swift.Bool) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func getVideoEvident() -> Swift.String
+  @_Concurrency.MainActor @preconcurrency public func startCountDownFrameTimeOut()
+  @objc deinit
+}
+@available(iOS 13.0, *)
+extension checkid.ScanFaceCustomView : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
 }
 extension checkid.PKCS7_ {
   public struct ReceiptInfo {
@@ -669,6 +728,11 @@ public enum CheckIDError : Swift.Error {
   case INVALID_DOCUMENT_TYPE
   case ERROR_OCCUR_WHEN_DETECT_QR
   case QR_CODE_INVALID
+  case OWNER_IS_ALREADY_EXISTED
+  case FAILED_TO_GET_OCR_INFORMATION
+  case BUSINESS_INFORMATION_NOT_FOUND
+  case OCR_DATA_DOES_NOT_MATCH_INFORMATION_IN_REQUEST
+  case OUT_OF_RETRY
   public static func == (a: checkid.CheckIDError, b: checkid.CheckIDError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -715,15 +779,251 @@ public class CheckIdICAO {
   public static func startFaceAuth(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), document_no: Swift.String, retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
   public static func startFaceLiveness(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), WithCardNo card_no: Swift.String = "", WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", retrieveVideo: Swift.Bool, onCompletion: @escaping (Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)
   public static func getIdentity(WithCard_no card_no: Swift.String = "", WithPassport_no passport_no: Swift.String = "", WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", onCompletion: @escaping (Swift.Result<checkid.eIdentitySubjectGetResponse, checkid.CheckIDError>) -> Swift.Void)
-  public static func createSubjectId(WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", onCompletion: @escaping (Swift.Result<checkid.SubjectCreate, checkid.CheckIDError>) -> Swift.Void)
+  public static func createSubjectId(WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", WithDocument document: checkid.DocumentType = .NONE, WithDocumentNumber documentNumber: Swift.String = "", onCompletion: @escaping (Swift.Result<checkid.SubjectCreate, checkid.CheckIDError>) -> Swift.Void)
   public static func createProcessId(subjectObj: checkid.SubjectCreate, processType: checkid.ProcessType, purpose: checkid.Purpose, WithJWT jwt: Swift.String = "", WithMobile mobile: Swift.String = "", WithEmail email: Swift.String = "", onCompletion: @escaping (Swift.Result<checkid.ProcessesCreate, checkid.CheckIDError>) -> Swift.Void)
   public static func verifyOtp(otp: Swift.String, subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.PerformVerificationResponse, checkid.CheckIDError>) -> Swift.Void)
   public static func resendOtp(WithJWT jwt: Swift.String = "", subjectObj: checkid.SubjectCreate, processObj: checkid.ProcessesCreate, onCompletion: @escaping (Swift.Result<checkid.Response, checkid.CheckIDError>) -> Swift.Void)
   public static func startNfcOffline(onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
   public static func startNfcV2(WithSubjectObj subjectObj: checkid.SubjectCreate = SubjectCreate(), onCompletion: @escaping (Swift.Result<checkid.NFCInfo, checkid.CheckIDError>) -> Swift.Void)
   public static func getOCRInfo(WithFront front: Swift.String = "", WithBack back: Swift.String = "", WithType type: checkid.OCRType, onCompletion: @escaping (Swift.Result<checkid.OcrInfo, checkid.CheckIDError>) -> Swift.Void)
+  public static func getDocumentInfo(WithDocumentData documentData: Foundation.Data, WithSubjectObj subjectObj: checkid.SubjectCreate, WithProcessObj processObj: checkid.ProcessesCreate, WithDocumentType documentType: checkid.DocumentType, WithDocumentDataFront documentDataFront: Foundation.Data, WithDocumentDataBack documentDataBack: Foundation.Data, onCompletion: @escaping (Swift.Result<checkid.OcrInfo, checkid.CheckIDError>) -> Swift.Void)
+  public static func presentScanFaceVC(from presenter: UIKit.UIViewController)
   public static func testFunction(base64: Swift.String)
   @objc deinit
+}
+public protocol LanguageModelDataSource {
+  var pathToTrainedData: Swift.String { get }
+}
+extension Foundation.Bundle : checkid.LanguageModelDataSource {
+  public var pathToTrainedData: Swift.String {
+    get
+  }
+}
+extension checkid.SwiftyTesseract {
+  public enum Error : Swift.Error {
+    case imageConversionError
+    case unableToExtractTextFromImage
+    case unableToCreateRenderer
+    case unableToBeginDocument
+    case unableToProcessPage
+    case unableToEndDocument
+    case unableToRetrieveIterator
+    public static func == (a: checkid.SwiftyTesseract.Error, b: checkid.SwiftyTesseract.Error) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+public struct RecognizedBlock {
+  public var text: Swift.String
+  public var boundingBox: CoreFoundation.CGRect
+  public var confidence: Swift.Float
+}
+@_hasMissingDesignatedInitializers public class CacheMemomy {
+  public static let shared: checkid.CacheMemomy
+  public var retryCount: Swift.Int
+  public func setRetryCount(value: Swift.Int)
+  public var id: Swift.String
+  public func setId(value: Swift.String)
+  @objc deinit
+}
+public enum RecognitionLanguage {
+  case afrikaans
+  case albanian
+  case amharic
+  case arabic
+  case assamese
+  case azerbaijani
+  case azerbaijaniCyrillic
+  case basque
+  case belarusian
+  case bengali
+  case bosnian
+  case bulgarian
+  case burmese
+  case catalanAndValencian
+  case cebuano
+  case centralKhmer
+  case chineseSimplified
+  case chineseTraditional
+  case croatian
+  case czech
+  case cherokee
+  case danish
+  case dutchFlemish
+  case dzongkha
+  case english
+  case englishMiddle
+  case esperanto
+  case estonian
+  case finnish
+  case frankish
+  case french
+  case frenchMiddle
+  case galician
+  case georgian
+  case georgianOld
+  case german
+  case greekAncient
+  case greekModern
+  case guajarati
+  case haitian
+  case hebrew
+  case hindi
+  case hungarian
+  case icelandic
+  case inuktitut
+  case indonesian
+  case italian
+  case italianOld
+  case irish
+  case javanese
+  case japanese
+  case kannada
+  case kazakh
+  case korean
+  case kurdish
+  case kyrgyz
+  case lao
+  case latin
+  case lithuanian
+  case malayalam
+  case macedonian
+  case malay
+  case maltese
+  case marathi
+  case nepali
+  case norwegian
+  case oriya
+  case pashto
+  case persian
+  case polish
+  case portugese
+  case punjabi
+  case romanian
+  case russian
+  case sanskrit
+  case serbian
+  case serbianLatin
+  case sinhala
+  case slovak
+  case slovenian
+  case spanish
+  case spanishOld
+  case swahili
+  case swedish
+  case syriac
+  case tamil
+  case tagalog
+  case tajik
+  case telugu
+  case thai
+  case tibetan
+  case tigrinya
+  case turkish
+  case uighur
+  case ukrainian
+  case urdu
+  case uzbek
+  case uzbekCyrillic
+  case vietnamese
+  case welsh
+  case yiddish
+  case custom(Swift.String)
+}
+extension checkid.RecognitionLanguage : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @available(iOS 13.0, *)
+@_Concurrency.MainActor @preconcurrency public class ScanFaceViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency public var completionHandleResult: ((Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func startSession()
+  @_Concurrency.MainActor @preconcurrency public func stopSession()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewWillLayoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  @objc deinit
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@available(iOS 13.0, *)
+extension checkid.ScanFaceViewController : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+}
+public enum EngineMode : libtesseract.TessOcrEngineMode.RawValue {
+  case tesseractOnly
+  case lstmOnly
+  case tesseractLstmCombined
+  public init?(rawValue: libtesseract.TessOcrEngineMode.RawValue)
+  public typealias RawValue = libtesseract.TessOcrEngineMode.RawValue
+  public var rawValue: libtesseract.TessOcrEngineMode.RawValue {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class SwiftyTesseract {
+  public var whiteList: Swift.String? {
+    get
+    set
+  }
+  public var blackList: Swift.String? {
+    get
+    set
+  }
+  public var preserveInterwordSpaces: Swift.Bool? {
+    get
+    set
+  }
+  public var minimumCharacterHeight: Swift.Int? {
+    get
+    set
+  }
+  public var version: Swift.String? {
+    get
+  }
+  convenience public init(languages: [checkid.RecognitionLanguage], dataSource: any checkid.LanguageModelDataSource = Bundle.main, engineMode: checkid.EngineMode = .lstmOnly)
+  convenience public init(language: checkid.RecognitionLanguage, dataSource: any checkid.LanguageModelDataSource = Bundle.main, engineMode: checkid.EngineMode = .lstmOnly)
+  @available(*, deprecated, message: "migrate to init(language:dataSource:engineMode:)")
+  convenience public init(language: checkid.RecognitionLanguage, bundle: Foundation.Bundle = .main, engineMode: checkid.EngineMode = .lstmOnly)
+  @available(*, deprecated, message: "migrate to init(languages:dataSource:engineMode:)")
+  convenience public init(languages: [checkid.RecognitionLanguage], bundle: Foundation.Bundle = .main, engineMode: checkid.EngineMode = .lstmOnly)
+  @objc deinit
+}
+extension checkid.SwiftyTesseract {
+  @available(*, deprecated, message: "use performOCR(on:) or performOCRPublisher(on:)")
+  public func performOCR(on image: UIKit.UIImage, completionHandler: (Swift.String?) -> ())
+  public func performOCR(on image: UIKit.UIImage) -> Swift.Result<Swift.String, any Swift.Error>
+  @available(iOS 13.0, *)
+  public func performOCRPublisher(on image: UIKit.UIImage) -> Combine.AnyPublisher<Swift.String, any Swift.Error>
+}
+extension checkid.SwiftyTesseract {
+  public func createPDF(from images: [UIKit.UIImage]) throws -> Foundation.Data
+}
+extension checkid.SwiftyTesseract {
+  public func recognizedBlocks(for level: checkid.ResultIteratorLevel) -> Swift.Result<[checkid.RecognizedBlock], any Swift.Error>
+}
+public enum ResultIteratorLevel : libtesseract.TessPageIteratorLevel.RawValue {
+  case block
+  case paragraph
+  case textline
+  case word
+  case symbol
+  public var tesseractLevel: libtesseract.TessPageIteratorLevel {
+    get
+  }
+  public init?(rawValue: libtesseract.TessPageIteratorLevel.RawValue)
+  public typealias RawValue = libtesseract.TessPageIteratorLevel.RawValue
+  public var rawValue: libtesseract.TessPageIteratorLevel.RawValue {
+    get
+  }
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class TestViewController : UIKit.UIViewController {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
@@ -952,7 +1252,7 @@ extension UIKit.UIColor {
   convenience public init(rgb: Swift.Int32, alpha: CoreFoundation.CGFloat)
   convenience public init(rgb: Swift.Int32)
   convenience public init(hexString: Swift.String, defaultColor: UIKit.UIColor)
-  convenience public init(hexString: Swift.String)
+  convenience public init?(hexCode: Swift.String)
   public func colorWithMinimumSaturation(_ minSaturation: CoreFoundation.CGFloat) -> UIKit.UIColor
   public func inverted() -> UIKit.UIColor
   public func isBlackOrWhite() -> Swift.Bool
@@ -1291,6 +1591,15 @@ extension Foundation.Data {
   public func setStep1(isPerform: Swift.Bool)
   public func setStep2(isPerform: Swift.Bool)
   @objc deinit
+}
+public enum FaceAuthorizationType : Swift.String {
+  case OCR
+  case CHIP
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
 }
 public enum OID : Swift.String {
   case etsiQcsCompliance
@@ -1734,41 +2043,66 @@ extension CoreGraphics.CGImage {
   public func sharpened(_ bias: Swift.Int32 = 0) -> CoreGraphics.CGImage?
   public func unsharpened(_ bias: Swift.Int32 = 0) -> CoreGraphics.CGImage?
 }
-public protocol CheckIDScanFaceViewDelegate : AnyObject {
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didBlinkEye status: Swift.Bool)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didCenterFace status: Swift.Bool)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didCenterNose status: Swift.Bool)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleError error: checkid.CheckIDError)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didFinish status: Swift.Bool)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleDetectionType type: checkid.DetectionType)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleLivenessOk object: checkid.FaceResult)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleLivenessFailure object: checkid.FaceResult)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHandleScanFaceForResult object: checkid.FaceResult)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didMoveFaceCloser isCloser: Swift.Bool)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHoldFaceSteady isHoldSteady: Swift.Bool)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, didHadMoreOneFace isMoreOneFace: Swift.Bool)
-  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.CheckIDScanFaceView, getFaceFrameTimeOut value: Swift.Int)
+@available(iOS 13.0, *)
+public protocol ScanFaceCustomViewOfflineDelegate : AnyObject {
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, didBlinkEye status: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, didCenterFace status: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, didCenterNose status: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, didHandleError error: checkid.CheckIDError)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, didFinish status: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, didHandleDetectionType type: checkid.DetectionType)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, didHandleLivenessOk object: checkid.FaceResult)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, didHandleLivenessFailure object: checkid.FaceResult)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, didHandleScanFaceForResult object: checkid.FaceResult)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, didMoveFaceCloser isCloser: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, didHoldFaceSteady isHoldSteady: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, didHadMoreOneFace isMoreOneFace: Swift.Bool)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, getFaceFrameTimeOut value: Swift.Int)
+  func checkIDScanFaceView(_ checkIDScanFaceView: checkid.ScanFaceCustomViewOffline, getFaceFrame list: [Swift.String])
+  func didRequestDismiss()
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(CheckIDScanFace) @_Concurrency.MainActor @preconcurrency public class CheckIDScanFaceView : UIKit.UIView {
-  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any checkid.CheckIDScanFaceViewDelegate)?
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
+@objc(ScanFaceCustomViewOffline) @_Concurrency.MainActor @preconcurrency public class ScanFaceCustomViewOffline : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any checkid.ScanFaceCustomViewOfflineDelegate)?
   @_Concurrency.MainActor @preconcurrency public var card_no: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var faceSelfie: Swift.String
   @_Concurrency.MainActor @preconcurrency public var mobile: Swift.String
   @_Concurrency.MainActor @preconcurrency public var email: Swift.String
-  @_Concurrency.MainActor @preconcurrency public var methodType: checkid.FaceMethod?
-  @_Concurrency.MainActor @preconcurrency public var original_frame: Swift.String
-  @_Concurrency.MainActor @preconcurrency public var borderCornerRadius: CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency public var methodType: checkid.FaceMethod
+  @_Concurrency.MainActor @preconcurrency public var authorizationType: checkid.FaceAuthorizationType
   @_Concurrency.MainActor @preconcurrency public var subjectObj: checkid.SubjectCreate
+  @_Concurrency.MainActor @preconcurrency public var original_frame: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var topTitle: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var completionHandleResult: ((Swift.Result<checkid.FaceResult, checkid.CheckIDError>) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency public var maxRetries: Swift.Int
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak public var centerAlertView: UIKit.UIStackView!
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak public var cameraView: UIKit.UIView!
+  @_Concurrency.MainActor @preconcurrency public var isHiddenNavBar: Swift.Bool?
+  @_Concurrency.MainActor @preconcurrency public var titleText: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var dimColor: UIKit.UIColor
+  @_Concurrency.MainActor @preconcurrency public var request_id: Swift.String
+  @_Concurrency.MainActor @preconcurrency public func loadRetryCount()
+  @_Concurrency.MainActor @preconcurrency public func saveRetryCount()
+  @_Concurrency.MainActor @preconcurrency public func increaseRetry()
+  @_Concurrency.MainActor @preconcurrency public func resetRetryCount()
+  @_Concurrency.MainActor @preconcurrency public func retryKey(for id: Swift.String) -> Swift.String
+  @_Concurrency.MainActor @preconcurrency public func setupUI()
+  @_Concurrency.MainActor @preconcurrency public func hiddenNavBar(isHidden: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func setBackGroundColor(color: UIKit.UIColor)
+  @_Concurrency.MainActor @preconcurrency public func initialize()
   @_Concurrency.MainActor @preconcurrency public func finalizeCordinate()
-  @objc deinit
-  @_Concurrency.MainActor @preconcurrency public func getChallenge(finished: @escaping () -> Swift.Void)
-  @_Concurrency.MainActor @preconcurrency public func getCoordinatesOfFaceFrame() -> CoreFoundation.CGRect
-  @_Concurrency.MainActor @preconcurrency public func finalizeChallenge(onComplete: @escaping (Swift.Bool) -> Swift.Void)
-  @_Concurrency.MainActor @preconcurrency public func getVideoEvident() -> Swift.String
   @_Concurrency.MainActor @preconcurrency public func startSession()
   @_Concurrency.MainActor @preconcurrency public func stopSession()
+  @_Concurrency.MainActor @preconcurrency public func setupAlertView()
+  @_Concurrency.MainActor @preconcurrency public func drawOvalView()
+  @_Concurrency.MainActor @preconcurrency public func getChallenge(onCompletion: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func finalizeChallenge(onComplete: @escaping (Swift.Bool) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func getVideoEvident() -> Swift.String
   @_Concurrency.MainActor @preconcurrency public func startCountDownFrameTimeOut()
+  @objc deinit
 }
-extension checkid.CheckIDScanFaceView : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+@available(iOS 13.0, *)
+extension checkid.ScanFaceCustomViewOffline : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
@@ -2169,6 +2503,17 @@ open class KeychainWrapper {
   open class func wipeKeychain()
   @objc deinit
 }
+public enum DocumentType : Swift.String {
+  case NONE
+  case CITIZEN_CARD
+  case PASSPORT
+  case BUSINESS_REGISTRATION
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers @available(iOS 13, macOS 10.15, *)
 public class DataGroup {
   public var datagroupType: checkid.DataGroupId
@@ -2209,15 +2554,6 @@ public struct QKMRZResult {
   public let isPersonalNumberValid: Swift.Bool?
   public let allCheckDigitsValid: Swift.Bool
 }
-public enum DocumentType {
-  case PASSPORT
-  case CITIZEN_CARD
-  public static func == (a: checkid.DocumentType, b: checkid.DocumentType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
 extension CoreGraphics.CGImage {
   public func masked(withImage maskImage: CoreGraphics.CGImage) -> CoreGraphics.CGImage?
 }
@@ -2238,17 +2574,6 @@ public class PACEHandler {
   @objc deinit
 }
 public func exifOrientationToUIImageOrientation(_ exifOrientation: Swift.Int) -> UIKit.UIImage.Orientation
-@_hasMissingDesignatedInitializers public class UIUtilities {
-  public static func addCircle(atPoint point: CoreFoundation.CGPoint, to view: UIKit.UIView, color: UIKit.UIColor, radius: CoreFoundation.CGFloat)
-  public static func addLineSegment(fromPoint: CoreFoundation.CGPoint, toPoint: CoreFoundation.CGPoint, inView: UIKit.UIView, color: UIKit.UIColor, width: CoreFoundation.CGFloat)
-  public static func addRectangle(_ rectangle: CoreFoundation.CGRect, to view: UIKit.UIView, color: UIKit.UIColor)
-  public static func addRectangleNose(_ rectangle: CoreFoundation.CGRect, to view: UIKit.UIView, color: UIKit.UIColor)
-  public static func addShape(withPoints points: [Foundation.NSValue]?, to view: UIKit.UIView, color: UIKit.UIColor)
-  public static func imageOrientation(fromDevicePosition devicePosition: AVFoundation.AVCaptureDevice.Position = .back) -> UIKit.UIImage.Orientation
-  public static func createUIImage(from imageBuffer: CoreVideo.CVImageBuffer, orientation: UIKit.UIImage.Orientation) -> UIKit.UIImage?
-  public static func createImageBuffer(from image: UIKit.UIImage) -> CoreVideo.CVImageBuffer?
-  @objc deinit
-}
 @objc @available(iOS 13, *)
 public class PassportReader : ObjectiveC.NSObject {
   public var passiveAuthenticationUsesOpenSSL: Swift.Bool
@@ -2453,6 +2778,7 @@ public enum ProcessType {
   case LIVE_FACIAL_MATCHING_EKYC
   case LIVE_FACIAL_MATCHING_AUTHENTICATION
   case PASSIVE_AUTHENTICATION
+  case OCR_ANALYSIS
   public static func == (a: checkid.ProcessType, b: checkid.ProcessType) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -2588,6 +2914,12 @@ public struct DocumentData : Swift.Codable {
   public let mrz: Swift.String
   public let passport_number: Swift.String
   public let name_vie: Swift.String
+  public let legal_person: Swift.String
+  public let acronym_name: Swift.String
+  public let tax_number: Swift.String
+  public let legal_person_id_number: Swift.String
+  public let legal_person_address: Swift.String
+  public let company_address: Swift.String
   public func encode(to encoder: any Swift.Encoder) throws
 }
 extension checkid.DocumentData {
@@ -2619,6 +2951,14 @@ extension checkid.DetectionType : Swift.Equatable {}
 extension checkid.DetectionType : Swift.Hashable {}
 extension checkid.CheckIDError : Swift.Equatable {}
 extension checkid.CheckIDError : Swift.Hashable {}
+extension checkid.SwiftyTesseract.Error : Swift.Equatable {}
+extension checkid.SwiftyTesseract.Error : Swift.Hashable {}
+extension checkid.EngineMode : Swift.Equatable {}
+extension checkid.EngineMode : Swift.Hashable {}
+extension checkid.EngineMode : Swift.RawRepresentable {}
+extension checkid.ResultIteratorLevel : Swift.Equatable {}
+extension checkid.ResultIteratorLevel : Swift.Hashable {}
+extension checkid.ResultIteratorLevel : Swift.RawRepresentable {}
 @available(iOS 13, macOS 10.15, *)
 extension checkid.DataGroupId : Swift.Equatable {}
 @available(iOS 13, macOS 10.15, *)
@@ -2651,6 +2991,9 @@ extension checkid.DocTypeEnum : Swift.Equatable {}
 extension checkid.DocTypeEnum : Swift.Hashable {}
 @available(iOS 13, macOS 10.15, *)
 extension checkid.DocTypeEnum : Swift.RawRepresentable {}
+extension checkid.FaceAuthorizationType : Swift.Equatable {}
+extension checkid.FaceAuthorizationType : Swift.Hashable {}
+extension checkid.FaceAuthorizationType : Swift.RawRepresentable {}
 extension checkid.OID : Swift.Equatable {}
 extension checkid.OID : Swift.Hashable {}
 extension checkid.OID : Swift.RawRepresentable {}
@@ -2677,6 +3020,7 @@ extension checkid.LicenseError : Swift.Equatable {}
 extension checkid.LicenseError : Swift.Hashable {}
 extension checkid.DocumentType : Swift.Equatable {}
 extension checkid.DocumentType : Swift.Hashable {}
+extension checkid.DocumentType : Swift.RawRepresentable {}
 extension checkid.PassportAuthenticationStatus : Swift.Equatable {}
 extension checkid.PassportAuthenticationStatus : Swift.Hashable {}
 extension checkid.ProcessType : Swift.Equatable {}

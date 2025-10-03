@@ -6816,6 +6816,41 @@
           },
           {
             "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
             "name": "ReferenceConvertible",
             "printedName": "ReferenceConvertible",
             "children": [
@@ -6857,41 +6892,6 @@
             ],
             "usr": "s:s21_ObjectiveCBridgeableP",
             "mangledName": "$ss21_ObjectiveCBridgeableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomReflectable",
-            "printedName": "CustomReflectable",
-            "usr": "s:s17CustomReflectableP",
-            "mangledName": "$ss17CustomReflectableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Decodable",
-            "printedName": "Decodable",
-            "usr": "s:Se",
-            "mangledName": "$sSe"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Encodable",
-            "printedName": "Encodable",
-            "usr": "s:SE",
-            "mangledName": "$sSE"
           }
         ]
       }
@@ -6900,49 +6900,49 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Volumes\/Phung\/WORK\/checkid\/Pods\/SwiftyRSA\/Source\/Asn1Parser.swift",
+      "filePath": "\/Users\/syminhphungtiep\/Documents\/iOS\/checkid\/Pods\/SwiftyRSA\/Source\/Asn1Parser.swift",
       "kind": "IntegerLiteral",
       "offset": 380,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Volumes\/Phung\/WORK\/checkid\/Pods\/SwiftyRSA\/Source\/PublicKey.swift",
+      "filePath": "\/Users\/syminhphungtiep\/Documents\/iOS\/checkid\/Pods\/SwiftyRSA\/Source\/PublicKey.swift",
       "kind": "StringLiteral",
       "offset": 2255,
       "length": 57,
       "value": "\"(-----BEGIN PUBLIC KEY-----.+?-----END PUBLIC KEY-----)\""
     },
     {
-      "filePath": "\/Volumes\/Phung\/WORK\/checkid\/Pods\/SwiftyRSA\/Source\/SwiftyRSA.swift",
+      "filePath": "\/Users\/syminhphungtiep\/Documents\/iOS\/checkid\/Pods\/SwiftyRSA\/Source\/SwiftyRSA.swift",
       "kind": "BooleanLiteral",
       "offset": 4747,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Volumes\/Phung\/WORK\/checkid\/Pods\/SwiftyRSA\/Source\/SwiftyRSA+ObjC.swift",
+      "filePath": "\/Users\/syminhphungtiep\/Documents\/iOS\/checkid\/Pods\/SwiftyRSA\/Source\/SwiftyRSA+ObjC.swift",
       "kind": "IntegerLiteral",
       "offset": 7948,
       "length": 6,
       "value": "1"
     },
     {
-      "filePath": "\/Volumes\/Phung\/WORK\/checkid\/Pods\/SwiftyRSA\/Source\/SwiftyRSA+ObjC.swift",
+      "filePath": "\/Users\/syminhphungtiep\/Documents\/iOS\/checkid\/Pods\/SwiftyRSA\/Source\/SwiftyRSA+ObjC.swift",
       "kind": "IntegerLiteral",
       "offset": 7968,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Volumes\/Phung\/WORK\/checkid\/Pods\/SwiftyRSA\/Source\/SwiftyRSA+ObjC.swift",
+      "filePath": "\/Users\/syminhphungtiep\/Documents\/iOS\/checkid\/Pods\/SwiftyRSA\/Source\/SwiftyRSA+ObjC.swift",
       "kind": "IntegerLiteral",
       "offset": 7988,
       "length": 6,
       "value": "3"
     },
     {
-      "filePath": "\/Volumes\/Phung\/WORK\/checkid\/Pods\/SwiftyRSA\/Source\/SwiftyRSA+ObjC.swift",
+      "filePath": "\/Users\/syminhphungtiep\/Documents\/iOS\/checkid\/Pods\/SwiftyRSA\/Source\/SwiftyRSA+ObjC.swift",
       "kind": "IntegerLiteral",
       "offset": 8008,
       "length": 6,

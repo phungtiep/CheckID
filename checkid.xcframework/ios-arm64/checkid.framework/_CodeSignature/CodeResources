@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		TnIrgWY3W+/+E9R/c3urds1U4rU=
+		w1fPcTwao3Y2Qc+rwYRvd2+xyEI=
 		</data>
 		<key>CSCA Vietnam.cer</key>
 		<data>
@@ -24,6 +24,14 @@
 		<data>
 		0dNA5ZmjU3JUGOoW/QEUazklZpk=
 		</data>
+		<key>CryptoSwift.bundle/Info.plist</key>
+		<data>
+		Jm/8KSH4WyKPhz+SYNhbTg3Haa8=
+		</data>
+		<key>CryptoSwift.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		ucg9pita0v8d353x3NuGfxweQYU=
+		</data>
 		<key>Edit9LastIDViewController.nib</key>
 		<data>
 		AWT2GAkyFYeXUv8vB5IHuANEAEs=
@@ -39,58 +47,6 @@
 		<key>EditKeyInfoIDViewController.nib</key>
 		<data>
 		O85fj9TlXlGf5FSOoDPrBYIYsGc=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/BCLjoy_200.emd</key>
-		<data>
-		96Uw5p4tLIiDbN11Du0p0c5xqE8=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/BCLlefteyeclosed_200.emd</key>
-		<data>
-		KBTvwnLXsoe2PIlGUwZzMUOp5k8=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/BCLrighteyeclosed_200.emd</key>
-		<data>
-		fW6O7h6Je5DNmNrbOeCGmAixyLI=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/Info.plist</key>
-		<data>
-		1h7rMQjbjV57NRtZBM3ZGyzI6uQ=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/LMprec_600.emd</key>
-		<data>
-		trY9XrpS4DxHzs3eHljZHIJNHrI=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/MFT_fssd_accgray.pb</key>
-		<data>
-		tq7fRawRQ359i/c0FEVvpQ6Oee0=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/MFT_fssd_fastgray.pb</key>
-		<data>
-		DP+qJf0czliL6znGLVx90ASNzCY=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/blazeface.tfl</key>
-		<data>
-		oseYQ/EQxo7JsNpdNgo4YVLh7a4=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/contours.tfl</key>
-		<data>
-		PaAh9+zFw3Is4fLMn5iQsLG5M34=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/fssd_100_8bit_gray_v1.tflite</key>
-		<data>
-		VCp0NyrYJWQnYbGaxVv0Vzy0IeA=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/fssd_100_8bit_v1.tflite</key>
-		<data>
-		AHaxev+fV4YGoIDboAUFlxfISmY=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/fssd_25_8bit_gray_v1.tflite</key>
-		<data>
-		Rd53RFFpKHZNvbiDaE2p4XxjbY0=
-		</data>
-		<key>GoogleMVFaceDetectorResources.bundle/fssd_25_8bit_v1.tflite</key>
-		<data>
-		RxtbTN3LjpFChp3tmniX3KD+dsE=
 		</data>
 		<key>Headers/QKMRZScanner.h</key>
 		<data>
@@ -162,7 +118,7 @@
 		</data>
 		<key>Headers/checkid-Swift.h</key>
 		<data>
-		dJgP3AU4LVhhMwlZHh/+hmkjieQ=
+		j+Wpu9PoqIT6ldUsu2jIGBjMFTo=
 		</data>
 		<key>Headers/checkid.h</key>
 		<data>
@@ -526,7 +482,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		UXtBW23qadGIohqVZ0iihZB290k=
+		EpHxPRZ4mBRikMt5K2P7lFne+0A=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -534,23 +490,23 @@
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		Fmp5zA3lVAJrWA6USAJ9acwipFw=
+		S2Fw7gO+mepS7fTukJPt/ORQQ4A=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		/d19E5OqeNQx6eqUHOZW3rosXuM=
+		9SkXVGxv1iAHxKwfjtEpXZvoPps=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		hz8QXUEMGxJn1TfRdvHFbqAtQVI=
+		OoaVfQlynPaXp2EqGevHTmYhk08=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		/d19E5OqeNQx6eqUHOZW3rosXuM=
+		9SkXVGxv1iAHxKwfjtEpXZvoPps=
 		</data>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		LeXZFZz5cAjZHfhF/0r9q3IoupQ=
+		+aOdxaDCXIcsonM4q2RwpK2dKAA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -559,6 +515,18 @@
 		<key>README.md</key>
 		<data>
 		HG2iY8h/+CBB/oLuZnLELLu4nzI=
+		</data>
+		<key>ScanFaceCustomView.nib</key>
+		<data>
+		sh4up77uBMuUTlXwMM8jJHWAM2A=
+		</data>
+		<key>ScanFaceCustomViewOffline.nib</key>
+		<data>
+		sh4up77uBMuUTlXwMM8jJHWAM2A=
+		</data>
+		<key>ScanFaceViewController.nib</key>
+		<data>
+		absNeRCMVzsxtnMNkEDb3EMVqXo=
 		</data>
 		<key>TestStoryboard.storyboardc/8zo-lH-1dn-view-rZv-xm-OWt.nib</key>
 		<data>
@@ -588,7 +556,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5bPwcmd9uHjFd4OZ2lTrUG80qds=
+			Rvf8yO3wrk/i8isHZNF+yJhisJU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -596,10 +564,6 @@
 		<key>ocrb.traineddata</key>
 		<data>
 		LCB9HKlImEGzlmLulZhNhPNS9fs=
-		</data>
-		<key>tessdata/._ocrb.traineddata</key>
-		<data>
-		q94P5BLEjKykVRCC9eY6noihgks=
 		</data>
 		<key>tessdata/ocrb.traineddata</key>
 		<data>
@@ -609,7 +573,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nPX6XdH5zh4Y7EC5L7KPpTwv0S0=
+			yDANnRmQ+4jPh8vhX9+KnM6247M=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -621,7 +585,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MxutfhZxhXlh08I9qlbBiVBFqNx19nWvgCi85uWV/l4=
+			SdyHvJWNJa/TPB54PbEZSdjb0v2lzz8u3ZWCBo9RaDE=
 			</data>
 		</dict>
 		<key>CSCA Vietnam.cer</key>
@@ -652,6 +616,20 @@
 			QjHjXKlpdzC9yKkmJuzLgjJW7pSasQ3cDH6tMX1vA1M=
 			</data>
 		</dict>
+		<key>CryptoSwift.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CJpL9IZfPrmxSH7DjDnABOn5BXcVSxP3GwzUWY8udBU=
+			</data>
+		</dict>
+		<key>CryptoSwift.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Uh6274Qwdz5cAQ4YOP6d2PpdYre3bRzqjX2NqtyxROI=
+			</data>
+		</dict>
 		<key>Edit9LastIDViewController.nib</key>
 		<dict>
 			<key>hash2</key>
@@ -678,97 +656,6 @@
 			<key>hash2</key>
 			<data>
 			QeD9PcJjHU4q6MQUxS/PxfKZJcLrA+GL0L0qFkVxl44=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/BCLjoy_200.emd</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			8A8lZEpijnOMFV9JPQcq8UPyU8v5nwi/SCnL5dT0NRw=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/BCLlefteyeclosed_200.emd</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			0xIT5PJf+LIXgeeG/YnO3lkX75s/vlC99V1IOvE27e0=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/BCLrighteyeclosed_200.emd</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Y8oL2DjlGXdImtrbgKC+AWxaoLe2kPvDiaBkWqzP5P8=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			PzkrtzEJ1P6ta9AHuWJYd9pwbfrdNkwBmNqE08z8yWA=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/LMprec_600.emd</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			DtXIUoL5QNFKVyOmwK8F+cKr1Okww8TwvloHI203QRE=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/MFT_fssd_accgray.pb</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			8K2wTXshtNmImTKmLw7/En7tsn0vhTQqkBRBU8oLgbE=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/MFT_fssd_fastgray.pb</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			CUNCXfGzUODFinvmaL4flC6sM4wZjhpPFoWco+Eif0U=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/blazeface.tfl</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			TyXMFC6WtfIbMjbSFmwuZikgaB8dI5QtJRDpjIr27Nw=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/contours.tfl</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			hBYLwMSnSVF+Yvk8ssaKuP9J3lcfcOttFgJUypoHicA=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/fssd_100_8bit_gray_v1.tflite</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ekzwnGrkp1gUTUK/NbmiapWYfjxYQdDcORCVaYKZ2as=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/fssd_100_8bit_v1.tflite</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			OvuTDu3I0dQENEgCgdO16M7EwwTlLTT9/IqVCDQLtxk=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/fssd_25_8bit_gray_v1.tflite</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			IVEbvtJxoKkri5ORjg+I9u+70RWjbRVV8GHO4TH2qzw=
-			</data>
-		</dict>
-		<key>GoogleMVFaceDetectorResources.bundle/fssd_25_8bit_v1.tflite</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			2pAlL0mzu5QuX4gBgKFFYfZpKW5/s+3s3quqi2u3gio=
 			</data>
 		</dict>
 		<key>Headers/QKMRZScanner.h</key>
@@ -894,7 +781,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			y+BRcJRlO9DgoZO2oqKdcZpdj8az+/GdOA66T6+MdeM=
+			xWM8qyzoAVbjEy2BmSpUnw0Z1bKYSqOOXNM8WKiuWwE=
 			</data>
 		</dict>
 		<key>Headers/checkid.h</key>
@@ -1538,35 +1425,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0kjJFNEpS/Qu5Wcca09Y2eEY9PHFETKpBVxhoigP4B0=
+			CKon7zQr8I4HG6e8TlATYHrUsVWp5LWXcc5SPcgAvXo=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			C6PxHLk8AcpTomzgKQBvmmtYUvskpLJBxcoHMer/TiI=
+			WHQ8E3CHicrOA9UrSSugu6wSeRFxEWcLIjsgtYb8XWw=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mjV/OR4or0xszaOWSo9NvTohBRKfkgC5iquNSNae4OU=
+			/ZZe8yYpmob8TQtCLFEa1+e0XUtpPu+cTNTpGN9+j2Y=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			C6PxHLk8AcpTomzgKQBvmmtYUvskpLJBxcoHMer/TiI=
+			WHQ8E3CHicrOA9UrSSugu6wSeRFxEWcLIjsgtYb8XWw=
 			</data>
 		</dict>
 		<key>Modules/checkid.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U2wYiS+T696Jwv2Gk7WZgCIGP7KsI348ANBWdNmmdkM=
+			dt7SgBPYBsYEI9VCxUT0Ayk4eAiru9YOI3BtHTl1YjM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1581,6 +1468,27 @@
 			<key>hash2</key>
 			<data>
 			0zPmnsWeneS9Mu8uFlVllj48I2OdvT8oXFXIky2gw74=
+			</data>
+		</dict>
+		<key>ScanFaceCustomView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ySIWk/CAHoGhiFJTRHeaI3VKqGWFFVa9FdQqwSengYE=
+			</data>
+		</dict>
+		<key>ScanFaceCustomViewOffline.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ySIWk/CAHoGhiFJTRHeaI3VKqGWFFVa9FdQqwSengYE=
+			</data>
+		</dict>
+		<key>ScanFaceViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			boNM9vwiglLJBXB0xjPn5vyuGWP8QSjb4bH9zlggk50=
 			</data>
 		</dict>
 		<key>TestStoryboard.storyboardc/8zo-lH-1dn-view-rZv-xm-OWt.nib</key>
@@ -1629,7 +1537,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ICf/oRRcaCy20pHE8Xnp9ESUYrHrJ6K8kIiYf16TAa4=
+			OwIgkmFK6VrJ23PvK/1qStV8Hxl9yC0uNE3lbJcOy+A=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1639,13 +1547,6 @@
 			<key>hash2</key>
 			<data>
 			f2wpUj+pNsfvU9JZZIPiG4LVBjfz8ebGf31P6lkOJS0=
-			</data>
-		</dict>
-		<key>tessdata/._ocrb.traineddata</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			j/qZluepmE3CWE1C6xaElA1WqOzqhzNG9WrSBW5Jxy4=
 			</data>
 		</dict>
 		<key>tessdata/ocrb.traineddata</key>
@@ -1659,7 +1560,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cbQLbCIrtNsvwPgrLpd9+FhiuizxZYj2lWpH6CO5XQI=
+			vQXEQ7tGeBy3zC2yRiS5bSWgI3R+VRj/jGKjZ3rwAnI=
 			</data>
 			<key>optional</key>
 			<true/>
