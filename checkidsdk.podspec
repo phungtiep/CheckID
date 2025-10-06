@@ -1,11 +1,11 @@
 Pod::Spec.new do |spec|
   spec.name         = 'checkidsdk'
-  spec.version      = '2.0.25.1003'
+  spec.version      = '2.0.25.1006'
   spec.license      = 'MIT'
   spec.summary      = 'CheckID framework with Vietnamese Chip Citizen Card'
   spec.homepage     = 'https://github.com/phungtiep/CheckID'
   spec.author       = 'PHUNGTSM @Mobile-ID Technology and Services Joint Stock Company'
-  spec.source       = { :git => 'https://github.com/phungtiep/CheckID.git', :tag => '2.0.25.1003' }
+  spec.source       = { :git => 'https://github.com/phungtiep/CheckID.git', :tag => '2.0.25.1006' }
   spec.requires_arc = true
   spec.ios.deployment_target  = '13.0'
   spec.weak_frameworks = ['CoreNFC']

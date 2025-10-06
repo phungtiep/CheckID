@@ -24,14 +24,6 @@
 		<data>
 		0dNA5ZmjU3JUGOoW/QEUazklZpk=
 		</data>
-		<key>CryptoSwift.bundle/Info.plist</key>
-		<data>
-		Jm/8KSH4WyKPhz+SYNhbTg3Haa8=
-		</data>
-		<key>CryptoSwift.bundle/PrivacyInfo.xcprivacy</key>
-		<data>
-		ucg9pita0v8d353x3NuGfxweQYU=
-		</data>
 		<key>Edit9LastIDViewController.nib</key>
 		<data>
 		AWT2GAkyFYeXUv8vB5IHuANEAEs=
@@ -614,20 +606,6 @@
 			<key>hash2</key>
 			<data>
 			QjHjXKlpdzC9yKkmJuzLgjJW7pSasQ3cDH6tMX1vA1M=
-			</data>
-		</dict>
-		<key>CryptoSwift.bundle/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			CJpL9IZfPrmxSH7DjDnABOn5BXcVSxP3GwzUWY8udBU=
-			</data>
-		</dict>
-		<key>CryptoSwift.bundle/PrivacyInfo.xcprivacy</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Uh6274Qwdz5cAQ4YOP6d2PpdYre3bRzqjX2NqtyxROI=
 			</data>
 		</dict>
 		<key>Edit9LastIDViewController.nib</key>
